@@ -9,12 +9,16 @@ function Apptwo() {
     //Following text is presented on welcome page
     return (
         // wraps everything
+        // for future: navlinks og links
         <BrowserRouter>
             <Routes>
                 {/** paths to different pages */}
-                <Route path="/one" element={<SideI/>}/>
-                <Route path="/two" element={<SideI/>}/>
-                <Route path="/three" element={<Welcome/>}/>
+                <Route path="/journalist" element={}/>
+                <Route path="/editor" element={}/>
+                <Route path="/journalist/employees" element={}/>
+                <Route path="/editor" element={}/>
+                
+                {/** "homepage" */}
                 <Route path="/" element={<App/>}/>
             </Routes>
         </BrowserRouter>
