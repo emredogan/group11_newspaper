@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import LoginForm from './Components/LoginForm';
+import Navigation from './Components/Navigation';
+import Welcome from './Components/Welcome';
+
+import { BrowserRouter as Router, Route, Swicth } from 'react-router-dom';
 
 function App() {
   const adminUser = {
