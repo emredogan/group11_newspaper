@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
+import Header from './Components/Header';
 import LoginForm from './Components/LoginForm';
+import MyButton from './Components/MyButton';
+
+
+
 
 function App() {
   const adminUser = {
@@ -37,9 +42,24 @@ function App() {
   return (
     <div className="App">
    {(user.email !== "" ) ? (
-     <div className="welcome">
-       <h2>Welcome, <span>{user.name} </span></h2>
+     <div className="welcome"
+     >
+       <Header name={user.name} >
+       </Header>
+
+       <ul
+       style={{
+        position: 'absolute', left: '50%', top: '50%',
+        transform: 'translate(-50%, -50%)'
+    }}>
+    <li><MyButton text="Overview of Emp" imageURL="account_multiple.png"></MyButton></li>
+    <li><MyButton text="Article Idea" imageURL="alert-octagon.png"></MyButton></li>
+    <li><MyButton text="Overview of Tasks" imageURL="clipboard-check.png"></MyButton></li>
+</ul>
+
+       
        <button onClick={Logout}>Logout</button>
+       
         </div>
    )
   : (

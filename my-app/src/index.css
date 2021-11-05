@@ -97,6 +97,25 @@ form .form-inner input [type="submit"],
   font-weight: 600;
   cursor: pointer;
 } 
+
+.welcome big-button{
+  border: 2px solid gray;
+  height: 190px;
+  width: 220px;
+  font-family: "Roboto";
+  font-size: 12;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-image: black;
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  cursor: pointer;
+
+} 
 form .form-inner input[type="submit"]:hover,
 .welcome button:hover {
   background-position: 100% 0%;
@@ -107,7 +126,8 @@ form .form-inner input[type="submit"]:hover,
 .welcome {
   width: 100%;
   max-width: 480%;
-  background-color: aliceblue;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
   padding: 15px 30px;
 }
 
@@ -136,4 +156,12 @@ background-position: 0%;
 transition: 0.4s;
 color: #FFF;
 font-weight: 600;
+}
+
+ul, li {
+    display:inline-block
+}
+
+li.menu-item:not(:last-child) { 
+  margin-bottom: 3px;  
 }
