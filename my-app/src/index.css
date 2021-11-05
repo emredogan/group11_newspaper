@@ -1,9 +1,13 @@
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: montserrat, sans-serif;
+  font-family: 'Roboto';
+  font-weight: 400;
 }
+
 
 input, button {
   appearance: none;
@@ -99,21 +103,24 @@ form .form-inner input [type="submit"],
 } 
 
 .welcome big-button{
-  border: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid #7D28C3;
   height: 190px;
   width: 220px;
   font-family: "Roboto";
   font-size: 12;
-  display: inline-block;
   padding: 10px 15px;
+  margin: 5px;
   border-radius: 8px;
   background-image: black;
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
-  color: rgb(0, 0, 0);
-  font-weight: 600;
+  color: rgba(28, 28, 28, 0.85);
   cursor: pointer;
+  align-items: center;
 
 } 
 form .form-inner input[type="submit"]:hover,

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from './Components/Header';
 import LoginForm from './Components/LoginForm';
 import MyButton from './Components/MyButton';
+import 'typeface-roboto';
 
 
 
@@ -47,14 +48,14 @@ function App() {
        <Header name={user.name} >
        </Header>
 
-       <ul
+       <ul className='Cards'
        style={{
         position: 'absolute', left: '50%', top: '50%',
         transform: 'translate(-50%, -50%)'
     }}>
-    <li><MyButton text="Overview of Emp" imageURL="account_multiple.png"></MyButton></li>
-    <li><MyButton text="Article Idea" imageURL="alert-octagon.png"></MyButton></li>
-    <li><MyButton text="Overview of Tasks" imageURL="clipboard-check.png"></MyButton></li>
+    <li><MyButton text="Employee Overview" imageURL="accounts.svg"></MyButton></li>
+    <li><MyButton text="Article Idea" imageURL="dialogue.svg"></MyButton></li>
+    <li><MyButton text="Overview of Tasks" imageURL="statistic.svg"></MyButton></li>
 </ul>
 
        
