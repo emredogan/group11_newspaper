@@ -13,7 +13,9 @@ function Apptwo() {
         <BrowserRouter>
             <Routes>
                 {/** paths to different pages */}
-                {/** Note: element should be updated for each ind. path */}
+                {/** Note: element should be updated for each ind. path
+                 *   Paths so fare: Journalist and Editor 
+                 */}
                 <Route path="/journalist" element={<JournalistCards />}/>
                 <Route path="/editor" element={<EditorCards />}/>
                 <Route path="/journalist/employees" element={<SideI/>}/>
