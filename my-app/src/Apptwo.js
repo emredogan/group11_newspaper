@@ -1,5 +1,5 @@
 import React from 'react';
-//import Welcome from './Components/Welcome';
+import Welcome from './Components/Welcome';
 import SideI from './SideI';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
@@ -13,7 +13,7 @@ function Apptwo() {
             <Routes>
                 {/** paths to different pages */}
                 {/** Note: element should be updated for each ind. path */}
-                <Route path="/journalist" element={<SideI/>}/>
+                <Route path="/journalist" element={<Welcome />}/>
                 <Route path="/editor" element={<SideI/>}/>
                 <Route path="/journalist/employees" element={<SideI/>}/>
                 <Route path="/editor" element={<SideI/>}/>
