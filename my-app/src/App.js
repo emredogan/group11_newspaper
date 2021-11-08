@@ -48,11 +48,7 @@ function App() {
        <Header name={user.name} >
        </Header>
 
-       <ul className='Cards'
-       style={{
-        position: 'absolute', left: '50%', top: '50%',
-        transform: 'translate(-50%, -50%)'
-    }}>
+       <ul className='Cards'>
     <li><MyButton text="Employee Overview" imageURL="accounts.svg"></MyButton></li>
     <li><MyButton text="Article Idea" imageURL="dialogue.svg"></MyButton></li>
     <li><MyButton text="Overview of Tasks" imageURL="statistic.svg"></MyButton></li>

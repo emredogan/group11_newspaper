@@ -153,8 +153,6 @@ form .form-inner input[type="submit"]:hover,
 
 
 .thebutton { 
-
-display: inline-block;
 padding: 10px 15px;
 border-radius: 8px;
 background-image: linear-gradient(to right, #2979FF 50%, #2979FF 50%, #512DA8);
@@ -166,7 +164,10 @@ font-weight: 600;
 }
 
 ul, li {
-    display:inline-block
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
 }
 
 li.menu-item:not(:last-child) { 
