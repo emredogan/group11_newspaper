@@ -1,11 +1,11 @@
-// import React, { useState } from 'react'
-// import Header from './Components/Header';
-// import MyButton from './Components/MyButton';
-// import EditorCards from './Components/EditorCards'
-// import JournalistCards from './Components/JournalistCards'
-// import 'typeface-roboto';
-// import Navigation from './Components/Navigation';
 /*import React, { useState } from 'react'
+import Header from './Components/Header';
+import MyButton from './Components/MyButton';
+import EditorCards from './Components/EditorCards'
+import JournalistCards from './Components/JournalistCards'
+import 'typeface-roboto';
+import Navigation from './Components/Navigation';
+import React, { useState } from 'react'
 import LoginForm from './Components/LoginForm';
 import Navigation from './Components/Navbar';
 import Welcome from './Components/Welcome';
