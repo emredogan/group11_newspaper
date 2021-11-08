@@ -5,8 +5,8 @@ const Header = (props) => {
        >
     <li><header className='welcome'>
             <h2>Welcome, <span>{props.name} </span></h2>
+            <li className="logo"><img src = "logo.png"></img></li>
         </header></li>
-        <li><img src = "logo.svg"></img></li>
 
 </ul>
         
@@ -14,7 +14,7 @@ const Header = (props) => {
 }
 
 Header.defaultProps = {
-    name: 'there'
+    name: 'there',
 }
 
 export default Header
