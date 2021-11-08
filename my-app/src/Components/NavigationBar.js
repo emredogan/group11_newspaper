@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Navigation() {
+function NavigationBar() {
     return (
         <nav>
             <h3>Logo</h3>
@@ -12,4 +12,4 @@ function Navigation() {
     );
 }
 
-export default Navigation;
+export default NavigationBar;
