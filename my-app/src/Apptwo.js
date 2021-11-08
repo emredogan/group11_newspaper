@@ -1,5 +1,7 @@
 import React from 'react';
 import Welcome from './Components/Welcome';
+import EditorCards from './Components/EditorCards';
+import JournalistCards from './Components/JournalistCards';
 import SideI from './SideI';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
@@ -12,16 +14,9 @@ function Apptwo() {
         <BrowserRouter>
             <Routes>
                 {/** paths to different pages */}
-<<<<<<< HEAD
-                <Route path="/journalist" element={<App/>}/>
-                <Route path="/editor" element={<App/>}/>
-                <Route path="/journalist/employees" element={<App/>}/>
-                <Route path="/editor" element={<App/>}/>
-                
-=======
                 {/** Note: element should be updated for each ind. path */}
-                <Route path="/journalist" element={<Welcome />}/>
-                <Route path="/editor" element={<SideI/>}/>
+                <Route path="/journalist" element={<JournalistCards />}/>
+                <Route path="/editor" element={<EditorCards />}/>
                 <Route path="/journalist/employees" element={<SideI/>}/>
                 <Route path="/editor" element={<SideI/>}/>
                 <Route path="/journalist/task" element={<SideI/>}/>
@@ -32,7 +27,6 @@ function Apptwo() {
                 <Route path="/editor/employees" element={<SideI/>}/>
                 <Route path="/editor/article-ideas/create-idea" element={<SideI/>}/>
                 <Route path="/editor/newspaper" element={<SideI/>}/>
->>>>>>> navbar
                 {/** "homepage" */}
                 <Route path="/" element={<SideI />}/>
             </Routes>

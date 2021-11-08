@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import Apptwo from './Apptwo';
 import reportWebVitals from './reportWebVitals';
-import 'typeface-roboto';
+//import 'typeface-roboto';
 
 ReactDOM.render(
   <React.StrictMode>
