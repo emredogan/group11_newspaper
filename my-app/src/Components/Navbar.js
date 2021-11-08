@@ -1,15 +1,14 @@
 import React from 'react';
-
-function Navigation() {
+import link from "react-router-dom"
+/** "this is a test" */
+function Navbar() {
     return (
-        <nav>
-            <h3>Logo</h3>
-            <ul>
-                <li>Login</li>
-                <li>Welcome</li>
-            </ul>
-        </nav>
-    );
+        <div>
+    <li>
+      <Link to="/">App</Link>
+    </li>
+  </div>
+  );
 }
 
-export default Navigation;
+export default Navbar;
