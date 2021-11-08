@@ -3,8 +3,9 @@ import Header from './Components/Header';
 import LoginForm from './Components/LoginForm';
 import MyButton from './Components/MyButton';
 import 'typeface-roboto';
-
-
+import Navigation from './Components/Navigation';
+import Welcome from './Components/Welcome';
+import { BrowserRouter as Router, Route, Swicth } from 'react-router-dom';
 
 
 function App() {
