@@ -1,9 +1,8 @@
 import React from 'react';
-import Welcome from './Components/Welcome';
+//import Welcome from './Components/Welcome';
 import SideI from './SideI';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
-import App from './App';
 
 function Apptwo() {
     //Following text is presented on welcome page
@@ -13,20 +12,21 @@ function Apptwo() {
         <BrowserRouter>
             <Routes>
                 {/** paths to different pages */}
-                <Route path="/journalist" element={}/>
-                <Route path="/editor" element={}/>
-                <Route path="/journalist/employees" element={}/>
-                <Route path="/editor" element={}/>
-                <Route path="/journalist/task" element={}/>
-                <Route path="/journalist/task/create-task" element={}/>
-                <Route path="/journalist/task/create-task" element={}/>
-                <Route path="/journalist/article-ideas" element={}/>
-                <Route path="/journalist/article-ideas/create-idea" element={}/>
-                <Route path="/editor/employees" element={}/>
-                <Route path="/editor/article-ideas/create-idea" element={}/>
-                <Route path="/editor/newspaper" element={}/>
+                {/** Note: element should be updated for each ind. path */}
+                <Route path="/journalist" element={<SideI/>}/>
+                <Route path="/editor" element={<SideI/>}/>
+                <Route path="/journalist/employees" element={<SideI/>}/>
+                <Route path="/editor" element={<SideI/>}/>
+                <Route path="/journalist/task" element={<SideI/>}/>
+                <Route path="/journalist/task/create-task" element={<SideI/>}/>
+                <Route path="/journalist/task/create-task" element={<SideI/>}/>
+                <Route path="/journalist/article-ideas" element={<SideI/>}/>
+                <Route path="/journalist/article-ideas/create-idea" element={<SideI/>}/>
+                <Route path="/editor/employees" element={<SideI/>}/>
+                <Route path="/editor/article-ideas/create-idea" element={<SideI/>}/>
+                <Route path="/editor/newspaper" element={<SideI/>}/>
                 {/** "homepage" */}
-                <Route path="/" element={<App/>}/>
+                <Route path="/" element={<SideI />}/>
             </Routes>
         </BrowserRouter>
 
