@@ -1,0 +1,176 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+
+input, button {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+
+
+.App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFF;
+}
+
+form {
+  display: block;
+  position: relative;
+}
+
+form:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: 1;
+  background-color: #512DA8;
+}
+
+form .form-inner {
+  position: relative;
+  display: block;
+  background-color: #FFF;
+  padding: 30px;
+  z-index: 2;
+}
+
+form .form-inner h2 {
+  color: #4A5568;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+form .form-inner .form-group {
+  display: block;
+  width: 300px;
+  margin-bottom: 15px;
+
+}
+
+.form-inner .form-group label {
+  display: block;
+  color: #4A5568;
+  font-size: 12;
+  margin-bottom: 5px;
+  transition: 0.4s;
+}
+
+.form-inner .form-group:focus-within label{
+  color:#512DA8;
+}
+
+form .form-inner .form-group input{
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #EDF2F7;
+  border-radius: 8px;
+  transition: 0.4s;
+}
+
+form .form-inner .form-group input:focus {
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.2);
+}
+
+form .form-inner input [type="submit"],
+.welcome button{
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, #2979FF 50%, #2979FF 50%, #512DA8);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: #FFF;
+  font-weight: 600;
+  cursor: pointer;
+} 
+
+.welcome big-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid #7D28C3;
+  height: 190px;
+  width: 220px;
+  font-family: "Roboto";
+  font-size: 12;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  background-image: black;
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: rgba(28, 28, 28, 0.85);
+  cursor: pointer;
+  align-items: center;
+
+} 
+form .form-inner input[type="submit"]:hover,
+.welcome button:hover {
+  background-position: 100% 0%;
+}
+
+
+
+.welcome {
+  width: 100%;
+  max-width: 480%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 15px 30px;
+}
+
+.welcome h2 {
+  color: #4A5568;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.welcome h2 span {
+  color: #d822a1;
+  font-weight: 650;
+}
+
+
+
+
+.thebutton { 
+padding: 10px 15px;
+border-radius: 8px;
+background-image: linear-gradient(to right, #2979FF 50%, #2979FF 50%, #512DA8);
+background-size: 200%;
+background-position: 0%;
+transition: 0.4s;
+color: #FFF;
+font-weight: 600;
+}
+
+ul, li {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+li.menu-item:not(:last-child) { 
+  margin-bottom: 3px;  
+}
