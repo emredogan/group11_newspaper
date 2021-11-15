@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
+    "@parse/react": "0.0.1-alpha.16",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^4.6.0",
+    "parse": "^3.4.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.2",
     "react-dom": "^17.0.2",

@@ -27,7 +27,7 @@ input, button {
 }
 
 
-form {
+/* form {
   display: block;
   position: relative;
 }
@@ -42,9 +42,11 @@ form:after {
   bottom: -5px;
   z-index: 1;
   background-color: #512DA8;
-}
+} */
 
-form .form-inner {
+
+
+/* form .form-inner {
   position: relative;
   display: block;
   background-color: #FFF;
@@ -102,7 +104,7 @@ form .form-inner input [type="submit"],
   color: #FFF;
   font-weight: 600;
   cursor: pointer;
-} 
+}  */
 
 .welcome big-button{
   display: flex;

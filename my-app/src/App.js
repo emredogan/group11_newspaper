@@ -1,5 +1,6 @@
 import React from "react";
 import EditorCards from "./Components/EditorCards";
+import  CreateTask  from "./Components/CreateTask";
 import "bootstrap/dist/css/bootstrap.min.css";
 import JournalistCards from "./Components/JournalistCards";
 import SideI from "./SideI";
@@ -28,8 +29,7 @@ function App() {
           <Route path="/journalist/employees" element={<SideI />} />
           <Route path="/editor" element={<SideI />} />
           <Route path="/journalist/task" element={<SideI />} />
-          <Route path="/journalist/task/create-task" element={<SideI />} />
-          <Route path="/journalist/task/create-task" element={<SideI />} />
+          <Route path="/journalist/task/create-task" element={< CreateTask />} />
           <Route path="/journalist/article-ideas" element={<SideI />} />
           <Route
             path="/journalist/article-ideas/create-idea"
