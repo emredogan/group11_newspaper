@@ -5,9 +5,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto';
-  font-weight: 400;
-}
 
+}
 
 input, button {
   appearance: none;
@@ -18,13 +17,15 @@ input, button {
 
 
 
-.App {
-  height: 100vh;
+.align{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #FFF;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
+
 
 form {
   display: block;
