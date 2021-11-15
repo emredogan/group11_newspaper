@@ -6,13 +6,15 @@ import SideI from "./SideI";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { NavigationBar } from "./Components/NavigationBar";
+import LoginOut from "./Components/LoginOut";
 
-function Apptwo() {
+function App() {
   //Following text is presented on welcome page
   return (
     // wraps everything
     // for future: navlinks og links
     <div className="App">
+     
       <NavigationBar />
       <BrowserRouter>
         <Routes>
@@ -20,6 +22,7 @@ function Apptwo() {
           {/** Note: element should be updated for each ind. path
            *   Paths so fare: Journalist and Editor
            */}
+           <Route path="/" element={<LoginOut />} />
           <Route path="/journalist" element={<JournalistCards />} />
           <Route path="/editor" element={<EditorCards />} />
           <Route path="/journalist/employees" element={<SideI />} />
@@ -43,4 +46,5 @@ function Apptwo() {
   );
 }
 
-export default Apptwo;
+export default App;
+
