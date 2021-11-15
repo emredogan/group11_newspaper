@@ -14,7 +14,7 @@ Login(details);
     
     return (
 // returns the error function and has a form-group for styling
-        <form onSubmit={submitHandler}> 
+        <form className="loginForm" onSubmit={submitHandler}> 
         <div className="form-inner">
             <h2>Login</h2>
             {(error !== "") ? ( <div className="error">{error} </div> ) : ""}
