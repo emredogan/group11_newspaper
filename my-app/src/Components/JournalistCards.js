@@ -8,9 +8,9 @@ function Cards() {
          <div className="welcome">
            <Header name={"Journalist"}/>
            <ul className='Cards'>
-        <li><MyButton text="Newspaper" imageURL="newspaper.svg"></MyButton></li>
-        <li><MyButton text="Article Idea" imageURL="dialogue.svg"></MyButton></li>
-        <li><MyButton text="Overview of Tasks" imageURL="statistic.svg"></MyButton></li>
+        <li><MyButton text="Newspaper" imageURL="/newspaper.svg"></MyButton></li>
+        <li><MyButton text="Article Idea" imageURL="/dialogue.svg"></MyButton></li>
+        <li><MyButton text="Overview of Tasks" imageURL="/statistic.svg"></MyButton></li>
     </ul>
     
            
