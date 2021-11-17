@@ -176,3 +176,14 @@ ul, li {
 li.menu-item:not(:last-child) { 
   margin-bottom: 3px;  
 }
+
+.mb-3 {
+  padding: 15px 30px;
+  width: 300px
+}
+
+.mb-4 {
+  padding: 15px 30px;
+  width: 300px;
+  height: 200px;
+}

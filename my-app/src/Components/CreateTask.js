@@ -20,6 +20,7 @@ export function CreateTask() {
 
   const [title, setTitle] = useState();
   const [responsible, setResponsible] = useState();
+  const [description, setDescription] = useState();
 
   async function handleUpload(e) {
     e.preventDefault();
@@ -27,11 +28,15 @@ export function CreateTask() {
 
     console.log(title);
     console.log(responsible);
+    console.log(description);
 
     const Task = Parse.Object.extend("Task");
     const newTask = new Task();
     newTask.set("title", title);
     newTask.set("responsible", responsible);
+    newTask.set("description", description);
+
+
     try {
       const newTaskReference = await newTask.save();
       alert("succes");
@@ -55,9 +60,17 @@ export function CreateTask() {
             onChange={(e) => setResponsible(e.target.value)}
           />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="formControlTextarea1">
+          <Form.Label>
+            Task Description
+          </Form.Label>
+          <Form.Control 
+            title="description" rows={5} onChange={(e) => setDescription(e.target.value)} />
+        </Form.Group>
         <Button onClick={handleUpload} variant="primary" type="submit">
           Upload
         </Button>
+
       </Form>
     </>
   );
