@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "navbar": "^2.1.0",
+    "react-bootstrap": "^2.0.2",
     "react-nav-bar": "^0.6.5",
     "react-router-dom": "^6.0.0",
     "typeface-roboto": "^1.1.13"
