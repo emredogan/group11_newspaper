@@ -3,6 +3,9 @@ import { Form, Button } from "react-bootstrap";
 import Parse from "parse";
 
 export function CreateTask() {
+
+
+  console.log("DATE", date);
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 
@@ -21,6 +24,7 @@ export function CreateTask() {
   const [title, setTitle] = useState();
   const [responsible, setResponsible] = useState();
   const [description, setDescription] = useState();
+  const [date, setDate] = useState();
 
   async function handleUpload(e) {
     e.preventDefault();
@@ -55,18 +59,20 @@ export function CreateTask() {
 
         <Form.Group className="mb-3" controlId="formBasicTranslation">
           <Form.Label>Responsible</Form.Label>
-          <Form.Control
-            type="text"
-            onChange={(e) => setResponsible(e.target.value)}
-          />
+          <Form.Control type="text" onChange={(e) => setResponsible(e.target.value)} />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formControlTextarea1">
-          <Form.Label>
-            Task Description
-          </Form.Label>
-          <Form.Control 
-            title="description" rows={5} onChange={(e) => setDescription(e.target.value)} />
+        
+        <Form.Group className="mb-3" controlId="formControlTextarea">
+          <Form.Label>Task Description</Form.Label>
+          <Form.Control as="textarea" rows={3} onChange={(e) => setDescription(e.target.value)} /> {/** as brings the style of textarea */}
         </Form.Group>
+
+        {/** consider making our own? */}
+        <Form.Group className="mb-3" controlId="formDate">
+          <Form.Label>Deadline</Form.Label> 
+          <Form.Control type="date" onChange={(e) => setDate(e.target.value)} />
+        </Form.Group>
+
         <Button onClick={handleUpload} variant="primary" type="submit">
           Upload
         </Button>
