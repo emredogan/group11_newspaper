@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Button, Col, Row } from "react-bootstrap";
+import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
 
 export function CreateTask() {
@@ -51,73 +51,83 @@ export function CreateTask() {
 
   return (
     <>
+      <Container className="container">
       <Form>
-        <Row className="upperrow">
-        <Form.Group className="mb-3" controlId="formBasicUsername">
+
+      <Row className="upperrow">
+        <Col>
+        <Form.Group className="formpart" controlId="formBasicUsername">
           <Form.Label>Task Title</Form.Label>
           <Form.Control type="text" onChange={(e) => setTitle(e.target.value)} />
         </Form.Group>
-
-        <Form.Group className="mb-5" controlId="formControlTextarea">
+        </Col>
+        
+        <Col xs={5}>
+        <Form.Group className="formpart" controlId="formControlTextarea">
           <Form.Label>Task Description</Form.Label>
           <Form.Control as="textarea" rows={1} onChange={(e) => setDescription(e.target.value)} /> {/** as brings the style of textarea */}
         </Form.Group>
+        </Col>
 
-        <Form.Group className="mb-3" controlId="formStatusSelection">
+        <Col>
+        <Form.Group className="formpart" controlId="formStatusSelection">
         <Form.Label>Status</Form.Label>
-        <Form.Select className="mb-4" defaultValue="Select Status..">
-          <option>Select Status..</option>
-          <option>Culture</option>
-          <option>Finance</option>
-          <option>Politics</option>
-          <option>Travel</option>
-        </Form.Select>
+          <Form.Group> {/** right approach? */}
+          <Form.Select defaultValue="Select Status..">
+            <option>Select Status..</option>
+            <option>Culture</option>
+            <option>Finance</option>
+            <option>Politics</option>
+            <option>Travel</option>
+          </Form.Select>
+          </Form.Group>
         </Form.Group>
+        </Col>
       </Row>
 
       <Row className="lowerrow">
-      <Form.Group className="mb-3" controlId="formSectionSelection">
-        <Form.Label>Section</Form.Label>
-        <Form.Select className="mb-4" defaultValue="Select Section..">
-          <option>Select Section..</option>
-          <option>Culture</option>
-          <option>Finance</option>
-          <option>Politics</option>
-          <option>Travel</option>
-        </Form.Select>
+        <Col>
+        <Form.Group className="formpart" controlId="formSectionSelection">
+          <Form.Label>Section</Form.Label>
+          <Form.Group>
+          <Form.Select className="mb-4" defaultValue="Select Section..">
+            <option>Select Section..</option>
+            <option>Culture</option>
+            <option>Finance</option>
+            <option>Politics</option>
+            <option>Travel</option>
+          </Form.Select>
+          </Form.Group>
         </Form.Group>
+        </Col>
         
-      <Form.Group className="mb-3" controlId="formPlainTextResponsible">
+        <Col xs={5}>
+        <Form.Group className="formpart" controlId="formPlainTextResponsible">
           <Form.Label>Responsible</Form.Label>
           <Form.Control plaintext readOnly defaultValue="You" onChange={(e) => setResponsible(e.target.value)} />
           <Button>
           {/** add button for adding other employees */}
-          ➕
-        </Button>
+            ➕
+          </Button>
         </Form.Group>
+        </Col>
 
-        {/** consider making our own? */}
-        <Form.Group className="mb-3" controlId="formDate">
+          {/** consider making our own? */}
+        <Col>
+        <Form.Group className="formpart" controlId="formDate">
           <Form.Label>Deadline</Form.Label> 
           <Form.Control type="date" onChange={(e) => setDate(e.target.value)} />
         </Form.Group>
-
+        </Col>
       </Row>
 
-
-
-
-
-
-
-        
-        
-
-        <Button className="uploadbutton" variant="primary" type="submit" onClick={handleUpload}>
+      <Button className="uploadbutton" variant="primary" type="submit" onClick={handleUpload}>
           Upload
       </Button>
 
       </Form>
+      </Container>
+
     </>
   );
 }

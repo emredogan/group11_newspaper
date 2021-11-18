@@ -178,40 +178,10 @@ li.menu-item:not(:last-child) {
 }
 
 
-.upperrow {
-  max-width: 70%;
-  justify-content: center;
-
-}
-
-.lowerrow {
-  max-width: 70%;
-  justify-content: center;
-
-}
-
-
-.mb-3 {
-  /* background-color: red; */
+.formpart {
   padding: 30px;
-  width: 300px;
-  flex: 1;
-}
-
-.mb-4 {
-  width: 240px;
-  height: 35px;
-  flex: 1;
-}
-
-.mb-5 {
-  padding: 30px;
-  width: 490px;
-  flex: 2
 }
 
 .uploadbutton {
   float: right;
-  
-  
 }
