@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Col, Row } from "react-bootstrap";
 import Parse from "parse";
 
 export function CreateTask() {
 
 
-  console.log("DATE", date);
+  console.log("DATE");
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 
@@ -52,19 +52,48 @@ export function CreateTask() {
   return (
     <>
       <Form>
+        <Row className="upperrow">
         <Form.Group className="mb-3" controlId="formBasicUsername">
-          <Form.Label>Title</Form.Label>
+          <Form.Label>Task Title</Form.Label>
           <Form.Control type="text" onChange={(e) => setTitle(e.target.value)} />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicTranslation">
-          <Form.Label>Responsible</Form.Label>
-          <Form.Control type="text" onChange={(e) => setResponsible(e.target.value)} />
+        <Form.Group className="mb-5" controlId="formControlTextarea">
+          <Form.Label>Task Description</Form.Label>
+          <Form.Control as="textarea" rows={1} onChange={(e) => setDescription(e.target.value)} /> {/** as brings the style of textarea */}
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formStatusSelection">
+        <Form.Label>Status</Form.Label>
+        <Form.Select className="mb-4" defaultValue="Select Status..">
+          <option>Select Status..</option>
+          <option>Culture</option>
+          <option>Finance</option>
+          <option>Politics</option>
+          <option>Travel</option>
+        </Form.Select>
+        </Form.Group>
+      </Row>
+
+      <Row className="lowerrow">
+      <Form.Group className="mb-3" controlId="formSectionSelection">
+        <Form.Label>Section</Form.Label>
+        <Form.Select className="mb-4" defaultValue="Select Section..">
+          <option>Select Section..</option>
+          <option>Culture</option>
+          <option>Finance</option>
+          <option>Politics</option>
+          <option>Travel</option>
+        </Form.Select>
         </Form.Group>
         
-        <Form.Group className="mb-3" controlId="formControlTextarea">
-          <Form.Label>Task Description</Form.Label>
-          <Form.Control as="textarea" rows={3} onChange={(e) => setDescription(e.target.value)} /> {/** as brings the style of textarea */}
+      <Form.Group className="mb-3" controlId="formPlainTextResponsible">
+          <Form.Label>Responsible</Form.Label>
+          <Form.Control plaintext readOnly defaultValue="You" onChange={(e) => setResponsible(e.target.value)} />
+          <Button>
+          {/** add button for adding other employees */}
+          ➕
+        </Button>
         </Form.Group>
 
         {/** consider making our own? */}
@@ -73,9 +102,20 @@ export function CreateTask() {
           <Form.Control type="date" onChange={(e) => setDate(e.target.value)} />
         </Form.Group>
 
-        <Button onClick={handleUpload} variant="primary" type="submit">
+      </Row>
+
+
+
+
+
+
+
+        
+        
+
+        <Button className="uploadbutton" variant="primary" type="submit" onClick={handleUpload}>
           Upload
-        </Button>
+      </Button>
 
       </Form>
     </>
