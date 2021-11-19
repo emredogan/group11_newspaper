@@ -1,11 +1,11 @@
 // Auto generate rafce(Creates an arrow functio). (By using the ES7 extension)
-const Header = (props) => {
+const Header = ({ name }) => {
   return (
     <ul>
       <li>
         <header className="welcome">
           <h2>
-            Welcome, <span>{props.name} </span>
+            Welcome, <span>{name} </span>
           </h2>
         </header>
       </li>
