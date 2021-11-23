@@ -3,7 +3,7 @@ import EditorCards from "./Components/EditorCards";
 import  CreateTask  from "./Components/CreateTask";
 import "bootstrap/dist/css/bootstrap.min.css";
 import JournalistCards from "./Components/JournalistCards";
-import SideI from "./SideI";
+import SideI from "./Components/SideI";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { NavigationBar } from "./Components/NavigationBar";
@@ -23,7 +23,7 @@ function App() {
           {/** Note: element should be updated for each ind. path
            *   Paths so fare: Journalist and Editor
            */}
-           <Route path="/" element={<LoginOut />} />
+           <Route path="/" element={<JournalistCards />} /> {/** temp page */}
           <Route path="/journalist" element={<JournalistCards />} />
           <Route path="/editor" element={<EditorCards />} />
           <Route path="/journalist/employees" element={<SideI />} />
