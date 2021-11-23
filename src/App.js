@@ -1,6 +1,6 @@
 import React from "react";
 import EditorCards from "./Components/EditorCards";
-import  CreateTask  from "./Components/CreateTask";
+import CreateTask from "./Components/CreateTask";
 import "bootstrap/dist/css/bootstrap.min.css";
 import JournalistCards from "./Components/JournalistCards";
 import Tasks from "./Components/Tasks";
@@ -15,7 +15,6 @@ function App() {
     // wraps everything
     // for future: navlinks og links
     <div className="App">
-     
       <NavigationBar />
       <BrowserRouter>
         <Routes>
@@ -23,14 +22,14 @@ function App() {
           {/** Note: element should be updated for each ind. path
            *   Paths so fare: Journalist and Editor
            */}
-           <Route path="/" element={<JournalistCards />} /> {/** temp page */}
+          <Route path="/" element={<LoginOut />} />
           <Route path="/journalist" element={<JournalistCards />} />
           <Route path="/editor" element={<EditorCards />} />
-          <Route path="/journalist/employees" element={<Tasks />} />
-          <Route path="/editor" element={<Tasks />} />
-          <Route path="/journalist/task" element={<Tasks />} />
-          <Route path="/journalist/task/create-task" element={< CreateTask />} />
-          <Route path="/journalist/article-ideas" element={<Tasks />} />
+          <Route path="/journalist/employees" element={<SideI />} />
+          <Route path="/editor" element={<SideI />} />
+          <Route path="/journalist/task" element={<SideI />} />
+          <Route path="/journalist/task/create-task" element={<CreateTask />} />
+          <Route path="/journalist/article-ideas" element={<SideI />} />
           <Route
             path="/journalist/article-ideas/create-idea"
             element={<Tasks />}
@@ -47,4 +46,3 @@ function App() {
 }
 
 export default App;
-
