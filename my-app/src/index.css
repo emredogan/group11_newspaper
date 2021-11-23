@@ -124,8 +124,8 @@ form .form-inner .form-group input{
   color: rgba(28, 28, 28, 0.85);
   cursor: pointer;
   align-items: center;
-
 } 
+
 form .form-inner input[type="submit"]:hover,
 .welcome button:hover {
   background-position: 100% 0%;
@@ -177,11 +177,22 @@ li.menu-item:not(:last-child) {
   margin-bottom: 3px;  
 }
 
+/** create task styling */
+.container {
+  width: 680px;
+}
 
 .formpart {
-  padding: 30px;
+  padding: 20px 30px;
 }
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
 
 .uploadbutton {
   float: right;
+  margin: 20px 30px;
 }

@@ -4,7 +4,7 @@ import MyButton from './MyButton';
 import { Link } from "react-router-dom";
 
 
-function SideI() {
+function Tasks() {
     return (
         <div>
         <Link to="/journalist/task/create-task"><MyButton text="create task"></MyButton></Link>
@@ -13,4 +13,4 @@ function SideI() {
 
 }
 
-export default SideI;
+export default Tasks;

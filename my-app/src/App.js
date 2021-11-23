@@ -3,7 +3,7 @@ import EditorCards from "./Components/EditorCards";
 import  CreateTask  from "./Components/CreateTask";
 import "bootstrap/dist/css/bootstrap.min.css";
 import JournalistCards from "./Components/JournalistCards";
-import SideI from "./Components/SideI";
+import Tasks from "./Components/Tasks";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { NavigationBar } from "./Components/NavigationBar";
@@ -26,20 +26,20 @@ function App() {
            <Route path="/" element={<JournalistCards />} /> {/** temp page */}
           <Route path="/journalist" element={<JournalistCards />} />
           <Route path="/editor" element={<EditorCards />} />
-          <Route path="/journalist/employees" element={<SideI />} />
-          <Route path="/editor" element={<SideI />} />
-          <Route path="/journalist/task" element={<SideI />} />
+          <Route path="/journalist/employees" element={<Tasks />} />
+          <Route path="/editor" element={<Tasks />} />
+          <Route path="/journalist/task" element={<Tasks />} />
           <Route path="/journalist/task/create-task" element={< CreateTask />} />
-          <Route path="/journalist/article-ideas" element={<SideI />} />
+          <Route path="/journalist/article-ideas" element={<Tasks />} />
           <Route
             path="/journalist/article-ideas/create-idea"
-            element={<SideI />}
+            element={<Tasks />}
           />
-          <Route path="/editor/employees" element={<SideI />} />
-          <Route path="/editor/article-ideas/create-idea" element={<SideI />} />
-          <Route path="/editor/newspaper" element={<SideI />} />
+          <Route path="/editor/employees" element={<Tasks />} />
+          <Route path="/editor/article-ideas/create-idea" element={<Tasks />} />
+          <Route path="/editor/newspaper" element={<Tasks />} />
           {/** "homepage" */}
-          <Route path="/" element={<SideI />} />
+          <Route path="/" element={<Tasks />} />
         </Routes>
       </BrowserRouter>
     </div>
