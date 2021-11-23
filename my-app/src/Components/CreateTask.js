@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
+import TitleForm from "./FormComponents/TitleForm";
 
 export function CreateTask() {
 
@@ -30,7 +31,6 @@ export function CreateTask() {
     e.preventDefault();
     console.log("prevented default");
 
-    console.log(title);
     console.log(responsible);
     console.log(description);
 
@@ -55,10 +55,7 @@ export function CreateTask() {
       <Form>
       <Row className="upperrow">
         <Col lg="3">
-        <Form.Group className="formpart" controlId="formBasicUsername">
-          <Form.Label>Task Title</Form.Label>
-          <Form.Control type="text" onChange={(e) => setTitle(e.target.value)} />
-        </Form.Group>
+          <TitleForm text="Task Title"/>
         </Col>
         
         <Col>
@@ -72,8 +69,8 @@ export function CreateTask() {
         <Form.Group className="formpart" controlId="formStatusSelection">
         <Form.Label>Status</Form.Label>
           <Form.Group> {/** right approach? */}
-          <Form.Select defaultValue="Select Status..">
-            <option>Select Status..</option>
+          <Form.Select defaultValue="Select">
+            <option>Select</option>
             <option>to Do</option>
             <option>Doing</option>
             <option>Done</option>
@@ -88,8 +85,8 @@ export function CreateTask() {
         <Form.Group className="formpart" controlId="formSectionSelection">
           <Form.Label>Section</Form.Label>
           <Form.Group>
-          <Form.Select className="mb-4" defaultValue="Select Section..">
-            <option>Select Section..</option>
+          <Form.Select className="mb-4" defaultValue="Select">
+            <option>Select</option>
             <option>Culture</option>
             <option>Finance</option>
             <option>Politics</option>

@@ -5,8 +5,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto';
-
+  background-color: #F8F8F8;
 }
+
+
 
 input, button {
   appearance: none;
@@ -48,7 +50,7 @@ input, button {
  .loginForm .form-inner {
   position: relative;
   display: block;
-  background-color: #FFF;
+  background-color: #F8F8F8;
   padding: 30px;
   z-index: 2;
 }
@@ -137,7 +139,6 @@ form .form-inner input[type="submit"]:hover,
   width: 100%;
   max-width: 480%;
   height: 100%;
-  background-color: rgb(255, 255, 255);
   padding: 15px 30px;
 }
 
@@ -151,9 +152,6 @@ form .form-inner input[type="submit"]:hover,
   color: #d822a1;
   font-weight: 650;
 }
-
-
-
 
 .thebutton { 
 padding: 10px 15px;
@@ -178,8 +176,14 @@ li.menu-item:not(:last-child) {
 }
 
 /** create task styling */
+
 .container {
   width: 680px;
+}
+
+.form-select {
+  background-color : #FFF;
+  border-radius: 3px;
 }
 
 .formpart {
@@ -190,7 +194,6 @@ li.menu-item:not(:last-child) {
   display: flex;
   align-items: center;
 }
-
 
 .uploadbutton {
   float: right;

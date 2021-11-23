@@ -4,7 +4,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 
 export function NavigationBar() {
   return (
-    <Navbar className="Navbar" bg="white" expand="lg">
+    <Navbar className="Navbar" expand="lg">
       <Container>
         <Navbar.Brand href="/">
           <img src="/logo.png" alt="Logo"></img>
