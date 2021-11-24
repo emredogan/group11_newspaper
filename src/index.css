@@ -86,7 +86,6 @@ form .form-inner .form-group input {
 
 .loginForm .form-inner input [type="submit"],
 .welcome button {
-  display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
   background-image: linear-gradient(
@@ -101,6 +100,14 @@ form .form-inner .form-group input {
   color: #fff;
   font-weight: 600;
   cursor: pointer;
+}
+
+.Logout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .welcome big-button {
@@ -147,11 +154,14 @@ form .form-inner input[type="submit"]:hover,
   font-size: 28px;
   margin-bottom: 30px;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
 }
 .welcome h2 span {
   color: #d822a1;
   font-weight: 650;
 }
+
 
 .thebutton {
   padding: 10px 15px;
