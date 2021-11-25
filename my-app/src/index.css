@@ -137,6 +137,12 @@ form .form-inner input[type="submit"]:hover,
   padding: 15px 30px;
 }
 
+ourIcons {
+  width: 80px;
+  margin: 20px;
+  margin-top: 10px;
+}
+
 .welcome h2 {
   color: #4a5568;
   font-size: 28px;
