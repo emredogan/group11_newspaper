@@ -50,14 +50,24 @@ export function CreateTask() {
       <Container className="container">
         <Form>
           <Row className="upperrow">
-            <Col lg="3">
-              <TitleForm text="Task Title" />
+          <Col>
+              <Form.Group className="formpart" controlId="formControlTextarea">
+                <Form.Label>Task Title</Form.Label>
+                <Form.Control
+                placeholder = "Enter Title"
+                  as="textarea"
+                  rows={1}
+                  onChange={(e) => setDescription(e.target.value)}
+                />{" "}
+                {/** as brings the style of textarea */}
+              </Form.Group>
             </Col>
 
             <Col>
               <Form.Group className="formpart" controlId="formControlTextarea">
                 <Form.Label>Task Description</Form.Label>
                 <Form.Control
+                placeholder = "Enter Description"
                   as="textarea"
                   rows={1}
                   onChange={(e) => setDescription(e.target.value)}
