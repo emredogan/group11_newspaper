@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
+import TitleForm from "../Components/FormComponents/TitleForm"
 
 export function CreateTask() {
   console.log("DATE");
@@ -53,29 +54,12 @@ export function CreateTask() {
         <Form>
           <Row className="upperrow">
           <Col>
-              <Form.Group className="formpart" controlId="formControlTextarea">
-                <Form.Label>Task Title</Form.Label>
-                <Form.Control
-                placeholder = "Enter Title"
-                  as="textarea"
-                  rows={1}
-                  onChange={(e) => setTitle(e.target.value)}
-                />{" "}
-                {/** as brings the style of textarea */}
-              </Form.Group>
+            <TitleForm text="Task Title" setTitle= {setTitle} />
             </Col>
 
             <Col>
-              <Form.Group className="formpart" controlId="formControlTextarea">
-                <Form.Label>Task Description</Form.Label>
-                <Form.Control
-                placeholder = "Enter Description"
-                  as="textarea"
-                  rows={1}
-                  onChange={(e) => setDescription(e.target.value)}
-                />{" "}
-                {/** as brings the style of textarea */}
-              </Form.Group>
+            <TitleForm text="Task Description" setTitle= {setDescription} />
+
             </Col>
 
             <Col lg="3">
