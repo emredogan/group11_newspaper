@@ -34,7 +34,10 @@ export function CreateTask() {
     const Task = Parse.Object.extend("Task");
     const newTask = new Task();
     newTask.set("title", title);
-    newTask.set("responsible", responsible);
+    newTask.set("responsible", "You");
+    newTask.set("date", date)
+    newTask.set("status", "To do")
+    newTask.set("section", "Culture")
     newTask.set("description", description);
 
     try {
@@ -50,14 +53,24 @@ export function CreateTask() {
       <Container className="container">
         <Form>
           <Row className="upperrow">
-            <Col lg="3">
-              <TitleForm text="Task Title" />
+          <Col>
+              <Form.Group className="formpart" controlId="formControlTextarea">
+                <Form.Label>Task Title</Form.Label>
+                <Form.Control
+                placeholder = "Enter Title"
+                  as="textarea"
+                  rows={1}
+                  onChange={(e) => setTitle(e.target.value)}
+                />{" "}
+                {/** as brings the style of textarea */}
+              </Form.Group>
             </Col>
 
             <Col>
               <Form.Group className="formpart" controlId="formControlTextarea">
                 <Form.Label>Task Description</Form.Label>
                 <Form.Control
+                placeholder = "Enter Description"
                   as="textarea"
                   rows={1}
                   onChange={(e) => setDescription(e.target.value)}
