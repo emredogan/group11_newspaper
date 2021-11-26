@@ -1,5 +1,6 @@
 import React from "react";
-import MyButton from "./MyButton";
+import {Button} from "react-bootstrap";
+
 
 import { Link } from "react-router-dom";
 
@@ -7,7 +8,12 @@ function Tasks() {
   return (
     <div>
       <Link to="/journalist/task/create-task">
-        <MyButton text="create task"></MyButton>
+      <Button
+            variant="primary"
+            type="submit"
+          >
+            Create task
+          </Button>
       </Link>
     </div>
   );
