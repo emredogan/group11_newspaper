@@ -1,5 +1,5 @@
 import React from "react";
-
+import Header from "./Header";
 import MyButton from "./MyButton";
 
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Cards() {
   return (
     <div className="welcome">
-      
+      <Header name={"Journalist"} />
       <ul className="Cards">
         {/** if possible make Link reusable */}
         <li>

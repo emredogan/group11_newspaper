@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 //I am passing my prop as object to the Welcome.js
-function LoginForm({ Login, error }) {
+function LoginForm({ login, error }) {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
 
   //my function is handling the submit so that the page (default) does not re-render
@@ -9,7 +9,7 @@ function LoginForm({ Login, error }) {
     e.preventDefault();
 
     //here we call the login function that we called through as prop and pass it the details
-    Login(details);
+    login(details);
   };
 
   return (

@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm";
 import JournalistCards from "./JournalistCards";
 import Parse from "parse";
 
-function LoginOut() {
+function LoginOut(props) {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
   Parse.initialize(
@@ -27,12 +27,13 @@ function LoginOut() {
   const [error, setError] = useState("");
 
   // the function that is called when we are trying to login
-  const Login = (details) => {
+  const login = (details) => {
     console.log(details);
     const user = new Parse.User();
     user.set("username", details.email);
     user.set("password", details.password);
     user.set("email", details.email);
+
 
     try {
       user.signUp();
@@ -50,6 +51,7 @@ function LoginOut() {
         name: details.name,
         email: details.email,
       });
+      props.setIsLoggedIn(true)
     } else {
       console.log("Details do not match");
       setError("Details do not match");
@@ -73,12 +75,11 @@ function LoginOut() {
           </h2>
           <div className="Logout"> <button onClick={Logout}>Logout</button> </div> 
         </div>
-        <JournalistCards />
         </>
       ) : (
         //we need to pass the login function when user clicks the login button
         //here we also pass the error, in case there is an error
-        <LoginForm Login={Login} error={error} />
+        <LoginForm login={login} error={error} />
         
       )}
     </div>

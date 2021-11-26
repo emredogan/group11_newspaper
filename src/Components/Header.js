@@ -5,7 +5,7 @@ const Header = ({ name }) => {
       <li>
         <header className="welcome">
           <h2>
-            Welcome, <span>{name} </span>
+            Welcome, &nbsp;<span>{name} </span>
           </h2>
         </header>
       </li>
