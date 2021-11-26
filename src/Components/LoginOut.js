@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import LoginForm from "./LoginForm";
+import JournalistCards from "./JournalistCards";
 import Parse from "parse";
 
 function LoginOut() {
@@ -65,16 +66,20 @@ function LoginOut() {
   return (
     <div className="App2">
       {user.email !== "" ? (
-        <div className="welcome">
+        <>
+          <div className="welcome">
           <h2>
-            Welcome, <span>{user.name} </span>
+          Welcome, Journalist &nbsp;<span> {user.name} </span>
           </h2>
-          <button onClick={Logout}>Logout</button>
+          <div className="Logout"> <button onClick={Logout}>Logout</button> </div> 
         </div>
+        <JournalistCards />
+        </>
       ) : (
         //we need to pass the login function when user clicks the login button
         //here we also pass the error, in case there is an error
         <LoginForm Login={Login} error={error} />
+        
       )}
     </div>
   );
