@@ -22,7 +22,7 @@ function App() {
           {/** Note: element should be updated for each ind. path
            *   Paths so fare: Journalist and Editor
            */}
-          <Route path="/" element={<JournalistCards />} /> {/** temp page */}
+          <Route path="/" element={<LoginOut />} /> {/** temp page */}
           <Route path="/journalist" element={<JournalistCards />} />
           <Route path="/editor" element={<EditorCards />} />
           <Route path="/journalist/employees" element={<Tasks />} />

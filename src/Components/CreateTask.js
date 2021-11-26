@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
-import TitleForm from "./FormComponents/TitleForm";
+import TitleForm from "../Components/FormComponents/TitleForm"
 
 export function CreateTask() {
   console.log("DATE");
@@ -41,7 +41,7 @@ export function CreateTask() {
     newTask.set("description", description);
 
     try {
-      const newTaskReference = await newTask.save();
+      await newTask.save();
       alert("succes");
     } catch (error) {
       alert(error);

@@ -67,6 +67,13 @@ button {
   margin-bottom: 5px;
   transition: 0.4s;
 }
+.Logout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
 
 .form-inner .form-group:focus-within label {
   color: #512da8;
@@ -148,6 +155,8 @@ ourIcons {
   font-size: 28px;
   margin-bottom: 30px;
   font-weight: 500;
+  display: flex;
+  justify-content: center;
 }
 .welcome h2 span {
   color: #d822a1;
