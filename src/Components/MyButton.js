@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 
 const MyButton = ({ text, imageURL }) => {
   return (
@@ -6,6 +5,7 @@ const MyButton = ({ text, imageURL }) => {
       <big-button className="welcome">
         <img
           className="ourIcons"
+          alt="button_image"
           src={imageURL}
         />
         {text}
