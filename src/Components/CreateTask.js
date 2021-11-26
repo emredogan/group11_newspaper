@@ -34,7 +34,10 @@ export function CreateTask() {
     const Task = Parse.Object.extend("Task");
     const newTask = new Task();
     newTask.set("title", title);
-    newTask.set("responsible", responsible);
+    newTask.set("responsible", "You");
+    newTask.set("date", date)
+    newTask.set("status", "To do")
+    newTask.set("section", "Culture")
     newTask.set("description", description);
 
     try {
@@ -57,7 +60,7 @@ export function CreateTask() {
                 placeholder = "Enter Title"
                   as="textarea"
                   rows={1}
-                  onChange={(e) => setDescription(e.target.value)}
+                  onChange={(e) => setTitle(e.target.value)}
                 />{" "}
                 {/** as brings the style of textarea */}
               </Form.Group>
