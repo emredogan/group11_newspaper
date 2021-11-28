@@ -13,8 +13,6 @@ const Header = ({ name }) => {
   );
 };
 
-Header.defaultProps = {
-  name: "there",
-};
+
 
 export default Header;

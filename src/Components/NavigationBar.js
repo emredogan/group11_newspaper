@@ -1,24 +1,29 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 
+import { useNavigate, Link } from "react-router-dom";
+
 // This code is based on the demo from mircealungu
 
 export function NavigationBar() {
   return (
     <Navbar className="Navbar" expand="lg">
       <Container>
-        <Navbar.Brand href="/">
+        <Nav.Link as={Link} to="/">
           <img src="/logo.png" alt="Logo"></img>
-        </Navbar.Brand>
+        </Nav.Link>
         <div className="align">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
             <Nav className="me-auto">
-              <Nav.Link href="/notifications">
+              <Nav.Link as={Link} to="/notifications">
                 <img src="/notification.svg" alt="Notification Icon"></img>
               </Nav.Link>
-              <Nav.Link href="/account">
+              <Nav.Link as={Link} to="/account">
                 <img src="/account.svg" alt="Account Icon"></img>
               </Nav.Link>
+              <Navbar.Brand href="/">
+                <img src="/logout.svg" alt="LogOut"></img>
+              </Navbar.Brand>
             </Nav>
           </Navbar.Collapse>
         </div>

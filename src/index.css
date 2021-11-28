@@ -24,27 +24,15 @@ button {
 }
 
 .loginForm {
-  display: block;
-  position: relative;
-}
-
-.loginForm:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  z-index: 1;
-  background-color: #512da8;
+  display: flex;
+  justify-content: center;
 }
 
 .loginForm .form-inner {
   position: relative;
   display: block;
   background-color: #f8f8f8;
-  padding: 30px;
+  padding: 50px;
   z-index: 2;
 }
 

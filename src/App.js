@@ -8,6 +8,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { NavigationBar } from "./Components/NavigationBar";
 import LoginOut from "./Components/LoginOut";
+import Notifications from "./Components/Notifications";
 
 function App() {
   //Following text is presented on welcome page
@@ -30,6 +31,8 @@ function App() {
               <Route path="/editor" element={<EditorCards />} />
               <Route path="/journalist/employees" element={<Tasks />} />
               <Route path="/editor" element={<Tasks />} />
+              <Route path="/account" element={<Tasks />} />
+              <Route path="/notifications" element={<Notifications />} />
               <Route path="/journalist/task" element={<Tasks />} />
               <Route
                 path="/journalist/task/create-task"
