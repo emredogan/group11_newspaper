@@ -1,5 +1,4 @@
 import React from "react";
-import Parse from "parse";
 
     const Notifications = () => {
     
@@ -8,7 +7,7 @@ import Parse from "parse";
         <li>
           <header className="welcome">
             <h2>
-              Welcome journalist this is your account. {doUserLogIn}
+              Welcome journalist this is your account. 
             </h2>
           </header>
         </li>
