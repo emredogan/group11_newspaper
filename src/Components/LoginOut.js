@@ -24,7 +24,8 @@ function LoginOut(props) {
 
 
     try {
-      user.signUp();
+      doUserLogIn()
+      //user.signUp();
       // Hooray! Let them use the app now.
     } catch (error) {
       // Show the error message somewhere and let the user try again.
@@ -73,5 +74,27 @@ function LoginOut(props) {
     </div>
   );
 }
+
+const doUserLogIn = async function () {
+  // Note that these values come from state variables that we've declared before
+  const usernameValue = "admin@admin.com";
+  const passwordValue = "admin123";
+  return await Parse.User.logIn(usernameValue, passwordValue)
+    .then(async (loggedInUser) => {
+      // logIn returns the corresponding ParseUser object
+      alert('Success!',
+      `User ${loggedInUser.get('username')} has successfully signed in!`,)
+  
+      // To verify that this is in fact the current user, currentAsync can be used
+      const currentUser = await Parse.User.currentAsync();
+      console.log(loggedInUser === currentUser);
+      return true;
+    })
+    .catch((error) => {
+      // Error can be caused by wrong parameters or lack of Internet connection
+      alert('Error!', error.message);
+      return false;
+    });
+};
 
 export default LoginOut;
