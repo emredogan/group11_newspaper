@@ -7,18 +7,6 @@ export function CreateTask() {
   console.log("DATE");
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-  Parse.initialize(
-    "oHPQf2X0grpeXteCxywdMAvZ6BaV3lj1o3SUJ4pJ",
-    "wE0CWYnPVC86eVLQAcvOUm37BFhqW6ZBZTcdCL5B",
-    "7Tqwx4xkFQ0tZDsoQrsI2nxJdlZxXaSev96e5Dtw"
-  );
-
-  Parse.serverURL = "https://parseapi.back4app.com/";
-
-  console.log("STARTING PARSE");
-
-  console.log(Parse.applicationId);
-
   const [title, setTitle] = useState();
   const [responsible, setResponsible] = useState();
   const [description, setDescription] = useState();

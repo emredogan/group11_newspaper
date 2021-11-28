@@ -9,10 +9,22 @@ import { Routes } from "react-router-dom";
 import { NavigationBar } from "./Components/NavigationBar";
 import LoginOut from "./Components/LoginOut";
 import Notifications from "./Components/Notifications";
+import Accounts from "./Components/Account";
+import Parse from "parse";
+
+
 
 function App() {
   //Following text is presented on welcome page
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  Parse.initialize(
+    "oHPQf2X0grpeXteCxywdMAvZ6BaV3lj1o3SUJ4pJ",
+    "wE0CWYnPVC86eVLQAcvOUm37BFhqW6ZBZTcdCL5B",
+    "7Tqwx4xkFQ0tZDsoQrsI2nxJdlZxXaSev96e5Dtw"
+  );
+
+  Parse.serverURL = "https://parseapi.back4app.com/";
 
   return (
     // wraps everything
@@ -31,7 +43,7 @@ function App() {
               <Route path="/editor" element={<EditorCards />} />
               <Route path="/journalist/employees" element={<Tasks />} />
               <Route path="/editor" element={<Tasks />} />
-              <Route path="/account" element={<Tasks />} />
+              <Route path="/account" element={<Accounts />} />
               <Route path="/notifications" element={<Notifications />} />
               <Route path="/journalist/task" element={<Tasks />} />
               <Route
