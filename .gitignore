@@ -88,6 +88,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# api keys
+.env 
+
 
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,react,macos,windows
