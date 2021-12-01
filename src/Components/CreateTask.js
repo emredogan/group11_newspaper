@@ -4,8 +4,6 @@ import Parse from "parse";
 import TitleForm from "../Components/FormComponents/TitleForm"
 
 export function CreateTask() {
-  console.log("DATE");
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
   const [title, setTitle] = useState();
   const [responsible, setResponsible] = useState();
