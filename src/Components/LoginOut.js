@@ -22,7 +22,6 @@ function LoginOut(props) {
     user.set("password", details.password);
     user.set("email", details.email);
 
-
     try {
       doUserLogIn()
       //user.signUp();
@@ -48,7 +47,7 @@ function LoginOut(props) {
   };
 
   // the function that is called when we are trying to Logout
-  const Logout = () => {
+  const logout = () => {
     console.log("Logout");
     setUser({ name: "", email: "" });
   };
