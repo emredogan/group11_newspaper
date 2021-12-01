@@ -1,3 +1,8 @@
+Newsplan software
+
+In this project we are programming a system for a newspaper. The system is used to gain an overview over the employees, tasks and deadlines. 
+This project will be coded in React 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
