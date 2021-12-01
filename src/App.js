@@ -19,9 +19,9 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   Parse.initialize(
-    "oHPQf2X0grpeXteCxywdMAvZ6BaV3lj1o3SUJ4pJ",
-    "wE0CWYnPVC86eVLQAcvOUm37BFhqW6ZBZTcdCL5B",
-    "7Tqwx4xkFQ0tZDsoQrsI2nxJdlZxXaSev96e5Dtw"
+    process.env.REACT_APP_PARSE_API_APPLICATION_KEY, 
+    process.env.REACT_APP_PARSE_API_JAVASCRIPT_KEY, 
+    process.env.REACT_APP_PARSE_API_MASTER_KEY
   );
 
   Parse.serverURL = "https://parseapi.back4app.com/";
