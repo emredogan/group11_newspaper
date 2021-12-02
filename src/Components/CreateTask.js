@@ -39,13 +39,12 @@ export function CreateTask() {
       <Container className="container">
         <Form>
           <Row className="upperrow">
-          <Col>
+          <Col lg='auto'>
             <TitleForm text="Task Title" setTitle= {setTitle} />
             </Col>
 
             <Col>
             <TitleForm text="Task Description" setTitle= {setDescription} />
-
             </Col>
 
             <Col lg="3">
@@ -66,7 +65,7 @@ export function CreateTask() {
           </Row>
 
           <Row className="lowerrow">
-            <Col lg="3">
+            <Col lg='auto'>
               <Form.Group className="formpart" controlId="formSectionSelection">
                 <Form.Label>Section</Form.Label>
                 <Form.Group>
