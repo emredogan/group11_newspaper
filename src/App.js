@@ -16,10 +16,6 @@ import Parse from "parse";
 
 function App() {
   //Following text is presented on welcome page
-  const routes = [
-    { path: "/", text: "/"}
-
-  ];
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
