@@ -37,9 +37,9 @@ export function CreateTask() {
   return (
     <>
       <Container className="container">
-        <Form>
+        <Form className="formcontainer">
           <Row className="upperrow">
-          <Col lg='auto'>
+          <Col lg='3'>
             <TitleForm text="Task Title" setTitle= {setTitle} />
             </Col>
 
@@ -65,7 +65,7 @@ export function CreateTask() {
           </Row>
 
           <Row className="lowerrow">
-            <Col lg='auto'>
+            <Col lg='3'>
               <Form.Group className="formpart" controlId="formSectionSelection">
                 <Form.Label>Section</Form.Label>
                 <Form.Group>
@@ -80,7 +80,7 @@ export function CreateTask() {
               </Form.Group>
             </Col>
 
-            <Col>
+            <Col lg='6'>
               <Form.Group
                 className="formpart"
                 controlId="formPlainTextResponsible"
@@ -111,14 +111,15 @@ export function CreateTask() {
                       width: "1.5rem",
                     }}
                   >
-                    {/** add button for adding other employees */}+
+                    {/** add button for adding other employees */}
+                    +
                   </Button>
                 </Container>
               </Form.Group>
             </Col>
 
             {/** consider making our own? */}
-            <Col lg="3">
+            <Col lg='3'>
               <Form.Group className="formpart" controlId="formDate">
                 <Form.Label>Deadline</Form.Label>
                 <Form.Control

@@ -202,3 +202,34 @@ li.menu-item:not(:last-child) {
   float: right;
   margin: 20px 30px;
 }
+
+.formcontainer {
+  margin-top: 45px;
+}
+
+
+/** Tasks **/
+.tasksContainer {
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
+
+.table {
+  margin-top: 45px;
+  text-align: center;
+  font-size: small;
+  background-color: #FFF;
+}
+
+.toTaskButton {
+  margin-top: 45px;
+  font-size:15px;
+  background-color: #004DD1;
+  color: #FFF;
+  width: 100px;
+  height: 40px;
+  border-radius: 100px;
+}
