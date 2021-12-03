@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Parse from "parse";
 import React, { useState, useEffect } from "react";
+import { render } from "@testing-library/react";
 
 function Tasks() {
   const [tasks, setTasks] = useState([]);
@@ -14,49 +15,26 @@ function Tasks() {
   const renderTask = (task, index) => {
     return (
       <tr key={index}>
-        <td>{task.status}</td>
-        <td>{task.title}</td>
-        <td>{task.des}</td>
-        <td>{task.section}</td>
-        <td>{task.resp}</td>
-        <td>{task.deadl}</td>
+        <td>{task.get("status")}</td>
+        <td>{task.get("title")}</td>
+        <td>{task.get("description")}</td>
+        <td>{task.get("section")}</td>
+        <td>{task.get("responsible")}</td>
+        <td>{task.get("deadline")}</td>
       </tr>
     );
   };
 
   useEffect(() => {
-    //code
-    query.get("Ws4qPsemkG").then(
-      (task) => {
-        // The object was retrieved successfully.
-        console.log(task);
-        const status = task.get("status");
-        const title = task.get("title");
-        const description = task.get("description");
-        const section = task.get("section");
-        const responsible = task.get("responsible");
-        const deadline = task.get("deadline");
-  
-        console.log(status);
-  
-        setTasks({
-          status: status,
-          title: title,
-          des: description,
-          section: section,
-          resp: responsible,
-          deadl: deadline,
-        });
-        console.log("Tasks object");
-  
-        console.log(tasks);
-      },
-      (error) => {
-        console.log(error);
-        // The object was not retrieved successfully.
-        // error is a Parse.Error with an error code and message.
-      }
-    );
+    const task = Parse.Object.extend("Task");
+
+const query = new Parse.Query(task);
+
+query.find().then( (result) => {
+
+console.log(result);
+setTasks(result)
+});
     console.log('render stuff')
   },[])
 
@@ -83,7 +61,7 @@ function Tasks() {
         </thead>
         <tbody>
           {/** loop and present all tasks */}
-          {renderTask(tasks)}
+          {tasks.map(renderTask)}
         </tbody>
       </table>
     </div>
