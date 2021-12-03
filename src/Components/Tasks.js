@@ -23,7 +23,6 @@ function Tasks() {
     ) 
   }
 
-
   return (
     <div className="tasksContainer">
       {/** button to create task */}

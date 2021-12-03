@@ -9,6 +9,8 @@ export function CreateTask() {
   const [responsible, setResponsible] = useState();
   const [description, setDescription] = useState();
   const [date, setDate] = useState();
+  const [section, setSection] = useState();
+  const [status, setStatus] = useState();
 
   async function handleUpload(e) {
     e.preventDefault();
@@ -16,15 +18,18 @@ export function CreateTask() {
 
     console.log(responsible);
     console.log(description);
+    console.log(date);
+    console.log(section);
+    console.log(status);
 
     const Task = Parse.Object.extend("Task");
     const newTask = new Task();
     newTask.set("title", title);
     newTask.set("responsible", "You");
-    newTask.set("date", date)
-    newTask.set("status", "To do")
-    newTask.set("section", "Culture")
     newTask.set("description", description);
+    newTask.set("date", date)
+    newTask.set("section", section)
+    newTask.set("status", status)
 
     try {
       await newTask.save();
@@ -53,7 +58,8 @@ export function CreateTask() {
                 <Form.Group>
                   {" "}
                   {/** right approach? */}
-                  <Form.Select defaultValue="Select">
+                  <Form.Select defaultValue="Select"
+                  onChange={(e) => setStatus(e.target.value)}>
                     <option>Select</option>
                     <option>to Do</option>
                     <option>Doing</option>
@@ -69,7 +75,8 @@ export function CreateTask() {
               <Form.Group className="formpart" controlId="formSectionSelection">
                 <Form.Label>Section</Form.Label>
                 <Form.Group>
-                  <Form.Select className="mb-4" defaultValue="Select">
+                  <Form.Select className="mb-4" defaultValue="Select"
+                  onChange={(e) => setSection(e.target.value)}>
                     <option>Select</option>
                     <option>Culture</option>
                     <option>Finance</option>
