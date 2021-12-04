@@ -5,8 +5,12 @@ import TaskTable from "./TaskTable";
 function Tasks() {
 
   return (
-    <div className="tasksContainer">
-      {/** button to create task */}
+    <div className="tasksContain">
+        <header className="welcome">
+          <h2>
+            Overview of Tasks
+          </h2>
+        </header>
       <TaskBtn />
       <TaskTable />
 

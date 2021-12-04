@@ -232,7 +232,13 @@ li.menu-item:not(:last-child) {
   align-items: center;
   margin-left: 15%;
   margin-right: 15%;
-
+  margin-top: 10%;
+}
+.tasksContain {
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .table {

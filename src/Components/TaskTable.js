@@ -40,6 +40,7 @@ function TaskTable() {
         {/** button to create task */}
     
         {/** dynamic table */}
+        <div class="table-responsive-sm">
         <table class="table">
           <thead>
             <tr>
@@ -56,6 +57,7 @@ function TaskTable() {
             {tasks.map(renderTask)}
           </tbody>
         </table>
+      </div>
       </div>
     );
   }

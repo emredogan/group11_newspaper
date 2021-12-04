@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 function TaskBtn() {
   return (
-    <div className="tasksContainer">
+    <div>
       {/** button to create task */}
       <Link to="/journalist/task/create-task">
         <button className="toTaskButton" variant="primary" type="submit">
-          TASK
+          NEW  TASK
         </button>
       </Link>
     </div>

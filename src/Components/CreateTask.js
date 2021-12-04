@@ -5,7 +5,6 @@ import TitleForm from "../Components/FormComponents/TitleForm";
 import TaskTable from "./TaskTable";
 
 export function CreateTask() {
-
   const [title, setTitle] = useState();
   const [responsible, setResponsible] = useState();
   const [description, setDescription] = useState();
@@ -28,9 +27,9 @@ export function CreateTask() {
     newTask.set("title", title);
     newTask.set("responsible", "You");
     newTask.set("description", description);
-    newTask.set("date", date)
-    newTask.set("section", section)
-    newTask.set("status", status)
+    newTask.set("date", date);
+    newTask.set("section", section);
+    newTask.set("status", status);
 
     try {
       await newTask.save();
@@ -42,15 +41,18 @@ export function CreateTask() {
 
   return (
     <>
+      <header className="welcome">
+        <h2>Create a new Task</h2>
+      </header>
       <Container className="container">
         <Form className="formcontainer">
           <Row className="upperrow">
-          <Col lg='3'>
-            <TitleForm text="Task Title" setTitle= {setTitle} />
+            <Col lg="3">
+              <TitleForm text="Task Title" setTitle={setTitle} />
             </Col>
 
             <Col>
-            <TitleForm text="Task Description" setTitle= {setDescription} />
+              <TitleForm text="Task Description" setTitle={setDescription} />
             </Col>
 
             <Col lg="3">
@@ -59,8 +61,10 @@ export function CreateTask() {
                 <Form.Group>
                   {" "}
                   {/** right approach? */}
-                  <Form.Select defaultValue="Select"
-                  onChange={(e) => setStatus(e.target.value)}>
+                  <Form.Select
+                    defaultValue="Select"
+                    onChange={(e) => setStatus(e.target.value)}
+                  >
                     <option>Select</option>
                     <option>to Do</option>
                     <option>Doing</option>
@@ -72,12 +76,15 @@ export function CreateTask() {
           </Row>
 
           <Row className="lowerrow">
-            <Col lg='3'>
+            <Col lg="3">
               <Form.Group className="formpart" controlId="formSectionSelection">
                 <Form.Label>Section</Form.Label>
                 <Form.Group>
-                  <Form.Select className="mb-4" defaultValue="Select"
-                  onChange={(e) => setSection(e.target.value)}>
+                  <Form.Select
+                    className="mb-4"
+                    defaultValue="Select"
+                    onChange={(e) => setSection(e.target.value)}
+                  >
                     <option>Select</option>
                     <option>Culture</option>
                     <option>Finance</option>
@@ -88,7 +95,7 @@ export function CreateTask() {
               </Form.Group>
             </Col>
 
-            <Col lg='6'>
+            <Col lg="6">
               <Form.Group
                 className="formpart"
                 controlId="formPlainTextResponsible"
@@ -119,15 +126,14 @@ export function CreateTask() {
                       width: "1.5rem",
                     }}
                   >
-                    {/** add button for adding other employees */}
-                    +
+                    {/** add button for adding other employees */}+
                   </Button>
                 </Container>
               </Form.Group>
             </Col>
 
             {/** consider making our own? */}
-            <Col lg='3'>
+            <Col lg="3">
               <Form.Group className="formpart" controlId="formDate">
                 <Form.Label>Deadline</Form.Label>
                 <Form.Control
