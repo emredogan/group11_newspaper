@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
-import TitleForm from "../Components/FormComponents/TitleForm"
+import TitleForm from "../Components/FormComponents/TitleForm";
+import TaskTable from "./TaskTable";
 
 export function CreateTask() {
 
@@ -147,6 +148,7 @@ export function CreateTask() {
           </Button>
         </Form>
       </Container>
+      <TaskTable />
     </>
   );
 }
