@@ -132,6 +132,24 @@ form .form-inner input[type="submit"]:hover,
   padding: 15px 30px;
 }
 
+.welc {
+  width: 100%;
+  max-width: 480%;
+  padding: 15px 30px;
+}
+
+.welc h2 {
+  color: #4a5568;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+.welc h2 span {
+  color: #9500eb;
+  font-weight: 650;
+}
 ourIcons {
   width: 80px;
   margin: 20px;
