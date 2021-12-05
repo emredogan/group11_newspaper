@@ -223,10 +223,12 @@ li.menu-item:not(:last-child) {
 
 .formcontainer {
   margin-top: 45px;
+  margin: 80px;
 }
 
 
 /** Tasks **/
+
 .tasksContainer {
   justify-content: center;
   align-items: center;
