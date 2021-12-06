@@ -118,6 +118,7 @@ form .form-inner .form-group input {
   color: rgba(28, 28, 28, 0.85);
   cursor: pointer;
   align-items: center;
+  background-color: #FFF;
 }
 
 form .form-inner input[type="submit"]:hover,
@@ -130,6 +131,7 @@ form .form-inner input[type="submit"]:hover,
   max-width: 480%;
   height: 100%;
   padding: 15px 30px;
+
 }
 
 /* .welc {
@@ -138,14 +140,14 @@ form .form-inner input[type="submit"]:hover,
   padding: 15px 30px;
 } */
 
-.welc h2 {
+/* .welc h2 {
   color: #4a5568;
   font-size: 28px;
   margin-bottom: 30px;
   font-weight: 500;
   display: flex;
   justify-content: center;
-}
+} */
 
 .welc h2 span {
   color: #9500eb;
@@ -156,6 +158,7 @@ form .form-inner input[type="submit"]:hover,
   width: 80px;
   margin: 20px;
   margin-top: 10px;
+  background-color: #FFF;
 }
 
 .welcome h2 {
@@ -165,18 +168,19 @@ form .form-inner input[type="submit"]:hover,
   font-weight: 500;
   /* display: flex; */
   /* justify-content: center; */
-  position: absolute;
-  top: 0;
-  background-color: transparent;
+  width: 90%;
   text-align: center;
+  position: absolute;
+  top: 30px;
+  background-color: transparent;
 
 
 }
 .welcome h2 span {
   color: #d822a1;
   font-weight: 650;
-  position: absolute;
-  top: 0;
+  /* position: absolute; */
+  /* top: 0; */
   background-color: transparent;
 
 }
@@ -284,3 +288,10 @@ button:hover, Button:hover {
   height: 25px;
 }
 
+.Cards {
+  margin-top: 100px;
+}
+
+.Cards li {
+  padding: 0px 5px;
+}
