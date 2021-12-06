@@ -3,6 +3,7 @@ import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
 import TitleForm from "../Components/FormComponents/TitleForm";
 import TaskTable from "./TaskTable";
+import BtnComponent from "./BtnComponent"
 
 export function CreateTask() {
   const [title, setTitle] = useState();
@@ -41,10 +42,11 @@ export function CreateTask() {
 
   return (
     <>
-      <header className="welcome">
+        <div className="screenContain">
+        <header className="screentitle">
         <h2>Create a new Task</h2>
-      </header>
-      <Container className="container">
+        </header>
+        
         <Form className="formcontainer">
           <Row className="upperrow">
             <Col lg="3">
@@ -144,7 +146,7 @@ export function CreateTask() {
             </Col>
           </Row>
 
-          <Button
+          <Button 
             className="uploadbutton"
             variant="primary"
             type="submit"
@@ -153,8 +155,11 @@ export function CreateTask() {
             Upload
           </Button>
         </Form>
-      </Container>
-      <TaskTable />
+        </div>
+        
+        <div className="screenContain">
+          <TaskTable />
+        </div>
     </>
   );
 }

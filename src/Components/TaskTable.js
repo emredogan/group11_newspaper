@@ -36,11 +36,10 @@ function TaskTable() {
     },[])
   
     return (
-      <div className="tasksContainer">
-        {/** button to create task */}
-    
-        {/** dynamic table */}
-        <div class="table-responsive-sm">
+      
+
+        /** dynamic table */
+      <div class="table-responsive-sm">
         <table class="table">
           <thead>
             <tr>
@@ -58,7 +57,7 @@ function TaskTable() {
           </tbody>
         </table>
       </div>
-      </div>
+      
     );
   }
   

@@ -132,11 +132,11 @@ form .form-inner input[type="submit"]:hover,
   padding: 15px 30px;
 }
 
-.welc {
+/* .welc {
   width: 100%;
   max-width: 480%;
   padding: 15px 30px;
-}
+} */
 
 .welc h2 {
   color: #4a5568;
@@ -146,11 +146,13 @@ form .form-inner input[type="submit"]:hover,
   display: flex;
   justify-content: center;
 }
+
 .welc h2 span {
   color: #9500eb;
-  font-weight: 650;
+  font-weight: 650; 
 }
-ourIcons {
+
+.ourIcons {
   width: 80px;
   margin: 20px;
   margin-top: 10px;
@@ -161,12 +163,22 @@ ourIcons {
   font-size: 28px;
   margin-bottom: 30px;
   font-weight: 500;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  text-align: center;
+
+
 }
 .welcome h2 span {
   color: #d822a1;
   font-weight: 650;
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+
 }
 
 .thebutton {
@@ -222,40 +234,53 @@ li.menu-item:not(:last-child) {
 }
 
 .formcontainer {
-  margin-top: 45px;
-  margin: 80px;
+  margin-bottom: 120px;
 }
 
 
 /** Tasks **/
 
-.tasksContainer {
+
+.screenContain {
   justify-content: center;
   align-items: center;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 10%;
-}
-.tasksContain {
-  justify-content: center;
-  align-items: center;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .table {
-  margin-top: 45px;
+  margin-top: 30px;
   text-align: center;
   font-size: small;
   background-color: #FFF;
 }
 
-.toTaskButton {
+.toButton {
   margin-top: 45px;
   font-size:15px;
-  background-color: #004DD1;
-  color: #FFF;
+  background-color: #A8A8A8;
+  color: #000;
   width: 100px;
   height: 40px;
   border-radius: 100px;
+  position: absolute;
 }
+
+button:hover, Button:hover {
+  background-color: #004DD1;
+  color: #FFF;
+}
+
+/* .screentitle h2 {
+  padding-left: 15%;
+} */
+
+.screentitle {
+  padding-top: 110px;
+}
+
+.form-select {
+  width: 150px;
+  height: 25px;
+}
+
