@@ -3,6 +3,7 @@ import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
 import TitleForm from "../Components/FormComponents/TitleForm";
 import TaskTable from "./TaskTable";
+import BtnComponent from "./BtnComponent"
 
 export function CreateTask() {
   const [title, setTitle] = useState();
@@ -23,7 +24,7 @@ export function CreateTask() {
     console.log(status);
 
     const Task = Parse.Object.extend("Task");
-    const newTask = new Task(); 
+    const newTask = new Task();
     newTask.set("title", title);
     newTask.set("responsible", "You");
     newTask.set("description", description);

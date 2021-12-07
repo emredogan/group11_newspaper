@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import CustomButton from "./CustomButton";
+import MyButton from "./MyButton";
 
 import { Link } from "react-router-dom";
 
@@ -12,20 +12,20 @@ function Cards() {
         {/** if possible make Link reusable */}
         <li>
           <Link to="" style={{ textDecoration: "none" }}>
-            <CustomButton text="Newspaper" imageURL="/newspaper.svg"></CustomButton>
+            <MyButton text="Newspaper" imageURL="/newspaper.svg"></MyButton>
           </Link>
         </li>
         <li>
           <Link to="" style={{ textDecoration: "none" }}>
-            <CustomButton text="Article Idea" imageURL="/dialogue.svg"></CustomButton>
+            <MyButton text="Article Idea" imageURL="/dialogue.svg"></MyButton>
           </Link>
         </li>
         <li>
           <Link to="/journalist/task" style={{ textDecoration: "none" }}>
-            <CustomButton
+            <MyButton
               text="Overview of Tasks"
               imageURL="/statistic.svg"
-            ></CustomButton>
+            ></MyButton>
           </Link>
         </li>
       </ul>
