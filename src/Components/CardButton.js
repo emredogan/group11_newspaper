@@ -1,16 +1,17 @@
+import React from "react";
 
-const MyButton = ({ text, imageURL }) => {
+const CardButton = ({ text, imageURL }) => {
   return (
     <div>
-      <big-button className="welcome">
+      <button className="welcome">
         <img
           className="ourIcons"
           alt="button_image"
           src={imageURL}
         />
         {text}
-      </big-button>
+      </button>
     </div>
   );
 };
-export default MyButton;
+export default CardButton;
