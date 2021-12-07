@@ -1,5 +1,4 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
-
 import { useNavigate, Link } from "react-router-dom";
 
 // This code is based on the demo from mircealungu
