@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import MyButton from "./MyButton";
+import CardButton from "./CardButton";
 
 function EditorCards() {
   return (
@@ -8,18 +8,18 @@ function EditorCards() {
       <Header name={"Editor"} />
       <ul className="Cards">
         <li>
-          <MyButton
+          <CardButton
             text="Employee Overview"
             imageURL="/accounts.svg"
-          ></MyButton>
+          ></CardButton>
         </li>
         <li>
-          <MyButton text="Article Idea" imageURL="/dialogue.svg"></MyButton>
+          <CardButton text="Article Idea" imageURL="/dialogue.svg"></CardButton>
         </li>
         {/* In according to prototype, editor has three categories to choose from */}
         {/*<li><MyButton text="Overview of Tasks" imageURL="statistic.svg"></MyButton></li>*/}
         <li>
-          <MyButton text="Newspaper" imageURL="/newspaper.svg"></MyButton>
+          <CardButton text="Newspaper" imageURL="/newspaper.svg"></CardButton>
         </li>
       </ul>
     </div>

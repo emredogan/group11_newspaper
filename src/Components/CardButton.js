@@ -1,16 +1,15 @@
-import React from "react";
 
 const CardButton = ({ text, imageURL }) => {
   return (
     <div>
-      <button className="welcome">
+      <big-button className="welcome">
         <img
           className="ourIcons"
           alt="button_image"
           src={imageURL}
         />
         {text}
-      </button>
+      </big-button>
     </div>
   );
 };
