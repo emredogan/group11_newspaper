@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function BtnComponent(props) {
+function CustomButton(props) {
   return (
     <>
       {/** reusable buttonbutton */}
@@ -14,4 +14,4 @@ function BtnComponent(props) {
   );
 }
 
-export default BtnComponent;
+export default CustomButton;

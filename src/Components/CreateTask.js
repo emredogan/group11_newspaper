@@ -3,7 +3,7 @@ import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
 import TitleForm from "../Components/FormComponents/TitleForm";
 import TaskTable from "./TaskTable";
-import BtnComponent from "./BtnComponent"
+import CustomButton from "./CustomButton"
 
 export function CreateTask() {
   const [title, setTitle] = useState();
