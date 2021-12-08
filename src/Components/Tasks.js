@@ -6,12 +6,12 @@ function Tasks() {
   return (
     <>
       <div className="screenContain">
-        <CustomButton path={"/journalist/task/create-task"} text="NEW TASK" />
+        <CustomButton path="/journalist/task/create-task" text="NEW TASK" />
         <header className="screentitle">
           <h2>Overview of Tasks</h2>
         </header>
 
-        <TaskTable />
+        <TaskTable objecttitle="Task"/>
       </div>
     </>
   );

@@ -10,6 +10,7 @@ import { NavigationBar } from "./Components/NavigationBar";
 import LoginOut from "./Components/LoginOut";
 import Notifications from "./Components/Notifications";
 import Accounts from "./Components/Account";
+import ArticleIdea from "./Components/ArticleIdea"
 import Parse from "parse";
 
 
@@ -51,7 +52,7 @@ function App() {
                 path="/journalist/task/create-task"
                 element={<CreateTask />}
               />
-              <Route path="/journalist/article-ideas" element={<Tasks />} />
+              <Route path="/journalist/article-ideas" element={<ArticleIdea />} />
               <Route
                 path="/journalist/article-ideas/create-idea"
                 element={<Tasks />}

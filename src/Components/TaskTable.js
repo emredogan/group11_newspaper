@@ -1,12 +1,12 @@
 import Parse from "parse";
 import React, { useState, useEffect } from "react";
 
-function TaskTable() {
+function TaskTable(props) {
     const [tasks, setTasks] = useState([]);
   
     console.log("STARTS GETTING THE OBJECT");
   
-    const task = Parse.Object.extend("Task");
+    const task = Parse.Object.extend(props.objecttitle);
     const query = new Parse.Query(task);
   
     const renderTask = (task, index) => {
