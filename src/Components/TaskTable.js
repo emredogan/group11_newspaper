@@ -33,7 +33,7 @@ function TaskTable() {
   setTasks(result)
   });
       console.log('render stuff')
-    },[])
+    },[tasks])
   
     return (
       
