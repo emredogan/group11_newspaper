@@ -4,10 +4,9 @@ import React, { useState, useEffect } from "react";
 function TaskTable(props) {
     const [tasks, setTasks] = useState([]);
   
-    console.log("STARTS GETTING THE OBJECT");
-  
-    const task = Parse.Object.extend(props.objecttitle);
-    const query = new Parse.Query(task);
+    // console.log("STARTS GETTING THE OBJECT");
+    // const task = Parse.Object.extend("Task");
+    // const query = new Parse.Query(task);
   
     const renderTask = (task, index) => {
       return (
@@ -21,7 +20,7 @@ function TaskTable(props) {
         </tr>
       );
     };
-  
+
     useEffect(() => {
       const task = Parse.Object.extend("Task");
   
