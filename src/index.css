@@ -249,8 +249,8 @@ li.menu-item:not(:last-child) {
 .screenContain {
   justify-content: center;
   align-items: center;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .table {
