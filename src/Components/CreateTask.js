@@ -3,7 +3,8 @@ import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
 import TitleForm from "../Components/FormComponents/TitleForm";
 import TaskTable from "./TaskTable";
-import CustomButton from "./CustomButton"
+import CustomButton from "./CustomButton";
+import DescriptionForm from "./FormComponents/DescriptionForm";
 
 export function CreateTask() {
   const [title, setTitle] = useState();
@@ -49,15 +50,14 @@ export function CreateTask() {
         
         <Form className="formcontainer">
           <Row className="upperrow">
-            <Col lg="3">
-              <TitleForm text="Task Title" setTitle={setTitle} />
+            <Col lg="4">
+              <TitleForm text="Task Title" innertext="Enter Title" setTitle={setTitle} />
+            </Col>
+            <Col lg="4">
+              <DescriptionForm text="Task Description" innertext="Enter Description" setTitle={setDescription} />
             </Col>
 
-            <Col>
-              <TitleForm text="Task Description" setTitle={setDescription} />
-            </Col>
-
-            <Col lg="3">
+            <Col lg="4">
               <Form.Group className="formpart" controlId="formStatusSelection">
                 <Form.Label>Status</Form.Label>
                 <Form.Group>
@@ -78,12 +78,12 @@ export function CreateTask() {
           </Row>
 
           <Row className="lowerrow">
-            <Col lg="3">
+            <Col lg="4">
               <Form.Group className="formpart" controlId="formSectionSelection">
                 <Form.Label>Section</Form.Label>
                 <Form.Group>
                   <Form.Select
-                    className="mb-4"
+                    //className="mb-4"
                     defaultValue="Select"
                     onChange={(e) => setSection(e.target.value)}
                   >
@@ -96,8 +96,7 @@ export function CreateTask() {
                 </Form.Group>
               </Form.Group>
             </Col>
-
-            <Col lg="6">
+            <Col lg="4">
               <Form.Group
                 className="formpart"
                 controlId="formPlainTextResponsible"
@@ -135,7 +134,7 @@ export function CreateTask() {
             </Col>
 
             {/** consider making our own? */}
-            <Col lg="3">
+            <Col lg="4">
               <Form.Group className="formpart" controlId="formDate">
                 <Form.Label>Deadline</Form.Label>
                 <Form.Control
