@@ -4,6 +4,19 @@ import React, { useState, useEffect } from "react";
 function TaskTable() {
   const [tasks, setTasks] = useState([]);
 
+  const renderTask = (task, index) => {
+    return (
+      <tr key={index}>
+        <td>{task.get("status")}</td>
+        <td>{task.get("title")}</td>
+        <td>{task.get("description")}</td>
+        <td>{task.get("section")}</td>
+        <td>{task.get("responsible")}</td>
+        <td>{task.get("date")}</td>
+      </tr>
+    );
+  };
+
   useEffect(() => {
     const task = Parse.Object.extend("Task");
     const query = new Parse.Query(task);
@@ -14,19 +27,6 @@ function TaskTable() {
     });
     // console.log("render stuff");
   }, []);
-
-  const renderTask = (task, index) => {
-    return (
-      <tr key={index}>
-        <td>{task.get("status")}</td>
-        <td>{task.get("title")}</td>
-        <td>{task.get("description")}</td>
-        <td>{task.get("section")}</td>
-        <td>{task.get("responsible")}</td>
-        <td>{task.get("deadline")}</td>
-      </tr>
-    );
-  };
 
   return (
     /** dynamic table */
