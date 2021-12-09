@@ -1,12 +1,14 @@
 import React from "react";
-import BtnComponent from "././BtnComponent";
+import CustomButton from "././CustomButton";
 import TaskTable from "./TaskTable";
 
 function Tasks() {
   return (
     <>
       <div className="screenContain">
-        <BtnComponent path={"/journalist/task/create-task"} text="NEW TASK" />
+      <div className="placingBtnGeneral">
+        <CustomButton path="/journalist/task/create-task" text="NEW TASK" />
+      </div>
         <header className="screentitle">
           <h2>Overview of Tasks</h2>
         </header>
