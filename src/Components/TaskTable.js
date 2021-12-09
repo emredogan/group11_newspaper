@@ -20,38 +20,6 @@ function TaskTable() {
   useEffect(() => {
     const task = Parse.Object.extend("Task");
     const query = new Parse.Query(task);
-<<<<<<< HEAD
-  
-    const renderTask = (task, index) => {
-      return (
-        <tr key={index}>
-          <td>{task.get("status")}</td>
-          <td>{task.get("title")}</td>
-          <td>{task.get("description")}</td>
-          <td>{task.get("section")}</td>
-          <td>{task.get("responsible")}</td>
-          <td>{task.get("deadline")}</td>
-        </tr>
-      );
-    };
-  
-    useEffect(() => {
-      const task = Parse.Object.extend("Task");
-  
-  const query = new Parse.Query(task);
-  
-  query.find().then( (result) => {
-  
-  console.log(result);
-  setTasks(result)
-  });
-      console.log('render stuff')
-    },[tasks])
-  
-    return (
-      
-=======
->>>>>>> article_dev
 
     query.find().then((result) => {
       console.log(result);
