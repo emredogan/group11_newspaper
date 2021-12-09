@@ -144,15 +144,18 @@ export function CreateTask() {
               </Form.Group>
             </Col>
           </Row>
-
+          
+          <div className="placingSubmitBtn">
           <Button 
-            className="uploadbutton"
+            className="toButton" 
             variant="primary"
             type="submit"
             onClick={handleUpload}
           >
             Upload
           </Button>
+          </div>
+
         </Form>
         </div>
         

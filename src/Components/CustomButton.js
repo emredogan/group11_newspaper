@@ -6,9 +6,9 @@ function CustomButton(props) {
     <>
       {/** reusable buttonbutton */}
       <Link to={props.path}>
-        <button className="toButton" variant="primary" type="submit">
-          {props.text}
-        </button>
+          <button className="toButton" variant="primary" type="submit">
+            {props.text}
+          </button>
       </Link>
     </>
   );
