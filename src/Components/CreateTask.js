@@ -45,8 +45,7 @@ export function CreateTask() {
   }
 
   return (
-    <>
-        <div className="screenContain">
+    <div className="screenContain">
         <header className="screentitle">
           <h2>Create a new Task</h2>
         </header>
@@ -73,6 +72,13 @@ export function CreateTask() {
             </Col>
             {/** consider making our own? */}
             <Col lg="4">
+              {/* <Form.Group className="formpart" controlId="formDate">
+                <Form.Label>Deadline</Form.Label>
+                <Form.Control
+                  type="date"
+                  onChange={(e) => setDate(e.target.value)}
+                />
+              </Form.Group> */}
               <DeadlineForm setDate={setDate}/>
             </Col>
           </Row>
@@ -89,12 +95,10 @@ export function CreateTask() {
           </div>
 
         </Form>
-        </div>
+        <TaskTable />
         
-        <div className="screenContain">
-          <TaskTable />
-        </div>
-    </>
+
+    </div>
   );
 }
 

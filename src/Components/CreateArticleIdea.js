@@ -95,10 +95,9 @@ export default function CreateArticleIdea() {
               SAVE
             </Button>
           </div>
-        <div className="screenContain">
+
+        </Form>
         <TaskTable />
-        </div>
-      </Form>
     </div>
   );
 }
