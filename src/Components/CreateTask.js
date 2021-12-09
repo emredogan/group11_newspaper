@@ -8,6 +8,7 @@ import SelectStatusForm from "./FormComponents/SelectStatusForm";
 import SelectSectionForm from "./FormComponents/SelectSectionForm";
 import ResponsibleForm from "./FormComponents/ResponsibleForm";
 import DeadlineForm from "./FormComponents/DeadlineForm";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 
 export function CreateTask() {
   const [title, setTitle] = useState();
@@ -45,21 +46,35 @@ export function CreateTask() {
   }
 
   return (
-    <div className="screenContain">
+    <>
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/journalist/task">Tasks</Breadcrumb.Item>
+        <Breadcrumb.Item active>Create Task</Breadcrumb.Item>
+      </Breadcrumb>
+      <div className="screenContain">
         <header className="screentitle">
           <h2>Create a new Task</h2>
         </header>
-        
+
         <Form className="formcontainer">
           <Row className="upperrow">
             <Col lg="4">
-              <TitleForm text="Task Title" innertext="Enter Title" setTitle={setTitle} />
+              <TitleForm
+                text="Task Title"
+                innertext="Enter Title"
+                setTitle={setTitle}
+              />
             </Col>
             <Col lg="4">
-              <DescriptionForm text="Task Description" innertext="Enter Description" setDescription={setDescription} />
+              <DescriptionForm
+                text="Task Description"
+                innertext="Enter Description"
+                setDescription={setDescription}
+              />
             </Col>
             <Col lg="4">
-              <SelectStatusForm setStatus={setStatus}/>
+              <SelectStatusForm setStatus={setStatus} />
             </Col>
           </Row>
 
@@ -68,7 +83,11 @@ export function CreateTask() {
               <SelectSectionForm setSection={setSection} />
             </Col>
             <Col lg="4">
-              <ResponsibleForm title="Responsible" who="You" setResponsible={setResponsible} />
+              <ResponsibleForm
+                title="Responsible"
+                who="You"
+                setResponsible={setResponsible}
+              />
             </Col>
             {/** consider making our own? */}
             <Col lg="4">
@@ -79,13 +98,13 @@ export function CreateTask() {
                   onChange={(e) => setDate(e.target.value)}
                 />
               </Form.Group> */}
-              <DeadlineForm setDate={setDate}/>
+              <DeadlineForm setDate={setDate} />
             </Col>
           </Row>
-          
+
           <div className="placingSubmitBtn">
-            <Button 
-              className="toButton" 
+            <Button
+              className="toButton"
               variant="primary"
               type="submit"
               onClick={handleUpload}
@@ -93,12 +112,10 @@ export function CreateTask() {
               SAVE
             </Button>
           </div>
-
         </Form>
         <TaskTable />
-        
-
-    </div>
+      </div>
+    </>
   );
 }
 

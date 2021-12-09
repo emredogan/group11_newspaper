@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import Parse from "parse";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 
 const Account = () => {
   const [username, setUsername] = useState("");
@@ -23,13 +24,20 @@ const Account = () => {
 
   return (
     <>
- 
-    <form className="loginForm">
-      <div className="form-inner">
-      <header className="welc">
-        <h2> Hi &nbsp;<span> {username} </span> , &nbsp;this is your account. </h2>
-        </header>
-       
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item active>Account</Breadcrumb.Item>
+      </Breadcrumb>
+
+      <form className="loginForm">
+        <div className="form-inner">
+          <header className="welc">
+            <h2>
+              {" "}
+              Hi &nbsp;<span> {username} </span> , &nbsp;this is your account.{" "}
+            </h2>
+          </header>
+
           <Form.Group className="formpart" controlId="formDate">
             <Form.Label>Register sick leave:</Form.Label>
             <Form.Control
@@ -37,16 +45,15 @@ const Account = () => {
               onChange={(e) => setDate(e.target.value)}
             />
           </Form.Group>
-        
 
-        {/* <input className="thebutton" type="submit" value="Update"></input>
+          {/* <input className="thebutton" type="submit" value="Update"></input>
         <input
           className="thebutton"
           type="submit"
           value="Delete Account">
         </input> */}
-      </div>
-    </form>
+        </div>
+      </form>
     </>
   );
 };
