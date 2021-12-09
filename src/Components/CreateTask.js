@@ -3,8 +3,11 @@ import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
 import TitleForm from "../Components/FormComponents/TitleForm";
 import TaskTable from "./TaskTable";
-import CustomButton from "./CustomButton";
 import DescriptionForm from "./FormComponents/DescriptionForm";
+import SelectStatusForm from "./FormComponents/SelectStatusForm";
+import SelectSectionForm from "./FormComponents/SelectSectionForm";
+import ResponsibleForm from "./FormComponents/ResponsibleForm";
+import DeadlineForm from "./FormComponents/DeadlineForm";
 
 export function CreateTask() {
   const [title, setTitle] = useState();
@@ -45,7 +48,7 @@ export function CreateTask() {
     <>
         <div className="screenContain">
         <header className="screentitle">
-        <h2>Create a new Task</h2>
+          <h2>Create a new Task</h2>
         </header>
         
         <Form className="formcontainer">
@@ -54,106 +57,35 @@ export function CreateTask() {
               <TitleForm text="Task Title" innertext="Enter Title" setTitle={setTitle} />
             </Col>
             <Col lg="4">
-              <DescriptionForm text="Task Description" innertext="Enter Description" setTitle={setDescription} />
+              <DescriptionForm text="Task Description" innertext="Enter Description" setDescription={setDescription} />
             </Col>
-
             <Col lg="4">
-              <Form.Group className="formpart" controlId="formStatusSelection">
-                <Form.Label>Status</Form.Label>
-                <Form.Group>
-                  {" "}
-                  {/** right approach? */}
-                  <Form.Select
-                    defaultValue="Select"
-                    onChange={(e) => setStatus(e.target.value)}
-                  >
-                    <option>Select</option>
-                    <option>to Do</option>
-                    <option>Doing</option>
-                    <option>Done</option>
-                  </Form.Select>
-                </Form.Group>
-              </Form.Group>
+              <SelectStatusForm setStatus={setStatus}/>
             </Col>
           </Row>
 
           <Row className="lowerrow">
             <Col lg="4">
-              <Form.Group className="formpart" controlId="formSectionSelection">
-                <Form.Label>Section</Form.Label>
-                <Form.Group>
-                  <Form.Select
-                    //className="mb-4"
-                    defaultValue="Select"
-                    onChange={(e) => setSection(e.target.value)}
-                  >
-                    <option>Select</option>
-                    <option>Culture</option>
-                    <option>Finance</option>
-                    <option>Politics</option>
-                    <option>Travel</option>
-                  </Form.Select>
-                </Form.Group>
-              </Form.Group>
+              <SelectSectionForm setSection={setSection} />
             </Col>
             <Col lg="4">
-              <Form.Group
-                className="formpart"
-                controlId="formPlainTextResponsible"
-              >
-                <Form.Label>Responsible</Form.Label>
-                <Container className="row">
-                  <Form.Control
-                    style={{ width: "35px" }}
-                    plaintext
-                    readOnly
-                    defaultValue="You"
-                    onChange={(e) => setResponsible(e.target.value)}
-                  />
-                  <Button
-                    className="resbutton"
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      paddingInline: "0px",
-                      background: "#FFF",
-                      color: "#1C1C1C",
-                      borderColor: "#1C1C1C",
-                      borderRadius: "20px",
-                      border: "solid 2px",
-                      fontSize: "1.5rem",
-                      height: "1.5rem",
-                      width: "1.5rem",
-                    }}
-                  >
-                    {/** add button for adding other employees */}+
-                  </Button>
-                </Container>
-              </Form.Group>
+              <ResponsibleForm title="Responsible" who="You" setResponsible={setResponsible} />
             </Col>
-
             {/** consider making our own? */}
             <Col lg="4">
-              <Form.Group className="formpart" controlId="formDate">
-                <Form.Label>Deadline</Form.Label>
-                <Form.Control
-                  type="date"
-                  onChange={(e) => setDate(e.target.value)}
-                />
-              </Form.Group>
+              <DeadlineForm setDate={setDate}/>
             </Col>
           </Row>
           
           <div className="placingSubmitBtn">
-          <Button 
-            className="toButton" 
-            variant="primary"
-            type="submit"
-            onClick={handleUpload}
-          >
-            Upload
-          </Button>
+            <Button 
+              className="toButton" 
+              variant="primary"
+              type="submit"
+              onClick={handleUpload}
+            >
+              SAVE
+            </Button>
           </div>
 
         </Form>

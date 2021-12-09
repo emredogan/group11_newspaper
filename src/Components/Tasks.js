@@ -13,7 +13,7 @@ function Tasks() {
           <h2>Overview of Tasks</h2>
         </header>
 
-        <TaskTable objecttitle="Task"/>
+        <TaskTable />
       </div>
     </>
   );

@@ -11,6 +11,7 @@ import LoginOut from "./Components/LoginOut";
 import Notifications from "./Components/Notifications";
 import Accounts from "./Components/Account";
 import ArticleIdea from "./Components/ArticleIdea"
+import CreateArticleIdea from "./Components/CreateArticleIdea"
 import Parse from "parse";
 
 
@@ -48,15 +49,10 @@ function App() {
               <Route path="/account" element={<Accounts />} />
               <Route path="/notifications" element={<Notifications />} />
               <Route path="/journalist/task" element={<Tasks />} />
-              <Route
-                path="/journalist/task/create-task"
-                element={<CreateTask />}
-              />
+              <Route path="/journalist/task/create-task" element={<CreateTask />} />
               <Route path="/journalist/article-ideas" element={<ArticleIdea />} />
-              <Route
-                path="/journalist/article-ideas/create-idea"
-                element={<Tasks />}
-              />
+              <Route path="/journalist/article-ideas/create-idea" element={<CreateArticleIdea />} />
+
               <Route path="/editor/employees" element={<Tasks />} />
               <Route
                 path="/editor/article-ideas/create-idea"

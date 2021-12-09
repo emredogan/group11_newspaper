@@ -10,7 +10,7 @@ export default function DescriptionForm(props) {
             placeholder = { props.innertext }
             as="textarea" /** as brings the style of textarea */
             rows={1}
-            onChange={(e) => props.setTitle(e.target.value)}
+            onChange={(e) => props.setDescription(e.target.value)}
           />{" "}
         </Form.Group>
     </Form>
