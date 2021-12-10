@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 function TaskTable() {
   const [tasks, setTasks] = useState([]);
-
+  
   const renderTask = (task, index) => {
     return (
       <tr key={index}>
@@ -20,12 +20,11 @@ function TaskTable() {
   useEffect(() => {
     const task = Parse.Object.extend("Task");
     const query = new Parse.Query(task);
-
     query.find().then((result) => {
       console.log(result);
       setTasks(result);
     });
-    // console.log("render stuff");
+    console.log("render stuff");
   }, []);
 
   return (

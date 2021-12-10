@@ -89,15 +89,7 @@ export function CreateTask() {
                 setResponsible={setResponsible}
               />
             </Col>
-            {/** consider making our own? */}
             <Col lg="4">
-              {/* <Form.Group className="formpart" controlId="formDate">
-                <Form.Label>Deadline</Form.Label>
-                <Form.Control
-                  type="date"
-                  onChange={(e) => setDate(e.target.value)}
-                />
-              </Form.Group> */}
               <DeadlineForm setDate={setDate} />
             </Col>
           </Row>

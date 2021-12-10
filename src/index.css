@@ -252,6 +252,7 @@ li.menu-item:not(:last-child) {
   display: flex;
   justify-content: right;
   padding-bottom: 40px;
+  padding-right: 30px;
 }
 
 .placingSubmitBtn .toButton {
@@ -332,4 +333,14 @@ button:hover {
 
 .Cards li {
   padding: 0px 5px;
+}
+
+ol.breadcrumb {
+  background-color: transparent;
+  padding-left: 10%;
+  margin-bottom: 10px;
+}
+
+li.breadcrumb-item+.breadcrumb-item::before {
+  content: ">";
 }
