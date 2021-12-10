@@ -12,7 +12,7 @@ function Cards() {
         {/** if possible make Link reusable */}
         <li>
           <Link to="" style={{ textDecoration: "none" }}>
-            <CardButton text="Employee" imageURL="/employee.svg"></CardButton>
+            <CardButton text="Newspaper" imageURL="/statistic.svg"></CardButton>
           </Link>
         </li>
         <li>

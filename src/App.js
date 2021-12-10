@@ -34,9 +34,9 @@ function App() {
     // for future: navlinks og links
     <div className="App">
       <BrowserRouter>
-      {/* {isLoggedIn ? (
-      The following needs to replace the current isLoggedIn for the Breadcrumps to work */}
+      {/*The following needs to replace the current isLoggedIn for the Breadcrumps to work */}
       {Parse.User.current ? (
+      // {isLoggedIn ? (
         <>
           <NavigationBar />
             <Routes>
