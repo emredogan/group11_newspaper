@@ -13,7 +13,6 @@ import Accounts from "./Components/Account";
 import ArticleIdea from "./Components/ArticleIdea"
 import CreateArticleIdea from "./Components/CreateArticleIdea"
 import Parse from "parse";
-import { googleTranslate } from "./utils/googleTranslate";
 
 
 
