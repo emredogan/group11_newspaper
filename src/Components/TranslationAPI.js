@@ -1,46 +1,59 @@
-import { Form, Button } from "react-bootstrap";
-import { NarrowSpace } from "./Upload.sc";
-export default function Translation({
-  translation,
-  setFrom,
-  setTo,
-  deleteTranslation,
-}) {
-  console.log(translation.id);
-  console.log(translation.from);
-  console.log(translation.to);
+import React, { Component } from "react";
+import cookie from "react-cookies";
 
-  return (
-    <>
-      <div style={{ display: "flex" }}>
-        <Form.Group className="mb-3" controlId="formBasicUsername">
-          <Form.Label>Word</Form.Label>
-          <Form.Control
-            autoFocus
-            value={translation.from}
-            type="text"
-            onChange={(e) => setFrom(translation, e.target.value)}
-          />
-        </Form.Group>
+import { googleTranslate } from "./utils/googleTranslate";
 
-        <NarrowSpace />
+function Translation(){
+  state = {
+    languageCodes: [],
+    language: cookie.load("language") ? cookie.load("language") : "en",
+    question: cookie.load("question")
+      ? cookie.load("question")
+      : "What language do you prefer to read with?"
+  };
 
-        <Form.Group className="mb-3" controlId="formBasicTranslation">
-          <Form.Label>Translation</Form.Label>
-          <Form.Control
-            type="text"
-            onChange={(e) => setTo(translation, e.target.value)}
-          />
-        </Form.Group>
+  componentDidMount() ,
+    // load all of the language options from Google Translate to your app state
 
-        <Button
-          tabIndex="-1"
-          onClick={(e) => deleteTranslation(translation)}
-          variant="link"
+    googleTranslate.getSupportedLanguages("en", function(err, languageCodes) {
+      getLanguageCodes(languageCodes); // use a callback function to setState
+    });
+
+    const getLanguageCodes = languageCodes => {
+      this.setState({ languageCodes });
+    };
+  }
+
+  render() ;
+    const { languageCodes, language, question } = this.state;
+
+    return (
+      <div style={this.divStyle}>
+        <p>{question}</p>
+
+        {/* iterate through language options to create a select box */}
+        <select
+          className="select-language"
+          value={language}
+          onChange={e => this.changeHandler(e.target.value)}
         >
-          x
-        </Button>
+          {languageCodes.map(lang => (
+            <option key={lang.language} value={lang.language}>
+              {lang.name}
+            </option>
+          ))}
+        </select>
       </div>
-    </>
-  );
-}
+    );
+  
+
+
+  // just some inline css to center our demo
+  divStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+    width: "100wh"
+  };
+
