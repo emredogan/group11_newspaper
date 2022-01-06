@@ -3,9 +3,12 @@ import Parse from "parse";
 const fetch = require("node-fetch");
 
 Parse.Cloud.define("getEnvironmentVariable", (request) => {
-  const NODE_ENV = process.env.NODE_ENV;
-  
-  return `NODE_ENV = ${NODE_ENV}`
+  const REACT_APP_PARSE_API_JAVASCRIPT_KEY = process.env.REACT_APP_PARSE_API_JAVASCRIPT_KEY;
+  const REACT_APP_PARSE_API_APPLICATION_KEY = process.env.REACT_APP_PARSE_API_APPLICATION_KEY;
+  const REACT_APP_PARSE_API_MASTER_KEY = process.env.REACT_APP_PARSE_API_MASTER_KEY;
+
+
+  return [`JAVASCRIPT_KEY = ${JAVASCRIPT_KEY}`, `APPLICATION_KEY = ${APPLICATION_KEY}`, `MASTER_KEY = ${MASTER_KEY}`]
 });
 
 Parse.Cloud.define("google_translate", async (request) => {
