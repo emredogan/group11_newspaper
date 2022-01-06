@@ -1,6 +1,8 @@
 import React from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Progressbar from './FormComponents/Progress_bar';
+import OverviewTable from "./OverviewTable";
+
 
 const DailyTasks = () => {
   return (
@@ -15,7 +17,8 @@ const DailyTasks = () => {
       <header className="screentitle">
           <h2>Daily Task Load</h2>
         </header>
-        <Progressbar bgcolor="#387B19" progress='1/4'  height={25} />
+        <Progressbar bgcolor="#387B19" progress='25'  height={25} />
+        <OverviewTable></OverviewTable>
         </div>
     </div>
   );
