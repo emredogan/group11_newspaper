@@ -3,6 +3,14 @@ import cookie from "react-cookies";
 
 import { googleTranslate } from "./utils/googleTranslate";
 
+Parse.initialize(
+    process.env.REACT_APP_PARSE_API_APPLICATION_KEY, 
+    process.env.REACT_APP_PARSE_API_JAVASCRIPT_KEY, 
+    process.env.REACT_APP_PARSE_API_MASTER_KEY
+  );
+
+  Parse.serverURL = "https://parseapi.back4app.com/";
+
 const apiKey = process.env.REACT_APP_GOOGLE_TRANSLATE_API_KEY;
 
 export const googleTranslate = require("google-translate")(apiKey);
