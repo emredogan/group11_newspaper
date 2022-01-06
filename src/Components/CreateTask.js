@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import Parse from "parse";
 import TitleForm from "../Components/FormComponents/TitleForm";
-import TaskTable from "./TaskTable";
 import DescriptionForm from "./FormComponents/DescriptionForm";
 import SelectStatusForm from "./FormComponents/SelectStatusForm";
 import SelectSectionForm from "./FormComponents/SelectSectionForm";
 import ResponsibleForm from "./FormComponents/ResponsibleForm";
 import DeadlineForm from "./FormComponents/DeadlineForm";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import OverviewTable from "./OverviewTable";
 
 export function CreateTask() {
   const [title, setTitle] = useState();
@@ -154,7 +154,7 @@ export function CreateTask() {
             </Button>
           </div>
         </Form>
-        <TaskTable />
+        <OverviewTable />
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import CustomButton from "././CustomButton";
-import TaskTable from "./TaskTable";
+import OverviewTable from "./OverviewTable";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 
 function Tasks() {
@@ -18,7 +18,7 @@ function Tasks() {
           <h2>Overview of Tasks</h2>
         </header>
 
-        <TaskTable />
+        <OverviewTable objectName="Task" />
       </div>
     </>
   );

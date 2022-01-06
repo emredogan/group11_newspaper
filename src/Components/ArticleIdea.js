@@ -1,6 +1,7 @@
 import React from 'react';
 import CustomButton from './CustomButton';
-import TaskTable from './TaskTable';
+import OverviewTable from './OverviewTable';
+import TaskTable from './OverviewTable';
 
 export default function JournalistIdea() {
     return (
@@ -12,7 +13,7 @@ export default function JournalistIdea() {
                 <h2>Overview of Article Ideas</h2>
             </header>
             {/** tmp table - try making generic/reusable */}
-            <TaskTable />
+            <OverviewTable objectName="Idea" />
             
             
         </div>
