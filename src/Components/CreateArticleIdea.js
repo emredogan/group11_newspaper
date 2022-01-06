@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Parse from "parse";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import SelectSectionForm from "./FormComponents/SelectSectionForm";
-
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 import DescriptionForm from "./FormComponents/DescriptionForm";
 import TitleForm from "./FormComponents/TitleForm";
 import TaskTable from "./TaskTable";
@@ -50,6 +50,11 @@ export default function CreateArticleIdea() {
   }
 
   return (
+    <>
+    <Breadcrumb>
+    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+    <Breadcrumb.Item active>Account</Breadcrumb.Item>
+  </Breadcrumb>
     <div className="screenContain">
       <header className="screentitle">
         <h2>Create Article Idea</h2>
@@ -99,5 +104,6 @@ export default function CreateArticleIdea() {
         </Form>
         <TaskTable />
     </div>
+    </>
   );
 }
