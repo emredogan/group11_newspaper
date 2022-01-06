@@ -11,7 +11,7 @@ function Cards() {
       <ul className="Cards">
         {/** if possible make Link reusable */}
         <li>
-          <Link to="" style={{ textDecoration: "none" }}>
+          <Link to="/journalist/dailyTasks" style={{ textDecoration: "none" }}>
             <CardButton text="Daily Task Load" imageURL="/hourglass.svg"></CardButton>
           </Link>
         </li>

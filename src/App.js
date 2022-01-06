@@ -9,6 +9,7 @@ import { Routes } from "react-router-dom";
 import { NavigationBar } from "./Components/NavigationBar";
 import LoginOut from "./Components/LoginOut";
 import Notifications from "./Components/Notifications";
+import DailyTasks from "./Components/DailyTasks";
 import Accounts from "./Components/Account";
 import ArticleIdea from "./Components/ArticleIdea"
 import CreateArticleIdea from "./Components/CreateArticleIdea"
@@ -50,6 +51,7 @@ function App() {
               <Route path="/editor" element={<Tasks />} />
               <Route path="/account" element={<Accounts />} />
               <Route path="/notifications" element={<Notifications />} />
+              <Route path="/journalist/dailyTasks" element={<DailyTasks />} />
               <Route path="/journalist/task" element={<Tasks />} />
               <Route path="/journalist/task/create-task" element={<CreateTask />} />
               <Route path="/journalist/article-ideas" element={<ArticleIdea />} />
