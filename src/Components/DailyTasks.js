@@ -21,8 +21,8 @@ function DailyTasks() {
           height={25} />
         <OverviewTable objectName="Task" />
         </div>
-    </div>
-  </>
+      </div>
+    </>
   );
 };
 
