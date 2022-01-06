@@ -2,6 +2,12 @@ import Parse from "parse";
 
 const fetch = require("node-fetch");
 
+Parse.Cloud.define("getEnvironmentVariable", (request) => {
+  const NODE_ENV = process.env.NODE_ENV;
+  
+  return `NODE_ENV = ${NODE_ENV}`
+});
+
 Parse.Cloud.define("google_translate", async (request) => {
   let url = `https://translation.googleapis.com/language/translate/v2?key=${process.env.API_KEY}`;
   url += `&format=text&source=da&target=en&q=${encodeURIComponent(
