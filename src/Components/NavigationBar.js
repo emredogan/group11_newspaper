@@ -20,8 +20,8 @@ export function NavigationBar() {
               <Nav.Link as={Link} to="/account">
                 <img src="/account.svg" alt="Account Icon"></img>
               </Nav.Link>
-              <Navbar.Brand href="/">
-                <img src="/logout.svg" alt="LogOut"></img>
+              <Navbar.Brand href="/editor">
+                <img src="/logout.svg" alt="Switch to editor"></img>
               </Navbar.Brand>
             </Nav>
           </Navbar.Collapse>

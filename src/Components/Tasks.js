@@ -1,6 +1,6 @@
 import React from "react";
 import CustomButton from "././CustomButton";
-import TaskTable from "./TaskTable";
+import OverviewTable from "./OverviewTable";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 
 function Tasks() {
@@ -11,14 +11,14 @@ function Tasks() {
         <Breadcrumb.Item active>Tasks</Breadcrumb.Item>
       </Breadcrumb>
       <div className="screenContain">
-        <div className="placingBtnGeneral">
+        {/* <div className="placingBtnGeneral">
           <CustomButton path="/journalist/task/create-task" text="NEW TASK" />
-        </div>
+        </div> */}
         <header className="screentitle">
           <h2>Overview of Tasks</h2>
         </header>
 
-        <TaskTable />
+        <OverviewTable objectName="Task" />
       </div>
     </>
   );

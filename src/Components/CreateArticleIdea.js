@@ -2,32 +2,36 @@ import React, { useState } from "react";
 import Parse from "parse";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import SelectSectionForm from "./FormComponents/SelectSectionForm";
-
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 import DescriptionForm from "./FormComponents/DescriptionForm";
 import TitleForm from "./FormComponents/TitleForm";
-import TaskTable from "./TaskTable";
-import ResponsibleForm from "./FormComponents/ResponsibleForm";
 import DeadlineForm from "./FormComponents/DeadlineForm";
+import OverviewTable from "./OverviewTable";
+import TaskLoadForm from "./FormComponents/TaskLoadForm";
 
 export default function CreateArticleIdea() {
   {
     /** Same logic as with CreateTask */
   }
   const [title, setTitle] = useState();
-  const [responsible, setResponsible] = useState();
-  const [assigned, setAssigned] = useState();
   const [description, setDescription] = useState();
-  const [date, setDate] = useState();
+  const [createdby, setCreatedBy] = useState();
+  const [assignedto, setAssignedTo] = useState();
   const [section, setSection] = useState();
+  const [taskload, setTaskLoad] = useState();
+  const [date, setDate] = useState();
 
   async function handleUpload(e) {
     e.preventDefault();
     console.log("prevented default");
     console.log(title);
-    console.log(responsible);
     console.log(description);
-    console.log(date);
+    console.log(createdby);
+    console.log(assignedto);
     console.log(section);
+    console.log(taskload);
+    console.log(date);
+ 
 
     {
       /** db logik - "Idea" instead of "Task"? */
@@ -35,11 +39,12 @@ export default function CreateArticleIdea() {
     const Idea = Parse.Object.extend("Idea");
     const newIdea = new Idea();
     newIdea.set("title", title);
-    newIdea.set("responsible", "You");
-    newIdea.set("assigned", assigned);
     newIdea.set("description", description);
-    newIdea.set("date", date);
+    newIdea.set("createdby", "You");
+    newIdea.set("assignedto", "TBA");
     newIdea.set("section", section);
+    newIdea.set("taskload", taskload);
+    newIdea.set("date", date);
 
     try {
       await newIdea.save();
@@ -50,6 +55,12 @@ export default function CreateArticleIdea() {
   }
 
   return (
+    <>
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/journalist/article-ideas">Article Ideas</Breadcrumb.Item>
+        <Breadcrumb.Item active>Create Article Idea</Breadcrumb.Item>
+      </Breadcrumb>
     <div className="screenContain">
       <header className="screentitle">
         <h2>Create Article Idea</h2>
@@ -70,19 +81,20 @@ export default function CreateArticleIdea() {
               setDescription={setDescription}
             />
           </Col>
+          <Col lg="4">
+            <TaskLoadForm setTaskLoad={setTaskLoad} />
+          </Col>
         </Row>
         <Row>
           <Col lg="4">
             <SelectSectionForm setSection={setSection} />
           </Col>
           <Col lg="2">
-            <ResponsibleForm title="Responisble" who="You" setResponsible={setResponsible} />
           </Col>
           <Col lg="2">
-          <ResponsibleForm title="Assigned to" who="" setResponsible={setAssigned} />
           </Col>
           <Col lg="4">
-          <DeadlineForm />
+          <DeadlineForm setDate={setDate}/>
           </Col>
         </Row>
         <div className="placingSubmitBtn">
@@ -97,7 +109,8 @@ export default function CreateArticleIdea() {
           </div>
 
         </Form>
-        <TaskTable />
+        <OverviewTable objectName="Idea" />
     </div>
+    </>
   );
 }
