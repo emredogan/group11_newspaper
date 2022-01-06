@@ -7,7 +7,8 @@ const Progress_bar = ({bgcolor,progress,height}) => {
 		width: '100%',
 		backgroundColor: 'white',
 		borderRadius: 40,
-		margin: 50,
+		marginTop: 50,
+		marginBottom: 50,
         border: 'black',
 	}
 	

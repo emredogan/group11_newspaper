@@ -16,7 +16,7 @@ const DailyTasks = () => {
       <header className="screentitle">
           <h2>Daily Task Load</h2>
         </header>
-        <Progressbar bgcolor="#387B19" progress='25'  height={25} />
+        <Progressbar margin="0" bgcolor="#387B19" progress='25' height={25} />
         <OverviewTable objectName="Task" />
         </div>
     </div>
