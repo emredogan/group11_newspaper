@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./Header";
 import CardButton from "./CardButton";
-
 import { Link } from "react-router-dom";
 
 function Cards() {
