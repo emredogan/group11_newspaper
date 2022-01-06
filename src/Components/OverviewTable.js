@@ -13,6 +13,7 @@ function OverviewTable({objectName}) {
           <td>{object.get("description")}</td>
           <td>{object.get("section")}</td>
           <td>{object.get("responsible")}</td>
+          <td>{object.get("taskload")}</td>
           <td>{object.get("date")}</td>
         </tr>
       );
@@ -56,6 +57,7 @@ function OverviewTable({objectName}) {
               <th scope="col">Task Description</th>
               <th scope="col">Section</th>
               <th scope="col">Responsible</th>
+              <th scope="col">Task Load</th>
               <th scope="col">Deadline</th>
             </tr>
           </thead>

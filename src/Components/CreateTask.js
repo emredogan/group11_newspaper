@@ -9,6 +9,7 @@ import ResponsibleForm from "./FormComponents/ResponsibleForm";
 import DeadlineForm from "./FormComponents/DeadlineForm";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import OverviewTable from "./OverviewTable";
+import TaskLoadForm from "./FormComponents/TaskLoadForm";
 
 export function CreateTask() {
   const [title, setTitle] = useState();
@@ -16,6 +17,7 @@ export function CreateTask() {
   const [description, setDescription] = useState();
   const [date, setDate] = useState();
   const [section, setSection] = useState();
+  const [taskload, setTaskLoad] = useState();
   const [status, setStatus] = useState();
 
   async function handleUpload(e) {
@@ -26,7 +28,9 @@ export function CreateTask() {
     console.log(description);
     console.log(date);
     console.log(section);
+    console.log(taskload);
     console.log(status);
+    
 
     // REST API CALL POST
     const postData = {
@@ -84,6 +88,7 @@ export function CreateTask() {
     newTask.set("description", description);
     newTask.set("date", date);
     newTask.set("section", section);
+    newTask.set("taskload", taskload);
     newTask.set("status", status);
 
     try {
@@ -132,11 +137,12 @@ export function CreateTask() {
               <SelectSectionForm setSection={setSection} />
             </Col>
             <Col lg="4">
-              <ResponsibleForm
+              {/* <ResponsibleForm
                 title="Responsible"
                 who="You"
                 setResponsible={setResponsible}
-              />
+              /> */}
+            <TaskLoadForm setTaskLoad={setTaskLoad} />
             </Col>
             <Col lg="4">
               <DeadlineForm setDate={setDate} />

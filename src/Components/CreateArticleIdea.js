@@ -56,10 +56,11 @@ export default function CreateArticleIdea() {
 
   return (
     <>
-    <Breadcrumb>
-    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-    <Breadcrumb.Item active>Account</Breadcrumb.Item>
-  </Breadcrumb>
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/journalist/article-ideas">Article Ideas</Breadcrumb.Item>
+        <Breadcrumb.Item active>Create Article Idea</Breadcrumb.Item>
+      </Breadcrumb>
     <div className="screenContain">
       <header className="screentitle">
         <h2>Create Article Idea</h2>

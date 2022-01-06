@@ -6,21 +6,21 @@ import OverviewTable from "./OverviewTable";
 
 const DailyTasks = () => {
   return (
+  <>
     <div> 
- <>
       <Breadcrumb>
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
         <Breadcrumb.Item active>Daily Task Load</Breadcrumb.Item>
       </Breadcrumb>
-      </>
       <div className="screenContain">
       <header className="screentitle">
           <h2>Daily Task Load</h2>
         </header>
         <Progressbar bgcolor="#387B19" progress='25'  height={25} />
-        <OverviewTable></OverviewTable>
+        <OverviewTable objectName="Task" />
         </div>
     </div>
+  </>
   );
 };
 
