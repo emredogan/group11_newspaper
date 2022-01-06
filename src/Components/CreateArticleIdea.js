@@ -108,7 +108,7 @@ export default function CreateArticleIdea() {
           </div>
 
         </Form>
-        <OverviewTable />
+        <OverviewTable objectName="Idea" />
     </div>
     </>
   );

@@ -154,7 +154,7 @@ export function CreateTask() {
             </Button>
           </div>
         </Form>
-        <OverviewTable />
+        <OverviewTable objectName="Task"/>
       </div>
     </>
   );
