@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 function OverviewTable({objectName}) {
   const [items, setItem] = useState([]);
 
-  
   const renderItem = (object, index) => {
     if (objectName === "Task")
       return (
@@ -17,7 +16,7 @@ function OverviewTable({objectName}) {
           <td>{object.get("date")}</td>
         </tr>
       );
-      
+
       if (objectName === "Idea") { // Idea
       return (
         <tr key={index}>

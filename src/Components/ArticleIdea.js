@@ -1,7 +1,6 @@
 import React from 'react';
 import CustomButton from './CustomButton';
 import OverviewTable from './OverviewTable';
-import TaskTable from './OverviewTable';
 
 export default function JournalistIdea() {
     return (
