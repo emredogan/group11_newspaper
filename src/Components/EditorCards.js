@@ -14,12 +14,13 @@ function EditorCards() {
           text="Employee Overview" 
           imageURL="/accounts.svg" />
         </Link>
-
         </li>
         <li>
+        <Link to="/editor/article-ideas" style={{ textDecoration: "none" }} >
           <CardButton 
           text="Article Idea" 
           imageURL="/dialogue.svg" />
+        </Link>
         </li>
         <li>
           <CardButton 
