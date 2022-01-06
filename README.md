@@ -7,9 +7,13 @@ This project is be coded in React
 
 In order to switch from the Journalist/Photographer view to the Editor view, you can press the account button on the right upper corner. Once in editor view, clicking on the newspaper icon on the left upper corner allows you to switch back to the Journalist view.
 
-## Available Scripts
+## How to run our Project:
 
-In the project directory, you can run:
+In the project directory, you start by running the command:
+
+### `npm install`
+
+Once npm installed, you can now run the application on your localhost with the following command:
 
 ### `npm start`
 
