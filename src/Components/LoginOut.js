@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import LoginForm from "./LoginForm";
-import JournalistCards from "./JournalistCards";
 import Parse from "parse";
 
 function LoginOut(props) {

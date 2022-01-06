@@ -1,16 +1,18 @@
+import React from "react";
 
-const CardButton = ({ text, imageURL }) => {
+function CardButton(props) {
   return (
     <div>
       <big-button className="welcome">
         <img
           className="ourIcons"
           alt="button_image"
-          src={imageURL}
+          src={props.imageURL}
         />
-        {text}
+        {props.text}
       </big-button>
     </div>
   );
 };
+
 export default CardButton;

@@ -12,20 +12,27 @@ function Cards() {
         {/** if possible make Link reusable */}
         <li>
           <Link to="/journalist/dailyTasks" style={{ textDecoration: "none" }}>
-            <CardButton text="Daily Task Load" imageURL="/hourglass.svg"></CardButton>
-          </Link>
-        </li>
-        <li>
-          <Link to="/journalist/article-ideas" style={{ textDecoration: "none" }}>
-            <CardButton text="Article Idea" imageURL="/dialogue.svg"></CardButton>
-          </Link>
-        </li>
-        <li>
-          <Link to="/journalist/task" style={{ textDecoration: "none" }}>
             <CardButton
-              text="Tasks"
-              imageURL="/tasks.svg"
+              text="Daily Task Load"
+              imageURL="/hourglass.svg"
             ></CardButton>
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/journalist/article-ideas"
+            style={{ textDecoration: "none" }}>
+            <CardButton
+              text="Article Idea"
+              imageURL="/dialogue.svg"
+            />
+          </Link>
+        </li>
+        <li>
+          <Link to="/journalist/task" 
+          style={{ textDecoration: "none" }}>
+            <CardButton text="Tasks" 
+            imageURL="/tasks.svg" />
           </Link>
         </li>
       </ul>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-export default function SelectSectionForm(props) {
+function SelectSectionForm(props) {
   return (
     <Form.Group className="formpart" controlId="formSectionSelection">
       <Form.Label>Section</Form.Label>
@@ -19,4 +19,7 @@ export default function SelectSectionForm(props) {
       </Form.Group>
     </Form.Group>
   );
-}
+};
+
+export default SelectSectionForm;
+

@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
 
-export default function TitleForm( props ) {
-
-
+function TitleForm(props){
   return (
     <Form>
           <Form.Group className="formpart" controlId="formControlTextarea">
@@ -15,4 +13,6 @@ export default function TitleForm( props ) {
           </Form.Group>
     </Form>
   );
-}
+};
+
+export default TitleForm;

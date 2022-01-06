@@ -10,9 +10,7 @@ import OverviewTable from "./OverviewTable";
 import TaskLoadForm from "./FormComponents/TaskLoadForm";
 
 export default function CreateArticleIdea() {
-  {
-    /** Same logic as with CreateTask */
-  }
+
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
   const [createdby, setCreatedBy] = useState();
@@ -31,11 +29,7 @@ export default function CreateArticleIdea() {
     console.log(section);
     console.log(taskload);
     console.log(date);
- 
 
-    {
-      /** db logik - "Idea" instead of "Task"? */
-    }
     const Idea = Parse.Object.extend("Idea");
     const newIdea = new Idea();
     newIdea.set("title", title);
@@ -89,9 +83,7 @@ export default function CreateArticleIdea() {
           <Col lg="4">
             <SelectSectionForm setSection={setSection} />
           </Col>
-          <Col lg="2">
-          </Col>
-          <Col lg="2">
+          <Col lg="4">
           </Col>
           <Col lg="4">
           <DeadlineForm setDate={setDate}/>
@@ -113,4 +105,4 @@ export default function CreateArticleIdea() {
     </div>
     </>
   );
-}
+};

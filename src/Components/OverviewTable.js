@@ -1,7 +1,7 @@
 import Parse from "parse";
 import React, { useState, useEffect } from "react";
 
-function OverviewTable({objectName}) {
+function OverviewTable({ objectName }) {
   const [items, setItem] = useState([]);
 
   const renderItem = (object, index) => {
@@ -18,7 +18,7 @@ function OverviewTable({objectName}) {
         </tr>
       );
 
-      if (objectName === "Idea") { // Idea
+    if (objectName === "Idea") {
       return (
         <tr key={index}>
           <td>{object.get("title")}</td>
@@ -32,8 +32,6 @@ function OverviewTable({objectName}) {
       );
     }
   };
- 
-
 
   useEffect(() => {
     const object = Parse.Object.extend(`${objectName}`);
@@ -68,10 +66,8 @@ function OverviewTable({objectName}) {
         </table>
       </div>
     );
-  }
-  else {
+  } else {
     return (
-      /** dynamic table */
       <div class="table-responsive-sm">
         <table class="table">
           <thead>
@@ -85,10 +81,7 @@ function OverviewTable({objectName}) {
               <th scope="col">Deadline</th>
             </tr>
           </thead>
-          <tbody>
-            {/** loop and present all tasks */}
-            {items.map(renderItem)}
-          </tbody>
+          <tbody>{items.map(renderItem)}</tbody>
         </table>
       </div>
     );

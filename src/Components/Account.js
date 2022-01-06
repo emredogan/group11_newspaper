@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 import Parse from "parse";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 
-const Account = () => {
+function Account() {
   const [username, setUsername] = useState("");
   const [date, setDate] = useState();
 
@@ -28,7 +28,6 @@ const Account = () => {
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
         <Breadcrumb.Item active>Account</Breadcrumb.Item>
       </Breadcrumb>
-
       <form className="loginForm">
         <div className="form-inner">
           <header className="welc">
@@ -45,17 +44,10 @@ const Account = () => {
               onChange={(e) => setDate(e.target.value)}
             />
           </Form.Group>
-
-          {/* <input className="thebutton" type="submit" value="Update"></input>
-        <input
-          className="thebutton"
-          type="submit"
-          value="Delete Account">
-        </input> */}
         </div>
       </form>
     </>
   );
-};
+}
 
 export default Account;
