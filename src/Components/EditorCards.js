@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "./Header";
 import CardButton from "./CardButton";
+import { Link } from "react-router-dom";
+
 
 function EditorCards() {
   return (
@@ -8,10 +10,14 @@ function EditorCards() {
       <Header name={"Editor"} />
       <ul className="Cards">
         <li>
-          <CardButton
+
+        <Link to="/editor/employees" style={{ textDecoration: "none" }}>
+        <CardButton
             text="Employee Overview"
             imageURL="/accounts.svg"
           ></CardButton>
+          </Link>
+          
         </li>
         <li>
           <CardButton text="Article Idea" imageURL="/dialogue.svg"></CardButton>

@@ -12,7 +12,7 @@ function EmployeeTable() {
         <td>{employee.get("TaskTitle")}</td>
         <td>{employee.get("TaskDescription")}</td>
         <td>{employee.get("Status")}</td>
-        <td style={{ backgroundColor: getColor(employee.get("TaskLoad")), color: "black" }}>{employee.get("TaskLoad")}</td>
+        <td style={{ backgroundColor: getColor(employee.get("TaskLoad")), color: "white" }}>{employee.get("TaskLoad")}</td>
         <td>{employee.get("Remaining")}</td>
         <td>{employee.get("Deadline")}</td>
       </tr>
@@ -57,10 +57,10 @@ function EmployeeTable() {
 const getColor = (quantity) => {
     var str = quantity + ""
     console.log(quantity + "")
-    if (str.charAt(0) === "1") return 'green';
-    if (str.charAt(0) === "2") return 'yellow';
-    if (str.charAt(0) === "3") return 'yellow';
-    if (str.charAt(0) === "4") return 'red';
+    if (str.charAt(0) === "1") return '#387b19  ';
+    if (str.charAt(0) === "2") return '#d79400';
+    if (str.charAt(0) === "3") return '#c74900';
+    if (str.charAt(0) === "4") return '#9b0000';
     return '';
 };
 

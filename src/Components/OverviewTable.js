@@ -13,7 +13,7 @@ function OverviewTable({objectName}) {
           <td>{object.get("description")}</td>
           <td>{object.get("section")}</td>
           <td>{object.get("responsible")}</td>
-          <td>{object.get("taskload")}</td>
+          <td style={{ backgroundColor: getColor(object.get("taskload")), color: "white" }}>{object.get("taskload")}</td>
           <td>{object.get("date")}</td>
         </tr>
       );
@@ -26,7 +26,7 @@ function OverviewTable({objectName}) {
           <td>{object.get("createdby")}</td>
           <td>{object.get("assignedto")}</td>
           <td>{object.get("section")}</td>
-          <td>{object.get("taskload")}</td>
+          <td style={{ backgroundColor: getColor(object.get("taskload")), color: "white" }}>{object.get("taskload")}</td>
           <td>{object.get("date")}</td>
         </tr>
       );
@@ -94,5 +94,15 @@ function OverviewTable({objectName}) {
     );
   }
 }
+
+const getColor = (quantity) => {
+  var str = quantity + ""
+  console.log(quantity + "")
+  if (str.charAt(0) === "1") return '#387b19  ';
+  if (str.charAt(0) === "2") return '#d79400';
+  if (str.charAt(0) === "3") return '#c74900';
+  if (str.charAt(0) === "4") return '#9b0000';
+  return '';
+};
 
 export default OverviewTable;

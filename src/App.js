@@ -49,7 +49,7 @@ function App() {
                */}
               <Route path="/journalist" element={<JournalistCards />} />
               <Route path="/editor" element={<EditorCards />} />
-              <Route path="/journalist/employees" element={<Employees />} />
+              <Route path="/editor/employees" element={<Employees />} />
               <Route path="/editor" element={<Tasks />} />
               <Route path="/account" element={<Accounts />} />
               <Route path="/notifications" element={<Notifications />} />
