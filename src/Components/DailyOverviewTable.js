@@ -20,7 +20,6 @@ function DailyOverviewTable({objectName}) {
 
   };
  
-
   useEffect(() => {
     const object = Parse.Object.extend(`${objectName}`);
     const query = new Parse.Query(object);
