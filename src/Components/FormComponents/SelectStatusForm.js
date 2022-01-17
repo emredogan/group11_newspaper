@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from 'react-bootstrap';
 
-export default function SelectStatusForm(props) {
+function SelectStatusForm(props) {
   return (
     <Form.Group className="formpart" controlId="formStatusSelection">
       <Form.Label>Status</Form.Label>
@@ -20,4 +20,6 @@ export default function SelectStatusForm(props) {
       </Form.Group>
     </Form.Group>
   );
-}
+};
+
+export default SelectStatusForm;

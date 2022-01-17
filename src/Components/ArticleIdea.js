@@ -9,7 +9,6 @@ export default function JournalistIdea() {
         <Breadcrumb>
             <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
             <Breadcrumb.Item active>Article Ideas</Breadcrumb.Item>
-
         </Breadcrumb>
         <div className="screenContain">
             <div className="placingBtnGeneral">
@@ -18,9 +17,8 @@ export default function JournalistIdea() {
             <header className="screentitle">
                 <h2>Overview of Article Ideas</h2>
             </header>
-            {/** tmp table - try making generic/reusable */}
             <OverviewTable objectName="Idea" />
         </div>
     </>
     )
-}
+};

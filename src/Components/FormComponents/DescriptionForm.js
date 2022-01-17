@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
-export default function DescriptionForm(props) {
+function DescriptionForm(props) {
     return (
     <Form>
         <Form.Group className="formpart" controlId="formControlTextarea">
@@ -15,4 +15,5 @@ export default function DescriptionForm(props) {
         </Form.Group>
     </Form>
     )
-}
+};
+export default DescriptionForm;

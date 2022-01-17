@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-export default function TaskLoadForm(props) {
+function TaskLoadForm(props) {
   return (
     <Form.Group className="formpart" controlId="formTaskLoad">
       <Form.Label>Task Load</Form.Label>
@@ -19,4 +19,6 @@ export default function TaskLoadForm(props) {
       </Form.Group>
     </Form.Group>
   );
-}
+};
+
+export default TaskLoadForm;
