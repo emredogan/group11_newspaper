@@ -6,7 +6,7 @@ function OverviewTable({ objectName }) {
   const [byDates, setByDates] = useState([])
 
   const renderItem = (object, index) => {
-    if (objectName === "Task")
+    if (objectName === "Task") {
       return (
         <tr key={index}>
           <td>{object.get("status")}</td>
@@ -18,8 +18,7 @@ function OverviewTable({ objectName }) {
           <td>{object.get("date")}</td>
         </tr>
       );
-
-    if (objectName === "Idea") {
+    } else {
       return (
         <tr key={index}>
           <td>{object.get("title")}</td>
@@ -41,7 +40,7 @@ function OverviewTable({ objectName }) {
       console.log(result);
      // setItem(result);
       try {
-        setByDates(result.sort((a,b) =>  a.get("date").split("/" | "-" ).reverse().join("") -  b.get("date").split("/" | "-").reverse().join("")));
+        setByDates(result.sort((a,b) =>  a.get("date").split("/").reverse().join("") -  b.get("date").split("/").reverse().join("")));
         console.log(byDates);
       } catch (error) {
         console.log(error)
