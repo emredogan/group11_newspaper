@@ -20,16 +20,20 @@ function DailyOverviewTable({objectName}) {
 
   };
  
-
+  // The new Date() constructor creates a new date instance that contains the following methods to construct the full date.
+  // getDate() method: It returns the day of the month.
+  // then I compare the date to the date in the DB
   useEffect(() => {
     const object = Parse.Object.extend(`${objectName}`);
     const query = new Parse.Query(object);
-    query.equalTo("date", "2022-01-06");
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+    query.equalTo("date", date);
     query.find().then((result) => {
       console.log(result);
       setItem(result);
     });
-    console.log("render stuff");
+    console.log("Current date is " + date);
   }, []);
 
   if (objectName === "Task") {
