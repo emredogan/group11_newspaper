@@ -5,7 +5,9 @@ This project is be coded in React
 
 # Switching between different roles
 
-In order to switch from the Journalist/Photographer view to the Editor view, you can press the account button on the right upper corner. Once in editor view, clicking on the newspaper icon on the left upper corner allows you to switch back to the Journalist view.
+In order to switch from the Journalist/Photographer view you can modify the URL, after logging in.
+http://localhost:3000/journalist presents the Journalist view and
+http://localhost:3000/editor the Editor view
 
 ## How to run our Project:
 

@@ -5,17 +5,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import JournalistCards from "./Components/JournalistCards";
 import Tasks from "./Components/Tasks";
 import Employees from "./Components/Employees";
-
 import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { NavigationBar } from "./Components/NavigationBar";
-import LoginOut from "./Components/LoginOut";
 import Notifications from "./Components/Notifications";
 import DailyTasks from "./Components/DailyTasks";
 import Accounts from "./Components/Account";
 import ArticleIdea from "./Components/ArticleIdea"
 import CreateArticleIdea from "./Components/CreateArticleIdea"
 import Parse from "parse";
+import Login from "./Login";
+import Signup from "./Signup";
+import RequireAuth from "./Components/RequireAuth";
 
 
 
@@ -38,8 +39,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
       {/*The following needs to replace the current isLoggedIn for the Breadcrumps to work */}
-      {Parse.User.current ? (
-      // {isLoggedIn ? (
+       {/* {Parse.User.current ? ( */}
+      
         <>
           <NavigationBar />
             <Routes>
@@ -47,6 +48,10 @@ function App() {
               {/** Note: element should be updated for each ind. path
                *   Paths so fare: Journalist and Editor
                */}
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+
+              <Route element={<RequireAuth />}>
               <Route path="/journalist" element={<JournalistCards />} />
               <Route path="/editor" element={<EditorCards />} />
               <Route path="/editor/employees" element={<Employees />} />
@@ -67,11 +72,10 @@ function App() {
               <Route path="/editor/newspaper" element={<Tasks />} />
               {/** "homepage" */}
               <Route path="/" element={<JournalistCards />} />
+              </Route>
             </Routes>
         </>
-      ) : (
-        <LoginOut setIsLoggedIn={setIsLoggedIn} />
-      )}
+      ) 
         </BrowserRouter>
     </div>
   );
