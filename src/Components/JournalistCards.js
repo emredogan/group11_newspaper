@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import CardButton from "./CardButton";
+import { Button } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
@@ -26,6 +27,11 @@ function Cards() {
               text="Tasks"
               imageURL="/tasks.svg"
             ></CardButton>
+          </Link>
+        </li>
+        <li>
+        <Link to="/translation">
+        <Button> X </Button>
           </Link>
         </li>
       </ul>

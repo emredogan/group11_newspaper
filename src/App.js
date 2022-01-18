@@ -13,8 +13,13 @@ import Accounts from "./Components/Account";
 import ArticleIdea from "./Components/ArticleIdea"
 import CreateArticleIdea from "./Components/CreateArticleIdea"
 import Parse from "parse";
-//import Translation from "./Translation";
+import Translation from "./Components/Translation";
 import { Button } from "react-bootstrap";
+
+import { Link } from "react-router-dom";
+
+
+
 
 
 function App() {
@@ -56,6 +61,10 @@ function App() {
               <Route path="/journalist/article-ideas" element={<ArticleIdea />} />
               <Route path="/journalist/article-ideas/create-idea" element={<CreateArticleIdea />} />
 
+              <Route path="/translation" element={<Translation />} />
+
+
+
               <Route path="/editor/employees" element={<Tasks />} />
               <Route
                 path="/editor/article-ideas/create-idea"
@@ -69,10 +78,9 @@ function App() {
       ) : (
         <LoginOut setIsLoggedIn={setIsLoggedIn} />
       )}
-        </BrowserRouter>
-        <Button
 
-        ></Button>
+        </BrowserRouter>
+
     </div>
   );
 }
