@@ -13,8 +13,8 @@ import Accounts from "./Components/Account";
 import ArticleIdea from "./Components/ArticleIdea"
 import CreateArticleIdea from "./Components/CreateArticleIdea"
 import Parse from "parse";
-import Translation from "./Components/TranslationAPI"
-import { googleTranslate } from "./utils/googleTranslate";
+//import Translation from "./Translation";
+import { Button } from "react-bootstrap";
 
 
 function App() {
@@ -70,6 +70,9 @@ function App() {
         <LoginOut setIsLoggedIn={setIsLoggedIn} />
       )}
         </BrowserRouter>
+        <Button
+
+        ></Button>
     </div>
   );
 }
