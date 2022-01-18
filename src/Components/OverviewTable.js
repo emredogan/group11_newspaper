@@ -2,10 +2,11 @@ import Parse from "parse";
 import React, { useState, useEffect } from "react";
 
 function OverviewTable({ objectName }) {
-  const [items, setItem] = useState([]);
+  //const [items, setItem] = useState([]);
+  const [byDates, setByDates] = useState([])
 
   const renderItem = (object, index) => {
-    if (objectName === "Task")
+    if (objectName === "Task") {
       return (
         <tr key={index}>
           <td>{object.get("status")}</td>
@@ -13,12 +14,11 @@ function OverviewTable({ objectName }) {
           <td>{object.get("description")}</td>
           <td>{object.get("section")}</td>
           <td>{object.get("responsible")}</td>
-          <td>{object.get("taskload")}</td>
+          <td style={{ backgroundColor: getColor(object.get("taskload")), color: "white" }}>{object.get("taskload")}</td>
           <td>{object.get("date")}</td>
         </tr>
       );
-
-    if (objectName === "Idea") {
+    } else {
       return (
         <tr key={index}>
           <td>{object.get("title")}</td>
@@ -26,7 +26,7 @@ function OverviewTable({ objectName }) {
           <td>{object.get("createdby")}</td>
           <td>{object.get("assignedto")}</td>
           <td>{object.get("section")}</td>
-          <td>{object.get("taskload")}</td>
+          <td style={{ backgroundColor: getColor(object.get("taskload")), color: "white" }}>{object.get("taskload")}</td>
           <td>{object.get("date")}</td>
         </tr>
       );
@@ -38,7 +38,14 @@ function OverviewTable({ objectName }) {
     const query = new Parse.Query(object);
     query.find().then((result) => {
       console.log(result);
-      setItem(result);
+     // setItem(result);
+      try {
+        setByDates(result.sort((a,b) =>  a.get("date").split("/").reverse().join("") -  b.get("date").split("/").reverse().join("")));
+        console.log(byDates);
+      } catch (error) {
+        console.log(error)
+      }
+
     });
     console.log("render stuff");
   }, []);
@@ -61,7 +68,7 @@ function OverviewTable({ objectName }) {
           </thead>
           <tbody>
             {/** loop and present all tasks */}
-            {items.map(renderItem)}
+            {byDates.map(renderItem).reverse()}
           </tbody>
         </table>
       </div>
@@ -81,11 +88,21 @@ function OverviewTable({ objectName }) {
               <th scope="col">Deadline</th>
             </tr>
           </thead>
-          <tbody>{items.map(renderItem)}</tbody>
+          <tbody>{byDates.map(renderItem).reverse()}</tbody>
         </table>
       </div>
     );
   }
 }
+
+const getColor = (quantity) => {
+  var str = quantity + ""
+  console.log(quantity + "")
+  if (str.charAt(0) === "1") return '#387b19  ';
+  if (str.charAt(0) === "2") return '#d79400';
+  if (str.charAt(0) === "3") return '#c74900';
+  if (str.charAt(0) === "4") return '#9b0000';
+  return '';
+};
 
 export default OverviewTable;
