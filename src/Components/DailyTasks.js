@@ -1,7 +1,7 @@
 import React from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import ProgressBar from './FormComponents/ProgressBar';
-import OverviewTable from "./OverviewTable";
+import DailyOverviewTable from "./DailyOverviewTable";
 
 function DailyTasks() {
   return (
@@ -19,7 +19,7 @@ function DailyTasks() {
           bgcolor="#387B19" 
           progress='25' 
           height={25} />
-        <OverviewTable objectName="Task" />
+        <DailyOverviewTable objectName="Task" />
         </div>
       </div>
     </>

@@ -20,15 +20,18 @@ function DailyOverviewTable({objectName}) {
 
   };
  
+
   useEffect(() => {
     const object = Parse.Object.extend(`${objectName}`);
     const query = new Parse.Query(object);
-    query.equalTo("date", "2022-01-06");
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+    query.equalTo("date", date);
     query.find().then((result) => {
       console.log(result);
       setItem(result);
     });
-    console.log("render stuff");
+    console.log("Current date is " + date);
   }, []);
 
   if (objectName === "Task") {
