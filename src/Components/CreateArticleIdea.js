@@ -86,7 +86,7 @@ export default function CreateArticleIdea() {
           <Col lg="4">
           </Col>
           <Col lg="4">
-          <DeadlineForm setDate={setDate}/>
+            <DeadlineForm setDate={setDate}/>
           </Col>
         </Row>
         <div className="placingSubmitBtn">

@@ -2,7 +2,7 @@ import Parse from "parse";
 import React, { useState, useEffect } from "react";
 
 function OverviewTable({ objectName }) {
-  //const [items, setItem] = useState([]);
+  const [items, setItem] = useState([]);
   const [byDates, setByDates] = useState([])
 
   const renderItem = (object, index) => {
@@ -38,7 +38,7 @@ function OverviewTable({ objectName }) {
     const query = new Parse.Query(object);
     query.find().then((result) => {
       console.log(result);
-     // setItem(result);
+     setItem(result);
       try {
         setByDates(result.sort((a,b) =>  a.get("date").split("/").reverse().join("") -  b.get("date").split("/").reverse().join("")));
         console.log(byDates);
@@ -88,7 +88,7 @@ function OverviewTable({ objectName }) {
               <th scope="col">Deadline</th>
             </tr>
           </thead>
-          <tbody>{byDates.map(renderItem).reverse()}</tbody>
+          <tbody>{items.map(renderItem).reverse()}</tbody>
         </table>
       </div>
     );
