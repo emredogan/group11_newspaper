@@ -24,14 +24,14 @@ function DailyOverviewTable({objectName}) {
   useEffect(() => {
     const object = Parse.Object.extend(`${objectName}`);
     const query = new Parse.Query(object);
-    const current = new Date();
-    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-    query.equalTo("date", date);
+    const current = new Date().toLocaleDateString();
+    query.equalTo("date", current);
     query.find().then((result) => {
       console.log(result);
       setItem(result);
     });
-    console.log("Current date is " + date);
+    console.log("Current date is " + current);
+    
   }, []);
 
   if (objectName === "Task") {
