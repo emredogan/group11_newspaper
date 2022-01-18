@@ -30,7 +30,7 @@ export function NavigationBar() {
                  Sign Up
                </Nav.Link>
                <Nav.Link as={Link} to="/login">
-                 LogIn
+                 Log In
                </Nav.Link>
              </>
            )}

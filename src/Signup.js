@@ -35,10 +35,11 @@ export default function SignUp() {
   }
 
   return (
-    <>
-      <h1>Sign Up</h1>
+    <Form className="loginForm"> 
+     <div className="form-inner">
+      <h2>Sign Up</h2>
 
-      <Form.Group className="mb-3" controlId="formBasicUsrname">
+      <Form.Group className="form-group" controlId="formBasicUsrname">
         <Form.Label>Username</Form.Label>
         <Form.Control
           onChange={usernameChange}
@@ -48,7 +49,7 @@ export default function SignUp() {
         />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="form-group" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control
           type="password"
@@ -57,7 +58,7 @@ export default function SignUp() {
         />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="form-group" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
           onChange={emailChange}
@@ -69,6 +70,7 @@ export default function SignUp() {
       <Button variant="primary" onClick={createAccount}>
         Create Account
       </Button>
-    </>
+      </div>
+      </Form>
   );
 }

@@ -21,10 +21,11 @@ export default function Login(props) {
   }
 
   return (
-    <>
-      <h1>Login</h1>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicUsername">
+    
+      <Form className="loginForm">
+      <div className="form-inner">
+      <h2>Login</h2>
+        <Form.Group className="form-group" controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>
           <Form.Control
             type="text"
@@ -33,7 +34,7 @@ export default function Login(props) {
             autoFocus
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="form-group" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
@@ -47,7 +48,8 @@ export default function Login(props) {
         <br />
         <br />
         Don't have an account? <Link to="/signup"> Create one!</Link>
+        </div>
       </Form>
-    </>
+    
   );
 }

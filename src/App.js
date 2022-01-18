@@ -5,11 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import JournalistCards from "./Components/JournalistCards";
 import Tasks from "./Components/Tasks";
 import Employees from "./Components/Employees";
-
 import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { NavigationBar } from "./Components/NavigationBar";
-import LoginOut from "./Components/LoginOut";
 import Notifications from "./Components/Notifications";
 import DailyTasks from "./Components/DailyTasks";
 import Accounts from "./Components/Account";
