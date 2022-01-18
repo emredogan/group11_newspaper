@@ -1,9 +1,19 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import Parse from "parse";
+import { useNavigate, Link } from "react-router-dom";
 
 // This code is based on the demo from mircealungu
 
 export function NavigationBar() {
+  const navigate = useNavigate();
+
+  function handleSignOut(e) {
+    e.preventDefault();
+    Parse.User.logOut().then(() => {
+      navigate("/login");
+    });
+  }
+
   return (
     <Navbar className="Navbar" expand="lg">
       <Container>
@@ -12,17 +22,32 @@ export function NavigationBar() {
         </Nav.Link>
         <div className="align">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse>
-            <Nav className="me-auto">
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto" activeKey={window.location.pathname}>
+            {!Parse.User.current() && (
+               <>
+               <Nav.Link as={Link} to="/signup">
+                 Sign Up
+               </Nav.Link>
+               <Nav.Link as={Link} to="/login">
+                 LogIn
+               </Nav.Link>
+             </>
+           )}
+              {Parse.User.current() && (
+              <> 
               <Nav.Link as={Link} to="/notifications">
                 <img src="/notification.svg" alt="Notification Icon"></img>
               </Nav.Link>
               <Nav.Link as={Link} to="/account">
                 <img src="/account.svg" alt="Account Icon"></img>
               </Nav.Link>
-              <Navbar.Brand href="/editor">
-                <img src="/logout.svg" alt="Switch to editor"></img>
-              </Navbar.Brand>
+              
+              <Nav.Link onClick={handleSignOut} as={Link} to="/login">
+                <img src="/logout.svg" alt="logout"></img>
+                </Nav.Link>
+              </>
+               )}
             </Nav>
           </Navbar.Collapse>
         </div>
