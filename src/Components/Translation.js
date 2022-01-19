@@ -1,33 +1,22 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import Parse from "parse"
 
 export default function Translation() {
   const [to, setTo] = useState();
   const [from, setFrom] = useState();
   
-  const API_KEY = "AIzaSyCIaNmgZjvUPNlj7xISIcKqB8KsGGLf6ZU"
-
-  function automaticTranslation(e) {
+  async function automaticTranslation(e) {
     e.preventDefault();
 
-    console.log(from)
-    
-    let url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`;
-    url += `&format=text&source=da&target=en&q=${encodeURIComponent(
-      from
-    )}`;
+  let result = await Parse.Cloud.run("google_translate", {
+    from: from,
+  });
+  console.log("RESULT IS:")
 
-    fetch(url).then((response) => {
-      response.json().then((result) => {
-        console.log(result);
-          console.log(from);
 
-        const translated_string = result.data.translations[0].translatedText;
-        console.log(translated_string);
-        setTo(translated_string)
-      });
-    });
-
+  console.log(result)
+  setTo(result)
 
   }
 

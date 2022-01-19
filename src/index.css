@@ -399,3 +399,26 @@ Button.transButton {
   border-color: transparent;
 
 }
+
+/* Progress Bar  */
+
+.progress {
+  margin: 50px auto;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid black;
+  background-color: white;
+  height: 100px;
+}
+
+.progress .progress__bar {
+  height: 100%;
+  width: 100%;
+  background-color: #9B0000;
+  animation: fill-bar 3s;
+}
+
+@keyframes fill-bar {
+  from {width: 0%;}
+  to {width: 100%;}
+}
