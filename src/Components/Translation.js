@@ -15,7 +15,7 @@ export default function Translation() {
     console.log(from)
     
     let url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`;
-    url += `&format=text&source=da&target=en&q${encodeURIComponent(
+    url += `&format=text&source=da&target=en&q=${encodeURIComponent(
       from
     )}`;
 
