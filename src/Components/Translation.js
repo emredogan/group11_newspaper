@@ -58,7 +58,7 @@ export default function Translation() {
           className="transButton"
           onClick={automaticTranslation}
         >
-          ?
+          Go!
         </Button>
       </div>
     </>
