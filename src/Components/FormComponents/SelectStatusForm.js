@@ -10,13 +10,18 @@ function SelectStatusForm(props) {
         {/** right approach? */}
         <Form.Select
           defaultValue="Select"
-          onChange={(e) => props.setStatus(e.target.value)}
+          //onChange={(e) => props.setStatus(e.target.value)}
+          onChange={props.handleChange}
+          name={props.status}
+          //type={props.type}
         >
           <option>Select</option>
           <option>to Do</option>
           <option>Doing</option>
           <option>Done</option>
         </Form.Select>
+        {props.formErrors.status && (
+              <p className="text-danger">{props.formErrors.status}</p>)}
       </Form.Group>
     </Form.Group>
   );

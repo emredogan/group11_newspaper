@@ -8,7 +8,9 @@ function SelectSectionForm(props) {
       <Form.Group>
         <Form.Select
           defaultValue="Select"
-          onChange={(e) => props.setSection(e.target.value)}
+          //onChange={(e) => props.setSection(e.target.value)}
+          onChange={props.handleChange}
+          name={props.section}
         >
           <option>Select</option>
           <option>Culture</option>
@@ -16,6 +18,8 @@ function SelectSectionForm(props) {
           <option>Politics</option>
           <option>Travel</option>
         </Form.Select>
+        {props.formErrors.section && (
+              <p className="text-danger">{props.formErrors.section}</p>)}
       </Form.Group>
     </Form.Group>
   );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Button, Col, Row } from "react-bootstrap";
+import { Form, Button, Col, Row, Alert } from "react-bootstrap";
 import Parse from "parse";
 import TitleForm from "../Components/FormComponents/TitleForm";
 import DescriptionForm from "./FormComponents/DescriptionForm";
@@ -12,24 +12,99 @@ import OverviewTable from "./OverviewTable";
 import TaskLoadForm from "./FormComponents/TaskLoadForm";
 
 export function CreateTask() {
-  const [title, setTitle] = useState();
+  //const [title, setTitle] = useState();
+  //const [description, setDescription] = useState();
   const [responsible, setResponsible] = useState();
-  const [description, setDescription] = useState();
   const [date, setDate] = useState();
-  const [section, setSection] = useState();
-  const [taskload, setTaskLoad] = useState();
-  const [status, setStatus] = useState();
+  //const [section, setSection] = useState();
+  //const [taskload, setTaskLoad] = useState();
+  //const [status, setStatus] = useState();
+
+  /** Kepping track of the forms input */
+  const [values, setValues] = useState({
+    title: "",
+    description: "",
+    status: "",
+    section: "",
+    taskload: "",
+    date: ""
+  }); 
+
+  /** Hold error information for each forms field */
+  const [formErrors, setFormErrors] = useState({});
+
+  /**  */
+  const [showMessage, setShowMessage] = useState(false);
+
+  /** Check the data from forms */
+  const validate = () => {
+    console.log("validating form...")
+
+    //local list of errors
+    const errors = {};
+
+    //if no title, add error
+    if(!values.title) {
+      errors.title = "Title is required";
+    }
+
+    if(!values.description) {
+      errors.description = "Description is required";
+    }
+
+    if(!values.status) {
+      errors.status = "Status is required";
+    }
+
+    if(!values.section) {
+      errors.section = "Section is required";
+    }
+
+    if(!values.taskload) {
+      errors.taskload = "Taskload is required";
+    }
+
+    if(!values.date) {
+      errors.date = "Date is required";
+    }
+
+    //set state of formerror 
+    setFormErrors(errors);
+
+    console.log(errors);
+
+    if (Object.keys(errors).length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+  const handleSubmit = (e) => {
+      e.preventDefault()
+ 
+     if (validate(values)) {
+       setShowMessage(true);
+       handleUpload(e);
+     } else {
+       setShowMessage(false);
+     }
+   }
 
   async function handleUpload(e) {
     e.preventDefault();
     console.log("prevented default");
 
-    console.log(responsible);
-    console.log(description);
-    console.log(date);
-    console.log(section);
-    console.log(taskload);
-    console.log(status);
+    console.log(responsible); //current.user? 
+    console.log(values.title);
+    console.log(values.description);
+    console.log(values.status);
+    console.log(values.section);
+    console.log(values.taskload);
+    console.log(values.date.split("-").reverse().join("/"));
+
+
 
     // // REST API CALL POST
     // const postData = {
@@ -80,13 +155,13 @@ export function CreateTask() {
 
     const Task = Parse.Object.extend("Task");
     const newTask = new Task();
-    newTask.set("title", title);
+    newTask.set("title", values.title);
+    newTask.set("description", values.description);
+    newTask.set("status", values.status);
     newTask.set("responsible", "You");
-    newTask.set("description", description);
-    newTask.set("date", date);
-    newTask.set("section", section);
-    newTask.set("taskload", taskload);
-    newTask.set("status", status);
+    newTask.set("date", values.date);
+    newTask.set("section", values.section);
+    newTask.set("taskload", values.taskload);
 
     try {
       await newTask.save();
@@ -95,6 +170,20 @@ export function CreateTask() {
       alert(error);
     }
   }
+
+  const handleChange = (event) => {
+    //this console.log message should be removed once you've tested the event works 
+    console.log(
+       "handleChange -> " + event.target.name + " : " + event.target.value
+     );
+     //this is the important bit
+     setValues((values) => ({
+       ...values,
+       [event.target.name]: event.target.value,
+     }));
+
+     console.log(values);
+   };
 
   return (
     <>
@@ -108,40 +197,77 @@ export function CreateTask() {
           <h2>Create a new Task</h2>
         </header>
 
-        <Form className="formcontainer">
+        <Form className="formcontainer" onSubmit={handleSubmit}>
           <Row className="upperrow">
             <Col lg="4">
               <TitleForm
                 text="Task Title"
                 innertext="Enter Title"
-                setTitle={setTitle}
+                //setTitle={setTitle}
+                title="title"
+                type="text"
+                value={values.title}
+                handleChange={handleChange}
+                formErrors={formErrors}
+                required
               />
             </Col>
             <Col lg="4">
               <DescriptionForm
                 text="Task Description"
                 innertext="Enter Description"
-                setDescription={setDescription}
+                //setDescription={setDescription}
+                description="description"
+                type="text"
+                value={values.description}
+                handleChange={handleChange}
+                formErrors={formErrors}
+                required
               />
             </Col>
             <Col lg="4">
-              <SelectStatusForm setStatus={setStatus} />
+              <SelectStatusForm 
+                //setStatus={setStatus}
+                status="status"
+                //type="text"
+                value={values.status}
+                handleChange={handleChange}
+                formErrors={formErrors}
+                required
+               />
             </Col>
           </Row>
           <Row className="lowerrow">
             <Col lg="4">
-              <SelectSectionForm setSection={setSection} />
+              <SelectSectionForm 
+              //setSection={setSection} 
+              section="section"
+              value={values.section}
+              handleChange={handleChange}
+              formErrors={formErrors}
+              required
+            />
             </Col>
             <Col lg="4">
-              {/* <ResponsibleForm
-                title="Responsible"
-                who="You"
-                setResponsible={setResponsible}
-              /> */}
-              <TaskLoadForm setTaskLoad={setTaskLoad} />
+              <TaskLoadForm 
+              //setTaskLoad={setTaskLoad} 
+              taskload="taskload"
+              value={values.taskload}
+              handleChange={handleChange}
+              formErrors={formErrors}
+              required
+              />
             </Col>
             <Col lg="4">
-              <DeadlineForm setDate={setDate} />
+              <DeadlineForm 
+              //setDate={setDate} 
+              date="date"
+              value={values.date}
+              handleChange={handleChange}
+              formErrors={formErrors}
+              required
+
+            />
             </Col>
           </Row>
 
@@ -150,13 +276,13 @@ export function CreateTask() {
               className="toButton"
               variant="primary"
               type="submit"
-              onClick={handleUpload}
+              onClick={handleSubmit}
             >
               SAVE
             </Button>
           </div>
         </Form>
-        <OverviewTable objectName="Task" />
+        <OverviewTable objectName="Task" /> 
       </div>
     </>
   );

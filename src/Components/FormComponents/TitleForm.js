@@ -7,9 +7,15 @@ function TitleForm(props){
           <Form.Group className="formpart" controlId="formControlTextarea">
             <Form.Label>{props.text}</Form.Label>
             <Form.Control
-              placeholder = {props.innertext}
-              onChange={(e) => props.setTitle(e.target.value)}
-            />{" "}
+              placeholder={props.innertext}
+              onChange={props.handleChange}
+              name={props.title}
+              type={props.type}
+            />{""}
+            {/** if title is in errorForms, present its error message */}
+            {props.formErrors.title && (
+              <p className="text-danger">{props.formErrors.title}</p>)}
+
           </Form.Group>
     </Form>
   );

@@ -8,7 +8,9 @@ function TaskLoadForm(props) {
       <Form.Group>
         <Form.Select
           defaultValue="Select"
-          onChange={(e) => props.setTaskLoad(e.target.value)}
+          //onChange={(e) => props.setTaskLoad(e.target.value)}
+          onChange={props.handleChange}
+          name={props.taskload}
         >
           <option>Select</option>
           <option>1/4</option>
@@ -16,6 +18,8 @@ function TaskLoadForm(props) {
           <option>3/4</option>
           <option>4/4</option>
         </Form.Select>
+        {props.formErrors.taskload && (
+              <p className="text-danger">{props.formErrors.taskload}</p>)}
       </Form.Group>
     </Form.Group>
   );
