@@ -14,6 +14,11 @@ export function NavigationBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
             <Nav className="me-auto">
+
+              <Nav.Link as={Link} to="/translation">
+                <img src="translation.svg" alt="Google Transalte Icon"></img>
+              </Nav.Link>
+
               <Nav.Link as={Link} to="/notifications">
                 <img src="/notification.svg" alt="Notification Icon"></img>
               </Nav.Link>

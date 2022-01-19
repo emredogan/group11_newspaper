@@ -5,9 +5,7 @@ export default function Translation() {
   const [to, setTo] = useState();
   const [from, setFrom] = useState();
   
-
   const API_KEY = "AIzaSyCIaNmgZjvUPNlj7xISIcKqB8KsGGLf6ZU"
-
 
   function automaticTranslation(e) {
     e.preventDefault();
