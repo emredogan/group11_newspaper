@@ -22,20 +22,12 @@ export function NavigationBar() {
         </Nav.Link>
         <div className="align">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto" activeKey={window.location.pathname}>
-            {!Parse.User.current() && (
-               <>
-               <Nav.Link as={Link} to="/signup">
-                 Sign Up
-               </Nav.Link>
-               <Nav.Link as={Link} to="/login">
-                 Log In
-               </Nav.Link>
-             </>
-           )}
-              {Parse.User.current() && (
-              <> 
+          <Navbar.Collapse>
+            <Nav className="me-auto">
+              <Nav.Link as={Link} to="/translation">
+                <img src="translation.svg" alt="Google Transalte Icon"></img>
+              </Nav.Link>
+
               <Nav.Link as={Link} to="/notifications">
                 <img src="/notification.svg" alt="Notification Icon"></img>
               </Nav.Link>
@@ -46,8 +38,6 @@ export function NavigationBar() {
               <Nav.Link onClick={handleSignOut} as={Link} to="/login">
                 <img src="/logout.svg" alt="logout"></img>
                 </Nav.Link>
-              </>
-               )}
             </Nav>
           </Navbar.Collapse>
         </div>

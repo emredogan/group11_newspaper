@@ -64,6 +64,8 @@ function App() {
               <Route path="/journalist/article-ideas" element={<ArticleIdea />} />
               <Route path="/journalist/article-ideas/create-idea" element={<CreateArticleIdea />} />
 
+              <Route path="/translation" element={<Translation />} />
+
               <Route path="/editor/employees" element={<Tasks />} />
               <Route
                 path="/editor/article-ideas/create-idea"
@@ -77,6 +79,7 @@ function App() {
         </>
       ) 
         </BrowserRouter>
+
     </div>
   );
 }

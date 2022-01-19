@@ -31,7 +31,6 @@ export function CreateTask() {
     console.log(taskload);
     console.log(status);
 
-
     // // REST API CALL POST
     // const postData = {
     //   title: "mir3_rest",
