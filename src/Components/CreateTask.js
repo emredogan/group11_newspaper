@@ -12,13 +12,7 @@ import OverviewTable from "./OverviewTable";
 import TaskLoadForm from "./FormComponents/TaskLoadForm";
 
 export function CreateTask() {
-  //const [title, setTitle] = useState();
-  //const [description, setDescription] = useState();
-  const [responsible, setResponsible] = useState();
-  const [date, setDate] = useState();
-  //const [section, setSection] = useState();
-  //const [taskload, setTaskLoad] = useState();
-  //const [status, setStatus] = useState();
+  //const [responsible, setResponsible] = useState();
 
   /** Kepping track of the forms input */
   const [values, setValues] = useState({
@@ -32,9 +26,6 @@ export function CreateTask() {
 
   /** Hold error information for each forms field */
   const [formErrors, setFormErrors] = useState({});
-
-  /**  */
-  const [showMessage, setShowMessage] = useState(false);
 
   /** Check the data from forms */
   const validate = () => {
@@ -85,18 +76,15 @@ export function CreateTask() {
       e.preventDefault()
  
      if (validate(values)) {
-       setShowMessage(true);
        handleUpload(e);
-     } else {
-       setShowMessage(false);
-     }
-   }
+     } 
+  }
 
   async function handleUpload(e) {
     e.preventDefault();
     console.log("prevented default");
 
-    console.log(responsible); //current.user? 
+    //console.log(responsible); //current.user? 
     console.log(values.title);
     console.log(values.description);
     console.log(values.status);
@@ -171,12 +159,13 @@ export function CreateTask() {
     }
   }
 
+  /** updates the state of values, inserts the key value pair of form name and form value*/
   const handleChange = (event) => {
     //this console.log message should be removed once you've tested the event works 
-    console.log(
-       "handleChange -> " + event.target.name + " : " + event.target.value
-     );
-     //this is the important bit
+    // console.log(
+    //    "handleChange -> " + event.target.name + " : " + event.target.value
+    //  );
+
      setValues((values) => ({
        ...values,
        [event.target.name]: event.target.value,
@@ -216,7 +205,6 @@ export function CreateTask() {
               <DescriptionForm
                 text="Task Description"
                 innertext="Enter Description"
-                //setDescription={setDescription}
                 description="description"
                 type="text"
                 value={values.description}
@@ -227,9 +215,7 @@ export function CreateTask() {
             </Col>
             <Col lg="4">
               <SelectStatusForm 
-                //setStatus={setStatus}
                 status="status"
-                //type="text"
                 value={values.status}
                 handleChange={handleChange}
                 formErrors={formErrors}
@@ -240,7 +226,6 @@ export function CreateTask() {
           <Row className="lowerrow">
             <Col lg="4">
               <SelectSectionForm 
-              //setSection={setSection} 
               section="section"
               value={values.section}
               handleChange={handleChange}
@@ -250,7 +235,6 @@ export function CreateTask() {
             </Col>
             <Col lg="4">
               <TaskLoadForm 
-              //setTaskLoad={setTaskLoad} 
               taskload="taskload"
               value={values.taskload}
               handleChange={handleChange}
@@ -260,7 +244,6 @@ export function CreateTask() {
             </Col>
             <Col lg="4">
               <DeadlineForm 
-              //setDate={setDate} 
               date="date"
               value={values.date}
               handleChange={handleChange}
