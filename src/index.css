@@ -104,6 +104,11 @@ form .form-inner .form-group input {
   cursor: pointer;
 }
 
+.form-inner button {
+  margin: 35px;
+}
+
+
 .welcome big-button {
   display: flex;
   flex-direction: column;

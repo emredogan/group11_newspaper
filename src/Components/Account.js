@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import Parse from "parse";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 
@@ -28,7 +28,7 @@ function Account() {
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
         <Breadcrumb.Item active>Account</Breadcrumb.Item>
       </Breadcrumb>
-      <form className="loginForm">
+      <Form className="loginForm">
         <div className="form-inner">
           <header className="welc">
             <h2>
@@ -44,8 +44,14 @@ function Account() {
               onChange={(e) => setDate(e.target.value)}
             />
           </Form.Group>
+          <Button variant="primary" type="submit">
+          UPDATE
+        </Button>
+        <Button variant="primary" type="submit">
+          DELETE
+        </Button>
         </div>
-      </form>
+      </Form>
     </>
   );
 }
