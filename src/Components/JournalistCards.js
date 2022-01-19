@@ -29,11 +29,6 @@ function Cards() {
             ></CardButton>
           </Link>
         </li>
-        <li>
-        <Link to="/translation">
-        <Button> X </Button>
-          </Link>
-        </li>
       </ul>
     </div>
   );
