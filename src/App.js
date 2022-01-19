@@ -17,7 +17,7 @@ import Parse from "parse";
 import Login from "./Login";
 import Signup from "./Signup";
 import RequireAuth from "./Components/RequireAuth";
-
+import Translation from "./Components/Translation" 
 
 
 function App() {
@@ -77,7 +77,6 @@ function App() {
               </Route>
             </Routes>
         </>
-      ) 
         </BrowserRouter>
 
     </div>

@@ -33,7 +33,7 @@ export default function Translation() {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div className="translationContainer">
         <Form.Group className="mb-3" controlId="formBasicUsername">
           <Form.Label>Word</Form.Label>
           <Form.Control
@@ -55,6 +55,7 @@ export default function Translation() {
         </Form.Group>
 
         <Button
+          className="transButton"
           onClick={automaticTranslation}
         >
           ?

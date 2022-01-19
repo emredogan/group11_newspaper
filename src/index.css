@@ -379,3 +379,23 @@ li.breadcrumb-item+.breadcrumb-item::before {
   width: 1.5rem;
 }
 
+.translationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin-top: 125px;
+}
+
+.transButton {
+  margin-top: 30px;
+  font-size: 15px;
+  background-color: #A8A8A8;
+  color: #000;
+  width: 100px;
+  height: 40px;
+  border-radius: 100px;
+  border-color: transparent;
+
+}
