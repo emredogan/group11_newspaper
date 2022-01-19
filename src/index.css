@@ -388,7 +388,7 @@ li.breadcrumb-item+.breadcrumb-item::before {
   margin-top: 125px;
 }
 
-.transButton {
+Button.transButton {
   margin-top: 30px;
   font-size: 15px;
   background-color: #A8A8A8;
