@@ -20,15 +20,14 @@ export default function Translation() {
     )}`;
 
     fetch(url).then((response) => {
-      response.text().then((result) => {
+      response.json().then((result) => {
         console.log(result);
           console.log(from);
+
+        const translated_string = result.data.translations[0].translatedText;
+        console.log(translated_string);
+        setTo(translated_string)
       });
-      // response.json().then((result) => {
-      //   console.log(result);
-      //   const translated_string = result.data.translations[0].translatedText;
-      //   setTo(translated_string)
-      // });
     });
 
 
@@ -50,7 +49,9 @@ export default function Translation() {
         <Form.Group className="mb-3" controlId="formBasicTranslation">
           <Form.Label>Translation</Form.Label>
           <Form.Control
+            readOnly
             type="text"
+            value={to}
             onChange={(e) => setTo(e.target.value)}
           />
         </Form.Group>
