@@ -427,3 +427,7 @@ Button.transButton {
   from {width: 0%;}
   to {width: 100%;}
 }
+
+p {
+  background: transparent;
+}
