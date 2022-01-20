@@ -397,12 +397,12 @@ li.breadcrumb-item+.breadcrumb-item::before {
 Button.transButton {
   margin-top: 30px;
   font-size: 15px;
-  background-color: #A8A8A8;
-  color: #000;
   width: 100px;
   height: 40px;
   border-radius: 100px;
   border-color: transparent;
+  background-color: #004DD1;
+  color: #fff;
 
 }
 
@@ -415,6 +415,7 @@ Button.transButton {
   border: 1px solid black;
   background-color: white;
   height: 100px;
+
 }
 
 .progress .progress__bar {
