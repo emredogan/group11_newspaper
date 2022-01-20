@@ -1,6 +1,6 @@
 import React from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import DailyOverviewTable from "./DailyOverviewTable";
+import OverviewTable from "./OverviewTable";
 
 function DailyTasks() {
   return (
@@ -22,7 +22,7 @@ function DailyTasks() {
             <div className="progress__bar"></div>
           </div>
 
-          <DailyOverviewTable objectName="Task" />
+          <OverviewTable objectName="Task" overview="daily" />
         </div>
       </div>
     </>

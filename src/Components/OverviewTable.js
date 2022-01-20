@@ -1,12 +1,13 @@
+import { requirePropFactory } from "@material-ui/core";
 import Parse from "parse";
 import React, { useState, useEffect } from "react";
 
-function OverviewTable({ objectName }) {
+function OverviewTable(props) {
   const [items, setItem] = useState([]);
   const [byDates, setByDates] = useState([])
 
   const renderItem = (object, index) => {
-    if (objectName === "Task") {
+    if (props.objectName === "Task") {
       return (
         <tr key={index}>
           <td>{object.get("status")}</td>
@@ -34,8 +35,16 @@ function OverviewTable({ objectName }) {
   };
 
   useEffect(() => {
-    const object = Parse.Object.extend(`${objectName}`);
+    const object = Parse.Object.extend(`${props.objectName}`);
     const query = new Parse.Query(object);
+
+    if (props.overview === "daily") {
+      const current = new Date().toLocaleDateString('en-GB');
+      console.log(current)
+      query.equalTo("date", current);
+      console.log(current)
+    }
+
     query.find().then((result) => {
       console.log(result);
      setItem(result);
@@ -45,12 +54,11 @@ function OverviewTable({ objectName }) {
       } catch (error) {
         console.log(error)
       }
-
     });
     console.log("render stuff");
   }, []);
 
-  if (objectName === "Task") {
+  if (props.objectName === "Task") {
     return (
       /** dynamic table */
       <div class="table-responsive-sm">

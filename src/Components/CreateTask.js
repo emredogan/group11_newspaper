@@ -147,7 +147,7 @@ export function CreateTask() {
     newTask.set("description", values.description);
     newTask.set("status", values.status);
     newTask.set("responsible", "You");
-    newTask.set("date", values.date);
+    newTask.set("date", values.date.split("-").reverse().join("/"));
     newTask.set("section", values.section);
     newTask.set("taskload", values.taskload);
 
