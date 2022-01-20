@@ -318,18 +318,19 @@ justify-self: right;
 .toButton, .placingSubmitBtn .toButton {
   margin-top: 30px;
   font-size: 15px;
-  background-color: #A8A8A8;
-  color: #000;
+  /* background-color: #A8A8A8; */
   width: 100px;
   height: 40px;
   border-radius: 100px;
   border-color: transparent;
   position: absolute;
+  background-color: #004DD1;
+  color: #fff;
 }
 
 button:hover {
-  background-color: #004DD1;
-  color: #FFF;
+  background-color: #346FD4;
+  color: #fff;
 }
 
 /* .screentitle h2 {
