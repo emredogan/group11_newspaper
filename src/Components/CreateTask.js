@@ -14,8 +14,6 @@ import TaskLoadForm from "./FormComponents/TaskLoadForm";
 import { useNavigate} from "react-router-dom";
 
 export function CreateTask() {
-  //const [responsible, setResponsible] = useState();
-
   const navigate = useNavigate();
 
   /** Kepping track of the forms input */
@@ -35,10 +33,8 @@ export function CreateTask() {
   const validate = () => {
     console.log("validating form...")
 
-    //local list of errors
     const errors = {};
 
-    //if no title, add error
     if(!values.title) {
       errors.title = "Title is required";
     }
@@ -63,7 +59,6 @@ export function CreateTask() {
       errors.date = "Date is required";
     }
 
-    //set state of formerror 
     setFormErrors(errors);
 
     console.log(errors);
@@ -87,8 +82,6 @@ export function CreateTask() {
   async function handleUpload(e) {
     e.preventDefault();
     console.log("prevented default");
-
-    //console.log(responsible); //current.user? 
     console.log(values.title);
     console.log(values.description);
     console.log(values.status);
@@ -97,8 +90,9 @@ export function CreateTask() {
     console.log(values.date.split("-").reverse().join("/"));
 
 
+    //REST API 
 
-    // // REST API CALL POST
+    // REST API CALL POST
     // const postData = {
     //   title: "mir3_rest",
     //   description: "secret_rest",
@@ -143,7 +137,7 @@ export function CreateTask() {
     // const content = await rawResponse.json();
     // console.log("GET", content);
 
-    // // REST API CALL GET
+    // REST API CALL GET
 
     const Task = Parse.Object.extend("Task");
     const newTask = new Task();
