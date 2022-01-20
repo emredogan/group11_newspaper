@@ -11,8 +11,12 @@ import Breadcrumb from "react-bootstrap/Breadcrumb";
 import OverviewTable from "./OverviewTable";
 import TaskLoadForm from "./FormComponents/TaskLoadForm";
 
+import { useNavigate} from "react-router-dom";
+
 export function CreateTask() {
   //const [responsible, setResponsible] = useState();
+
+  const navigate = useNavigate();
 
   /** Kepping track of the forms input */
   const [values, setValues] = useState({
@@ -154,9 +158,11 @@ export function CreateTask() {
     try {
       await newTask.save();
       alert("succes");
+      navigate("/journalist/task");
     } catch (error) {
       alert(error);
     }
+
   }
 
   /** updates the state of values, inserts the key value pair of form name and form value*/

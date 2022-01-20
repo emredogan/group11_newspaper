@@ -8,8 +8,10 @@ import TitleForm from "./FormComponents/TitleForm";
 import DeadlineForm from "./FormComponents/DeadlineForm";
 import OverviewTable from "./OverviewTable";
 import TaskLoadForm from "./FormComponents/TaskLoadForm";
+import { useNavigate } from "react-router";
 
 export default function CreateArticleIdea() {
+  const navigate = useNavigate();
 
   // const [title, setTitle] = useState();
   // const [description, setDescription] = useState();
@@ -61,6 +63,7 @@ export default function CreateArticleIdea() {
     try {
       await newIdea.save();
       alert("succes");
+      navigate("/journalist/article-ideas");
     } catch (error) {
       alert(error);
     }
