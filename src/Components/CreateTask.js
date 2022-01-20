@@ -15,8 +15,11 @@ import { useNavigate} from "react-router-dom";
 function CreateTask() {
   const navigate = useNavigate();
 
+  /** Hold error information for each forms field */
+  const [formErrors, setFormErrors] = useState({});
+
   /** Kepping track of the forms input */
-  const [values, setValues] = useState({
+  const [formValues, setFormValues] = useState({
     title: "",
     description: "",
     status: "",
@@ -25,36 +28,33 @@ function CreateTask() {
     date: ""
   }); 
 
-  /** Hold error information for each forms field */
-  const [formErrors, setFormErrors] = useState({});
-
   /** Check the data from forms */
-  const validate = () => {
+  const isFormValid = () => {
     console.log("validating form...")
 
     const errors = {};
 
-    if(!values.title) {
+    if(!formValues.title) {
       errors.title = "Title is required";
     }
 
-    if(!values.description) {
+    if(!formValues.description) {
       errors.description = "Description is required";
     }
 
-    if(!values.status) {
+    if(!formValues.status) {
       errors.status = "Status is required";
     }
 
-    if(!values.section) {
+    if(!formValues.section) {
       errors.section = "Section is required";
     }
 
-    if(!values.taskload) {
+    if(!formValues.taskload) {
       errors.taskload = "Taskload is required";
     }
 
-    if(!values.date) {
+    if(!formValues.date) {
       errors.date = "Date is required";
     }
 
@@ -73,7 +73,7 @@ function CreateTask() {
   const handleSubmit = (e) => {
       e.preventDefault()
  
-     if (validate(values)) {
+     if (isFormValid(formValues)) {
        handleUpload(e);
      } 
   }
@@ -81,22 +81,16 @@ function CreateTask() {
   async function handleUpload(e) {
     e.preventDefault();
     console.log("prevented default");
-    console.log(values.title);
-    console.log(values.description);
-    console.log(values.status);
-    console.log(values.section);
-    console.log(values.taskload);
-    console.log(values.date.split("-").reverse().join("/"));
 
     const Task = Parse.Object.extend("Task");
     const newTask = new Task();
-    newTask.set("title", values.title);
-    newTask.set("description", values.description);
-    newTask.set("status", values.status);
+    newTask.set("title", formValues.title);
+    newTask.set("description", formValues.description);
+    newTask.set("status", formValues.status);
     newTask.set("responsible", "You");
-    newTask.set("date", values.date.split("-").reverse().join("/"));
-    newTask.set("section", values.section);
-    newTask.set("taskload", values.taskload);
+    newTask.set("date", formValues.date.split("-").reverse().join("/"));
+    newTask.set("section", formValues.section);
+    newTask.set("taskload", formValues.taskload);
 
     try {
       await newTask.save();
@@ -110,17 +104,13 @@ function CreateTask() {
 
   /** updates the state of values, inserts the key value pair of form name and form value*/
   const handleChange = (event) => {
-    //this console.log message should be removed once you've tested the event works 
-    // console.log(
-    //    "handleChange -> " + event.target.name + " : " + event.target.value
-    //  );
 
-     setValues((values) => ({
+     setFormValues((values) => ({
        ...values,
        [event.target.name]: event.target.value,
      }));
 
-     console.log(values);
+     console.log(formValues);
    };
 
   return (
@@ -134,17 +124,15 @@ function CreateTask() {
         <header className="screentitle">
           <h2>Create a new Task</h2>
         </header>
-
         <Form className="formcontainer" onSubmit={handleSubmit}>
           <Row className="upperrow">
             <Col lg="4">
               <TitleForm
                 text="Task Title"
                 innertext="Enter Title"
-                //setTitle={setTitle}
                 title="title"
                 type="text"
-                value={values.title}
+                value={formValues.title}
                 handleChange={handleChange}
                 formErrors={formErrors}
                 required
@@ -156,7 +144,7 @@ function CreateTask() {
                 innertext="Enter Description"
                 description="description"
                 type="text"
-                value={values.description}
+                value={formValues.description}
                 handleChange={handleChange}
                 formErrors={formErrors}
                 required
@@ -165,7 +153,7 @@ function CreateTask() {
             <Col lg="4">
               <SelectStatusForm 
                 status="status"
-                value={values.status}
+                value={formValues.status}
                 handleChange={handleChange}
                 formErrors={formErrors}
                 required
@@ -176,7 +164,7 @@ function CreateTask() {
             <Col lg="4">
               <SelectSectionForm 
               section="section"
-              value={values.section}
+              value={formValues.section}
               handleChange={handleChange}
               formErrors={formErrors}
               required
@@ -185,7 +173,7 @@ function CreateTask() {
             <Col lg="4">
               <TaskLoadForm 
               taskload="taskload"
-              value={values.taskload}
+              value={formValues.taskload}
               handleChange={handleChange}
               formErrors={formErrors}
               required
@@ -194,11 +182,10 @@ function CreateTask() {
             <Col lg="4">
               <DeadlineForm 
               date="date"
-              value={values.date}
+              value={formValues.date}
               handleChange={handleChange}
               formErrors={formErrors}
               required
-
             />
             </Col>
           </Row>

@@ -12,10 +12,9 @@ import { useNavigate } from "react-router";
 
 function CreateArticleIdea() {
   const navigate = useNavigate();
-
   const [formErrors, setFormErrors] = useState({});
 
-  const [values, setValues] = useState({
+  const [formValues, setFormValues] = useState({
     title: "",
     description: "",
     taskload: "",
@@ -27,7 +26,7 @@ function CreateArticleIdea() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (validate(values)) {
+    if (validate(formValues)) {
       handleUpload(e);
     } 
 
@@ -38,19 +37,18 @@ function CreateArticleIdea() {
     e.preventDefault();
     console.log("prevented default");
 
-    console.log(Object.values(values))
+    //console.log(Object.values(formValues))
 
     const Idea = Parse.Object.extend("Idea");
     const newIdea = new Idea();
-    newIdea.set("title", values.title);
-    newIdea.set("description", values.description);
-    newIdea.set("taskload", values.taskload);
-    newIdea.set("section", values.section);
-    newIdea.set("date", values.date);
+    newIdea.set("title", formValues.title);
+    newIdea.set("description", formValues.description);
+    newIdea.set("taskload", formValues.taskload);
+    newIdea.set("section", formValues.section);
+    newIdea.set("date", formValues.date.split("-").reverse().join("/"));
 
     newIdea.set("createdby", "You");
     newIdea.set("assignedto", "TBA");
-
 
     try {
       await newIdea.save();
@@ -62,7 +60,7 @@ function CreateArticleIdea() {
   }
 
   const handleChange = (event) => {
-     setValues((values) => ({
+     setFormValues((values) => ({
        ...values,
        [event.target.name]: event.target.value,
      }));
@@ -73,23 +71,23 @@ function CreateArticleIdea() {
 
     const errors = {};
 
-    if(!values.title) { //if "" is true
+    if(!formValues.title) { //if "" is true
       errors.title = "Title is required";
     }
 
-    if(!values.description) {
+    if(!formValues.description) {
       errors.description = "Description is required";
     }
 
-    if(!values.taskload) {
+    if(!formValues.taskload) {
       errors.taskload = "Taskload is required";
     }
 
-    if(!values.section) {
+    if(!formValues.section) {
       errors.section = "Section is required";
     }
 
-    if(!values.date) {
+    if(!formValues.date) {
       errors.date = "Date is required";
     }
 
@@ -121,7 +119,7 @@ function CreateArticleIdea() {
               innertext="Enter Title"
               title="title"
               type="text"
-              value={values.title}
+              value={formValues.title}
               handleChange={handleChange}
               formErrors={formErrors}
               required
@@ -132,8 +130,7 @@ function CreateArticleIdea() {
               text="Idea Description"
               innertext="Enter Description"
               description="description"
-              type="text"
-              value={values.description}
+              value={formValues.description}
               handleChange={handleChange}
               formErrors={formErrors}
               required
@@ -142,7 +139,7 @@ function CreateArticleIdea() {
           <Col lg="4">
             <TaskLoadForm 
             taskload="taskload"
-            value={values.taskload}
+            value={formValues.taskload}
             handleChange={handleChange}
             formErrors={formErrors}
             required
@@ -153,7 +150,7 @@ function CreateArticleIdea() {
           <Col lg="4">
             <SelectSectionForm
             section="section"
-            value={values.section}
+            value={formValues.section}
             handleChange={handleChange}
             formErrors={formErrors}
             required
@@ -164,7 +161,7 @@ function CreateArticleIdea() {
           <Col lg="4">
             <DeadlineForm
             date="date"
-            value={values.date}
+            value={formValues.date}
             handleChange={handleChange}
             formErrors={formErrors}
             required
