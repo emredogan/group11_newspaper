@@ -1,6 +1,6 @@
 import React from "react";
-import EmployeeTable from "./EmployeeTable";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import OverviewTable from "./OverviewTable";
 
 function Employees() {
   return (
@@ -13,9 +13,9 @@ function Employees() {
         <header className="screentitle">
           <h2>Overview of Employees</h2>
         </header>
-
-        <EmployeeTable />
+        <OverviewTable objectName="Employee" />
       </div>
+
     </>
   );
 }

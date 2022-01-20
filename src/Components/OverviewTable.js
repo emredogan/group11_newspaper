@@ -27,7 +27,7 @@ function OverviewTable(props) {
         <td>{object.get("date")}</td>
       </tr>
     );
-  } else {
+  } else if (props.objectName === "Idea") {
     return (
       <tr key={index}>
         <td>{object.get("title")}</td>
@@ -39,6 +39,19 @@ function OverviewTable(props) {
         <td>{object.get("date")}</td>
       </tr>
     );
+  } else {
+    return (
+      <tr key={index}>
+      <td>{object.get("name")}</td>
+      <td>{object.get("role")}</td>
+      <td>{object.get("title")}</td>
+      <td>{object.get("description")}</td>
+      <td>{object.get("status")}</td>
+      <td style={{ backgroundColor: getColor(object.get("taskload")), color: "white" }}>{object.get("taskload")}</td>
+      <td>{object.get("remain")}</td>
+      <td>{object.get("date")}</td>
+    </tr>
+    )
   }
   };
 
@@ -92,6 +105,20 @@ function OverviewTable(props) {
               <th scope="col">Task Load</th>
               <th scope="col">Deadline</th>
               </tr>
+          </thead>
+        }
+        {props.objectName === "Employee"  &&
+          <thead>
+            <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Task Title</th>
+            <th scope="col">Task Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Task Load</th>
+            <th scope="col">Remaining</th>
+            <th scope="col">Deadline</th>
+            </tr>
           </thead>
         }
           <tbody>
