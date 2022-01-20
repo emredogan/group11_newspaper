@@ -11,40 +11,111 @@ import TaskLoadForm from "./FormComponents/TaskLoadForm";
 
 export default function CreateArticleIdea() {
 
-  const [title, setTitle] = useState();
-  const [description, setDescription] = useState();
+  // const [title, setTitle] = useState();
+  // const [description, setDescription] = useState();
   const [createdby, setCreatedBy] = useState();
   const [assignedto, setAssignedTo] = useState();
   const [section, setSection] = useState();
-  const [taskload, setTaskLoad] = useState();
+  // const [taskload, setTaskLoad] = useState();
   const [date, setDate] = useState();
+
+  const [formErrors, setFormErrors] = useState({});
+
+  const [values, setValues] = useState({
+    title: "",
+    description: "",
+    taskload: "",
+    section: "",
+    date: ""
+  }); 
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (validate(values)) {
+      handleUpload(e);
+    } 
+
+   // console.log(Object.values(values))
+  }
 
   async function handleUpload(e) {
     e.preventDefault();
     console.log("prevented default");
-    console.log(title);
-    console.log(description);
-    console.log(createdby);
-    console.log(assignedto);
-    console.log(section);
-    console.log(taskload);
-    console.log(date);
+
+    console.log(Object.values(values))
 
     const Idea = Parse.Object.extend("Idea");
     const newIdea = new Idea();
-    newIdea.set("title", title);
-    newIdea.set("description", description);
+    newIdea.set("title", values.title);
+    newIdea.set("description", values.description);
+    newIdea.set("taskload", values.taskload);
+    newIdea.set("section", values.section);
+    newIdea.set("date", values.date);
+
     newIdea.set("createdby", "You");
     newIdea.set("assignedto", "TBA");
-    newIdea.set("section", section);
-    newIdea.set("taskload", taskload);
-    newIdea.set("date", date);
+
 
     try {
       await newIdea.save();
       alert("succes");
     } catch (error) {
       alert(error);
+    }
+  }
+
+  const handleChange = (event) => {
+    //this console.log message should be removed once you've tested the event works 
+    // console.log(
+    //    "handleChange -> " + event.target.name + " : " + event.target.value
+    //  );
+
+     setValues((values) => ({
+       ...values,
+       [event.target.name]: event.target.value,
+     }));
+
+     console.log(values);
+   };
+
+   const validate = () => {
+    console.log("validating form...")
+
+    //local list of errors
+    const errors = {};
+
+    //if no value, add error
+    if(!values.title) { //if "" is true
+      errors.title = "Title is required";
+    }
+
+    if(!values.description) {
+      errors.description = "Description is required";
+    }
+
+    if(!values.taskload) {
+      errors.taskload = "Taskload is required";
+    }
+
+    if(!values.section) {
+      errors.section = "Section is required";
+    }
+
+    if(!values.date) {
+      errors.date = "Date is required";
+    }
+
+    //set state of formerror 
+    setFormErrors(errors);
+
+    console.log(errors);
+
+    if (Object.keys(errors).length === 0) {
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -65,28 +136,56 @@ export default function CreateArticleIdea() {
             <TitleForm
               text="Idea Title"
               innertext="Enter Title"
-              setTitle={setTitle}
+              title="title"
+              type="text"
+              value={values.title}
+              handleChange={handleChange}
+              formErrors={formErrors}
+              required
             />
           </Col>
           <Col lg="4">
             <DescriptionForm
               text="Idea Description"
               innertext="Enter Description"
-              setDescription={setDescription}
+              description="description"
+              type="text"
+              value={values.description}
+              handleChange={handleChange}
+              formErrors={formErrors}
+              required
             />
           </Col>
           <Col lg="4">
-            <TaskLoadForm setTaskLoad={setTaskLoad} />
+            <TaskLoadForm 
+            taskload="taskload"
+            value={values.taskload}
+            handleChange={handleChange}
+            formErrors={formErrors}
+            required
+          />
           </Col>
         </Row>
         <Row>
           <Col lg="4">
-            <SelectSectionForm setSection={setSection} />
+            <SelectSectionForm
+            section="section"
+            value={values.section}
+            handleChange={handleChange}
+            formErrors={formErrors}
+            required
+          />
           </Col>
           <Col lg="4">
           </Col>
           <Col lg="4">
-            <DeadlineForm setDate={setDate}/>
+            <DeadlineForm
+            date="date"
+            value={values.date}
+            handleChange={handleChange}
+            formErrors={formErrors}
+            required
+          />
           </Col>
         </Row>
         <div className="placingSubmitBtn">
@@ -94,7 +193,7 @@ export default function CreateArticleIdea() {
               className="toButton" 
               variant="primary"
               type="submit"
-              onClick={handleUpload}
+              onClick={handleSubmit}
             >
               SAVE
             </Button>
