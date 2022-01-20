@@ -9,12 +9,11 @@ function DescriptionForm(props) {
           <Form.Control
             placeholder = { props.innertext }
             as="textarea" /** as brings the style of textarea */
-            rows={1}
             type="text"
+            rows={1}
             //onChange={(e) => props.setDescription(e.target.value)}
             onChange={props.handleChange}
             name={props.description}
-            type={props.type}
           />
             {props.formErrors.description && (
               <p className="text-danger">{props.formErrors.description}</p>)}

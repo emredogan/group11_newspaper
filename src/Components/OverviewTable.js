@@ -1,10 +1,8 @@
-import { requirePropFactory } from "@material-ui/core";
 import Parse from "parse";
 import React, { useState, useEffect } from "react";
 
 function OverviewTable(props) {
-  const [items, setItem] = useState([]);
-  const [byDates, setByDates] = useState([])
+  const [byDates, setByDates] = useState([]);
 
   const renderItem = (object, index) => {
     if (props.objectName === "Task") {
@@ -47,7 +45,6 @@ function OverviewTable(props) {
 
     query.find().then((result) => {
       console.log(result);
-     setItem(result);
       try {
         setByDates(result.sort((a,b) =>  a.get("date").split("/").reverse().join("") -  b.get("date").split("/").reverse().join("")));
         console.log(byDates);
@@ -96,7 +93,7 @@ function OverviewTable(props) {
               <th scope="col">Deadline</th>
             </tr>
           </thead>
-          <tbody>{items.map(renderItem).reverse()}</tbody>
+          <tbody>{byDates.map(renderItem).reverse()}</tbody>
         </table>
       </div>
     );

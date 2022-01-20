@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import EditorCards from "./Components/EditorCards";
 import CreateTask from "./Components/CreateTask";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,8 +21,6 @@ import Translation from "./Components/Translation"
 
 function App() {
   //Following text is presented on welcome page
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   Parse.initialize(
     process.env.REACT_APP_PARSE_API_APPLICATION_KEY, 

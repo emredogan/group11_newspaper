@@ -118,7 +118,6 @@ function CreateArticleIdea() {
               text="Idea Title"
               innertext="Enter Title"
               title="title"
-              type="text"
               value={formValues.title}
               handleChange={handleChange}
               formErrors={formErrors}

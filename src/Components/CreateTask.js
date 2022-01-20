@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Button, Col, Row, Alert } from "react-bootstrap";
+import { Form, Button, Col, Row } from "react-bootstrap";
 import Parse from "parse";
 import TitleForm from "../Components/FormComponents/TitleForm";
 import DescriptionForm from "./FormComponents/DescriptionForm";
@@ -131,7 +131,6 @@ function CreateTask() {
                 text="Task Title"
                 innertext="Enter Title"
                 title="title"
-                type="text"
                 value={formValues.title}
                 handleChange={handleChange}
                 formErrors={formErrors}
@@ -143,7 +142,6 @@ function CreateTask() {
                 text="Task Description"
                 innertext="Enter Description"
                 description="description"
-                type="text"
                 value={formValues.description}
                 handleChange={handleChange}
                 formErrors={formErrors}
@@ -189,7 +187,6 @@ function CreateTask() {
             />
             </Col>
           </Row>
-
           <div className="placingSubmitBtn">
             <Button
               className="toButton"
