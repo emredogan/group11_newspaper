@@ -10,16 +10,8 @@ import OverviewTable from "./OverviewTable";
 import TaskLoadForm from "./FormComponents/TaskLoadForm";
 import { useNavigate } from "react-router";
 
-export default function CreateArticleIdea() {
+function CreateArticleIdea() {
   const navigate = useNavigate();
-
-  // const [title, setTitle] = useState();
-  // const [description, setDescription] = useState();
-  const [createdby, setCreatedBy] = useState();
-  const [assignedto, setAssignedTo] = useState();
-  const [section, setSection] = useState();
-  // const [taskload, setTaskLoad] = useState();
-  const [date, setDate] = useState();
 
   const [formErrors, setFormErrors] = useState({});
 
@@ -70,26 +62,17 @@ export default function CreateArticleIdea() {
   }
 
   const handleChange = (event) => {
-    //this console.log message should be removed once you've tested the event works 
-    // console.log(
-    //    "handleChange -> " + event.target.name + " : " + event.target.value
-    //  );
-
      setValues((values) => ({
        ...values,
        [event.target.name]: event.target.value,
      }));
-
-     console.log(values);
    };
 
    const validate = () => {
     console.log("validating form...")
 
-    //local list of errors
     const errors = {};
 
-    //if no value, add error
     if(!values.title) { //if "" is true
       errors.title = "Title is required";
     }
@@ -110,10 +93,7 @@ export default function CreateArticleIdea() {
       errors.date = "Date is required";
     }
 
-    //set state of formerror 
     setFormErrors(errors);
-
-    console.log(errors);
 
     if (Object.keys(errors).length === 0) {
       return true;
@@ -208,3 +188,5 @@ export default function CreateArticleIdea() {
     </>
   );
 };
+
+export default CreateArticleIdea;
