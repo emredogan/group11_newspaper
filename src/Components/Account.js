@@ -8,19 +8,24 @@ function Account() {
   const [date, setDate] = useState();
 
   useEffect(() => {
-    async function getCurrentUser() {
-      if (username === "") {
-        const currentUser = await Parse.User.currentAsync();
-        if (currentUser !== null) {
-          setUsername(currentUser.getUsername());
-        }
-        const sick = Parse.Object.extend("sick");
-        const newSickLeave = new sick();
-        newSickLeave.set("date", date);
-      }
-    }
     getCurrentUser();
-  }, [username, date]);
+  }, []);
+
+  function getCurrentUser() {
+    setUsername(Parse.User.current().get("username"));
+  }
+
+  function setSickLeave(e) {
+    e.preventDefault();
+    console.log("this works")
+    const sickLeave = Parse.Object.extend("sickLeave");
+    const newSickLeave = new sickLeave();
+    newSickLeave.set("userId", Parse.User.current());
+    newSickLeave.set("date", date);
+    newSickLeave.save().then((sickLeaveSet) => {
+      alert("new sickleave created");
+    })
+  }
 
   return (
     <>
@@ -44,10 +49,10 @@ function Account() {
               onChange={(e) => setDate(e.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick={(e) => setSickLeave(e)}>
           UPDATE
         </Button>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" >
           DELETE
         </Button>
         </div>
