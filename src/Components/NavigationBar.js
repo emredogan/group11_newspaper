@@ -38,7 +38,7 @@ export function NavigationBar() {
             {Parse.User.current() && (
                 <> 
               <Nav.Link as={Link} to="/translation">
-                <img src="translation.svg" alt="Google Transalte Icon"></img>
+                <img src="/translation.svg" alt="Google Transalte Icon"></img>
               </Nav.Link>
 
               <Nav.Link as={Link} to="/notifications">
