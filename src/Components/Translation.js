@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import Parse from "parse"
+import {translateWordRequest}  from "./../Network"
 
 export default function Translation() {
   const [to, setTo] = useState();
@@ -8,16 +8,9 @@ export default function Translation() {
   
   async function automaticTranslation(e) {
     e.preventDefault();
-
-  let result = await Parse.Cloud.run("google_translate", {
-    from: from,
-  });
-  console.log("RESULT IS:")
-
-
-  console.log(result)
-  setTo(result)
-
+    translateWordRequest(from).then(value => {
+    setTo(value)  
+  }) 
   }
 
   return (
