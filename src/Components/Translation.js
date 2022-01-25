@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import {translateWordRequest}  from "./../Network"
+import {translateWordRequest}  from "./../Network";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 
 export default function Translation() {
   const [to, setTo] = useState();
@@ -15,6 +16,10 @@ export default function Translation() {
 
   return (
     <>
+     <Breadcrumb>
+          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+          <Breadcrumb.Item active>Translation</Breadcrumb.Item>
+        </Breadcrumb>
       <div className="translationContainer">
         <Form.Group className="mb-3" controlId="formBasicUsername">
           <Form.Label>Word</Form.Label>

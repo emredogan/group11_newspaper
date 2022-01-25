@@ -38,7 +38,7 @@ function Account() {
           <header className="welc">
             <h2>
               {" "}
-              Hi &nbsp;<span> {username} </span> , &nbsp;this is your account.{" "}
+              Hi <span> {username}, </span>this is your account.{" "}
             </h2>
           </header>
 
