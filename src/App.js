@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import JournalistCards from "./Components/JournalistCards";
 import Tasks from "./Components/Tasks";
 import Employees from "./Components/Employees";
+import EditorArticleIdea from "./Components/EditorArticleIdea";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { NavigationBar } from "./Components/NavigationBar";
@@ -52,7 +53,7 @@ function App() {
               <Route path="/journalist" element={<JournalistCards />} />
               <Route path="/editor" element={<EditorCards />} />
               <Route path="/editor/employees" element={<Employees />} />
-              <Route path="/editor/article-ideas" element={<ArticleIdea />} />
+              <Route path="/editor/article-ideas" element={<EditorArticleIdea />} />
               <Route path="/account" element={<Accounts />} />
               <Route path="/notifications" element={<Notifications />} />
               <Route path="/journalist/dailyTasks" element={<DailyTasks />} />
