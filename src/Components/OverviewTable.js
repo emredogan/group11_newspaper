@@ -6,7 +6,7 @@ function OverviewTable(props) {
 
   const getColor = (quantity) => {
   var str = quantity + ""
-  console.log(quantity + "")
+  //console.log(quantity + "")
     if (str.charAt(0) === "1") return '#387B19';
     if (str.charAt(0) === "2") return '#D79400';
     if (str.charAt(0) === "3") return '#C74900';

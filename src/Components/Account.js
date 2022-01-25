@@ -49,10 +49,10 @@ function Account() {
               onChange={(e) => setDate(e.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" type="submit" onClick={(e) => setSickLeave(e)}>
+          <Button className="accountButton" variant="primary" type="submit" onClick={(e) => setSickLeave(e)}>
           UPDATE
         </Button>
-        <Button variant="primary" type="submit" >
+        <Button className="accountButton" variant="primary" type="submit" >
           DELETE
         </Button>
         </div>

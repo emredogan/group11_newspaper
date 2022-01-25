@@ -394,7 +394,7 @@ li.breadcrumb-item+.breadcrumb-item::before {
   margin-top: 125px;
 }
 
-Button.transButton {
+Button.transButton, Button.accountButton {
   margin-top: 30px;
   font-size: 15px;
   width: 100px;
