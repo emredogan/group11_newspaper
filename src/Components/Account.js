@@ -52,9 +52,6 @@ function Account() {
           <Button className="accountButton" variant="primary" type="submit" onClick={(e) => setSickLeave(e)}>
           UPDATE
         </Button>
-        <Button className="accountButton" variant="primary" type="submit" >
-          DELETE
-        </Button>
         </div>
       </Form>
     </>

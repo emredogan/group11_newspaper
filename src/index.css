@@ -104,10 +104,6 @@ form .form-inner .form-group input {
   cursor: pointer;
 }
 
-.form-inner button {
-  margin: 35px;
-}
-
 
 .welcome big-button {
   display: flex;
@@ -397,6 +393,18 @@ li.breadcrumb-item+.breadcrumb-item::before {
 Button.transButton, Button.accountButton {
   margin-top: 30px;
   font-size: 15px;
+  width: 100px;
+  height: 40px;
+  border-radius: 100px;
+  border-color: transparent;
+  background-color: #004DD1;
+  color: #fff;
+
+}
+
+Button.signUpButton {
+  margin-top: 30px;
+  font-size: 12px;
   width: 100px;
   height: 40px;
   border-radius: 100px;
