@@ -65,9 +65,7 @@ function App() {
               <Route path="/translation" element={<Translation />} />
 
               <Route path="/editor/employees" element={<Tasks />} />
-              <Route
-                path="/editor/article-ideas/create-idea"
-                element={<Tasks />}
+              <Route path="/editor/article-ideas/create-idea" element={<Tasks />}
               />
               <Route path="/editor/newspaper" element={<Tasks />} />
               {/** "homepage" */}
