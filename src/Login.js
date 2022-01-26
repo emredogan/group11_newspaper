@@ -42,7 +42,7 @@ export default function Login(props) {
             placeholder="Password"
           />
         </Form.Group>
-        <Button onClick={handleLoginAttempt} variant="primary" type="submit">
+        <Button onClick={handleLoginAttempt} className="accountButton" type="submit">
           Submit
         </Button>
         <br />
