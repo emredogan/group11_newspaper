@@ -61,21 +61,15 @@ function OverviewTable(props) {
 
   if (props.overview === "daily") {
     const current = new Date().toLocaleDateString('en-GB');
-    console.log(current)
     query.equalTo("date", current);
-    console.log(current)
   }
 
   query.find().then((result) => {
-    console.log(result);
     try {
       setByDates(result.sort((a,b) =>  a.get("date").split("/").reverse().join("") -  b.get("date").split("/").reverse().join("")));
-      console.log(byDates);
     } catch (error) {
-      console.log(error)
     }
   });
-  console.log("render stuff");
   }, []);
 
     return (

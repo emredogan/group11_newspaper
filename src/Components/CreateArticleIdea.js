@@ -98,7 +98,7 @@ function CreateArticleIdea() {
     } else {
       return false;
     }
-  }
+  } 
 
   return (
     <>
