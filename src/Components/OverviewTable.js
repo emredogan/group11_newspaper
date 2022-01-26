@@ -118,7 +118,7 @@ function OverviewTable(props) {
         }
           <tbody>
             {/** loop and present all tasks */}
-            {byDates.map(renderItem).reverse()}
+            {byDates.map(renderItem)}
           </tbody>
         </table>
       </div>
