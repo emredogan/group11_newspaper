@@ -68,6 +68,7 @@ function OverviewTable(props) {
     try {
       setByDates(result.sort((a,b) =>  a.get("date").split("/").reverse().join("") -  b.get("date").split("/").reverse().join("")));
     } catch (error) {
+      console.log(error)
     }
   });
   }, []);
